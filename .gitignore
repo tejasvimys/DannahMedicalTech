@@ -1,0 +1,7 @@
+*.mp3
+*.jks
+**/.gradle/
+**/.idea/
+**/build/
+**/local.properties
+**/*.iml

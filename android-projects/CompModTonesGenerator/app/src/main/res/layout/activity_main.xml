@@ -1,0 +1,281 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"  android:id="@+id/mainlayout" tools:context=".MainActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_ui_mobile"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:weightSum="1">
+
+        <ImageView
+            android:layout_width="@dimen/logoWidth"
+            android:layout_height="@dimen/logoHeight"
+            android:id="@+id/imageView"
+            android:layout_gravity="left|top"
+            android:background="@drawable/logotinnitus"
+            android:maxWidth="100dp"
+            android:maxHeight="50dp"
+            />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Set Frequency"
+                android:id="@+id/textViewsetFreq" />
+
+            <EditText
+                android:layout_width="@dimen/txtSetFreqWidth"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/txtFreqVal"
+                android:layout_gravity="center_horizontal|top"
+                android:background="#ffffff"
+                android:width="100dp"
+                android:layout_marginLeft="20dp"
+                android:phoneNumber="false"></EditText>
+
+            <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Hz"
+                android:layout_marginLeft="10dp"
+            android:id="@+id/textVieFrew" />
+
+
+            <ToggleButton
+                android:layout_width="@dimen/btnSetFreqWidth"
+                android:layout_height="@dimen/btnSetFreqHeight"
+                android:text="New ToggleButton"
+                android:id="@+id/btnsetFrequency"
+                android:layout_gravity="right|top"
+                android:background="@drawable/setbtns0002"
+                android:layout_marginLeft="20dp"
+                ></ToggleButton>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Set Timer"
+                android:id="@+id/textView"
+                android:layout_gravity="left|top"
+                />
+
+            <Spinner
+                android:layout_width="@dimen/spinnerWidth"
+                android:layout_height="@dimen/spinnerHeight"
+                android:id="@+id/spinner"
+                android:layout_gravity="center_vertical" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Mins"
+                android:id="@+id/textView4" />
+
+
+        </LinearLayout>
+
+       <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_weight="1.00">
+
+
+
+           <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+               <ToggleButton
+                   android:layout_width="@dimen/dimen_layout_width"
+                   android:layout_height="@dimen/dimen_layout_height"
+                   android:id="@+id/lftButtn"
+                   android:layout_alignParentLeft="true"
+                   android:layout_alignParentTop="true"
+                   android:background="@drawable/btns_ui10_mobile0001"
+                   android:scaleType="centerInside"
+                   android:layout_marginLeft="@dimen/dimen_margin_left"
+                   android:layout_marginTop="@dimen/dimen_margin_top"/>
+
+               <ToggleButton
+                   android:layout_width="@dimen/dimen_layout_width"
+                   android:layout_height="@dimen/dimen_layout_height"
+                   android:id="@+id/rtBtn"
+                   android:layout_alignParentRight="true"
+                   android:layout_alignParentTop="true"
+                   android:background="@drawable/btns_ui10_mobile0007"
+                   android:layout_marginRight="@dimen/dimen_margin_right"
+                   android:layout_marginTop="@dimen/dimen_margin_top"
+                   android:scaleType="centerInside"
+
+                   />
+
+               <ToggleButton
+                   android:id="@+id/btnStop"
+                   android:layout_width="@dimen/dimen_layout_width"
+                   android:layout_height="@dimen/dimen_layout_height"
+                   android:textColor="#FFFFFF"
+                   android:layout_alignParentBottom="true"
+
+                   android:layout_alignParentLeft="true"
+                   android:background="@drawable/btns_ui10_mobile0003"
+                   android:layout_marginLeft="@dimen/dimen_margin_left"
+                   android:layout_marginBottom="@dimen/dimen_margin_bottom"
+                   android:scaleType="centerInside"
+
+
+                   />
+
+               <ToggleButton
+                   android:layout_width="@dimen/dimen_layout_width"
+                   android:layout_height="@dimen/dimen_layout_height"
+                   android:id="@+id/bothBtn"
+                   android:background="@drawable/btns_ui10_mobile0005"
+                   android:layout_alignParentBottom="true"
+                   android:layout_alignParentRight="true"
+                   android:layout_marginRight="@dimen/dimen_margin_right"
+                   android:layout_marginBottom="@dimen/dimen_margin_bottom"
+                   android:scaleType="centerInside"
+                   />
+
+               <ImageView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:id="@+id/imageView2"
+                   android:layout_centerHorizontal="true"
+                   android:layout_centerVertical="true"
+                   android:layout_gravity="center"
+                   android:background="@drawable/logo_centre_of_ui"/>
+
+
+           </RelativeLayout>
+
+ </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/freqmainLayoytidth"
+            android:background="@drawable/bottom_patch">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Frequencies in Hz"
+                    android:id="@+id/textView3"
+                    android:layout_gravity="left|top"
+                    android:layout_alignParentLeft="true"
+                    android:textColor="#ffffff"
+                    android:layout_marginLeft="10dp"
+                    />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="0"
+                    android:id="@+id/txtfreq1"
+                    android:textColor="#ffffff"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="30dp"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="0"
+                    android:id="@+id/txtfreq2"
+                    android:textColor="#ffffff"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="90dp"
+
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="0"
+                    android:id="@+id/txtfreq3"
+                    android:textColor="#ffffff"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="50dp"
+                    android:visibility="invisible" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="0"
+                    android:id="@+id/txtfreq4"
+                    android:textColor="#ffffff"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="70dp"
+                    android:visibility="invisible" />
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Elapsed Time"
+                    android:id="@+id/textView2"
+                    android:gravity="right"
+                    android:textColor="#ffffff"
+                    android:layout_marginRight="10dp"
+                    android:layout_alignParentRight="true" />
+
+
+                <Chronometer
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/chrnMtr"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="50dp"
+                    android:textColor="#ffffff"
+                    android:layout_marginTop="50dp"
+                    />
+
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
