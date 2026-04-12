@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinnitusTrioDoctorRegistration", "TinnitusTrioDoctorRegistration\TinnitusTrioDoctorRegistration.csproj", "{6377026F-CB2D-47EE-8D8C-CC118229C7B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinnitusTrioDAL", "TinnitusTrioDAL\TinnitusTrioDAL.csproj", "{D13D4D60-F9B3-40AF-B793-F9DA57E38AFA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinnitusTrioBAL", "TinnitusTrioBAL\TinnitusTrioBAL.csproj", "{645DE3FD-C0F1-4769-89EA-907BE7ECF68A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinnitusTrioBO", "TinnitusTrioBO\TinnitusTrioBO.csproj", "{4E7758BD-61F0-4F29-89A1-153AF2E32ED0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6377026F-CB2D-47EE-8D8C-CC118229C7B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6377026F-CB2D-47EE-8D8C-CC118229C7B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6377026F-CB2D-47EE-8D8C-CC118229C7B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6377026F-CB2D-47EE-8D8C-CC118229C7B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D13D4D60-F9B3-40AF-B793-F9DA57E38AFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D13D4D60-F9B3-40AF-B793-F9DA57E38AFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D13D4D60-F9B3-40AF-B793-F9DA57E38AFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D13D4D60-F9B3-40AF-B793-F9DA57E38AFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{645DE3FD-C0F1-4769-89EA-907BE7ECF68A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{645DE3FD-C0F1-4769-89EA-907BE7ECF68A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{645DE3FD-C0F1-4769-89EA-907BE7ECF68A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{645DE3FD-C0F1-4769-89EA-907BE7ECF68A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E7758BD-61F0-4F29-89A1-153AF2E32ED0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E7758BD-61F0-4F29-89A1-153AF2E32ED0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E7758BD-61F0-4F29-89A1-153AF2E32ED0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E7758BD-61F0-4F29-89A1-153AF2E32ED0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

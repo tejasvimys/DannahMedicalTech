@@ -1,0 +1,32 @@
+﻿@model List<AdminLteModels.Roles>
+
+    <link href="~/Content/datatables/jquery.dataTables.min.css" rel="stylesheet" />
+    <script src="~/Content/datatables/jquery.dataTables.min.js"></script>
+
+    <table id="example1" class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Role ID</th>
+                <th>Role</th>
+                <th>Role Description</th>
+                <th>Is Active</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var m in Model)
+            {
+                <tr>
+                    <td>@m.Roleid</td>
+                    <td>@m.RoleName</td>
+                    <td>@m.RoleDescription</td>
+                    <td>@m.isActive</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <script type="text/javascript">
+        $(function () {
+            $("#example1").DataTable();
+        });
+    </script>

@@ -1,0 +1,44 @@
+﻿@{
+    // TODO: Consider setting Layout set automatially in _ViewStart.cshtml
+    Layout = "~/Views/Shared/_AdminLteLayout.cshtml";
+
+
+    // EXAMPLE:
+    // Using the ViewBag on a page to set the title and sub-title
+    // This will cause the _AdminLteLayout to include this value in the page title
+    // And also set the top titles in the main content area of the page
+    ViewBag.Title = "View Doctor Details for Re Activation of Patient";
+    //ViewBag.TitleSmall = "Version 2.0";
+
+    // EXAMPLE:
+    // Using the Breadcrumb class to create a dynamically generated breadcrumb on the page with
+    // Titles, plus optional icon and URLs
+    ViewBag.Breadcrumb = new Breadcrumb(new Crumb[] {
+        new Crumb("Re Activation of Patient", "", "fa-table")
+    });
+}
+
+<style>
+    #tblDoctorDetails tbody tr {
+        cursor: pointer;
+    }
+
+    #tblDoctorDetails tbody tr:hover {
+        background-color: #BAE4FF;
+    }
+</style>
+
+<script>
+    $(document).ready(function() {
+
+    });
+</script>
+<div class="row">
+    <div class="col-md-12">
+        <div class="box box-warning">
+            <div class="box-body">
+                @{ Html.RenderAction("GetDoctorDetails", "Patient"); }
+            </div>
+        </div>
+    </div>
+</div>

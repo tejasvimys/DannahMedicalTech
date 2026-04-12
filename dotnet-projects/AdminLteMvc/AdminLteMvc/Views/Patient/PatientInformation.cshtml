@@ -1,0 +1,255 @@
+﻿@model List<AdminLteModels.PatientDetails>
+    @{
+        // TODO: Consider setting Layout set automatially in _ViewStart.cshtml
+        Layout = "~/Views/Shared/_AdminLteLayout.cshtml";
+
+
+        // EXAMPLE:
+        // Using the ViewBag on a page to set the title and sub-title
+        // This will cause the _AdminLteLayout to include this value in the page title
+        // And also set the top titles in the main content area of the page
+        ViewBag.Title = "Patient Information List";
+        //ViewBag.TitleSmall = "Version 2.0";
+
+        // EXAMPLE:
+        // Using the Breadcrumb class to create a dynamically generated breadcrumb on the page with
+        // Titles, plus optional icon and URLs
+        ViewBag.Breadcrumb = new Breadcrumb(new Crumb[] {
+        new Crumb("Patient Information List", "", "fa-table")
+    });
+    }
+
+    <link href="~/Content/datatables/jquery.dataTables.min.css" rel="stylesheet" />
+    <script src="~/Content/datatables/jquery.dataTables.min.js"></script>
+
+
+    <script>
+        $(document).ready(function () {
+            $("#tblPatient").dataTable({
+                'cell-border': true,
+                'scrollX':true
+            });
+
+            $('#tblPatient tbody tr td').click(function () {
+                //var patientId = $("#tblPatientDetails tbody tr").find('td:eq(1)').text();
+                var patientId = $(this).closest('tr').children('td:eq(0)').text();
+                var dto = { 'doctorCode': patientId };
+
+                $.ajax({
+                    type: "POST",
+                    //url: "/DoctorRegistration/InsertDoctor",
+                    url: '@Url.Action("GetPatientInformationforPatient", "Patient")',
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "html",
+                    data: JSON.stringify(dto), // Check this call.
+                    success: function (response) {
+
+                        $("#tblDivUserAuthentication").html("");
+                        $("#tblDivUserAuthentication").html(response);
+
+                        //initialize datatables for the table here
+                        $("#tblUserAuth").dataTable({
+                            'cell-border': true
+                        });
+                    },
+
+                    error: function (response) {
+                        alert(response.responseText);
+                    }
+                });
+
+            });
+
+            $('#tblPatientDetails tbody tr td:not(:last-child)').on("click",function () {
+                //var patientId = $("#tblPatientDetails tbody tr").find('td:eq(1)').text();
+                var patientId = $(this).closest('tr').children('td:eq(1)').text();
+                var dto = { 'uniqueId': patientId };
+
+                alert("here");
+
+                $.ajax({
+                    type: "POST",
+                    //url: "/DoctorRegistration/InsertDoctor",
+                    url: '@Url.Action("GetUserAuthenticationDetailsforPatient", "Patient")',
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "html",
+                    data: JSON.stringify(dto), // Check this call.
+                    success: function (response) {
+
+                        $("#tblDivuniqueids").html("");
+                        $("#tblDivuniqueids").html(response);
+
+                        //initialize datatables for the table here
+                        $("#tblPatientDetails").dataTable({
+                            'cell-border': true
+                        });
+                    },
+
+                    error: function (response) {
+                        alert(response.responseText);
+                    }
+                });
+
+            });
+
+            $(".btnSave").click(function () {
+                //var patientId = $("#tblPatientDetails tbody tr").find('td:eq(1)').text();
+                var patientId = $(this).closest('tr').children('td:eq(0)').text();
+                var dto = { 'patientId': patientId };
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("ReActivateaPatient", "Patient")',
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    data: JSON.stringify(dto), // Check this call.
+                    success: function (response) {
+                        if (response == true) {
+                            $('#myModal').modal();
+                        }
+
+                    },
+
+                    error: function (response) {
+                        alert(response.responseText);
+                    }
+                });
+
+
+            });
+
+            $(".btnDeActivate").click(function () {
+                //var patientId = $("#tblPatientDetails tbody tr").find('td:eq(1)').text();
+                var patientId = $(this).closest('tr').children('td:eq(0)').text();
+                var dto = { 'patientId': patientId };
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("DeActivateaPatient", "Patient")',
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    data: JSON.stringify(dto), // Check this call.
+                    success: function (response) {
+                        if (response == true) {
+                            $('#myModalDeActivate').modal();
+                        }
+
+                    },
+
+                    error: function (response) {
+                        alert(response.responseText);
+                    }
+                });
+
+
+            });
+
+            $("#btnModalok").click(function () {
+                window.location.reload();
+            });
+
+            $("#btnModalokDeActivate").click(function () {
+                window.location.reload();
+            });
+        });
+
+    </script>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-warning">
+                <div class="box-body">
+                    <table id="tblPatient" class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <td>Patient ID</td>
+                                <td>Patient Name</td>
+                                <td>City</td>
+                                <td>State</td>
+                                <td>Country</td>
+                                <td>E-Mail</td>
+                                <td>Mobile</td>
+                                <td>Is Active</td>
+                                <td></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.PatientId</td>
+                                    <td>@item.FirstName @item.MiddleName @item.LastName</td>
+                                    <td>@item.City</td>
+                                    <td>@item.State</td>
+                                    <td>@item.Country</td>
+                                    <td>@item.Email</td>
+                                    <td>@item.Mobile</td>
+                                    <td>@item.IsActive</td>
+                                    @if (item.IsActive == false)
+                                    {
+                                        <td><button type="button" id="btnSave" class="btnSave btn btn-block btn-success btn-sm">Re-Activate Patient</button></td>
+                                    }
+
+                                    else
+                                    {
+                                        <td><button type="button" id="btnSavebtn" class="btnDeActivate btn btn-block btn-danger btn-sm">De-Activate Patient</button></td>
+                                    }
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="row">
+    
+    <div class="col-md-6">
+        <div class="box box-warning">
+            <div class="box-body" id="tblDivUserAuthentication">
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+            <div class="box box-warning">
+                <div class="box-body" id="tblDivuniqueids">
+                   
+                </div>
+            </div>
+        </div>
+       
+    </div>
+
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Success</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Patient Re-Activated Successfully!</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="btnModalok" class="btn btn-primary" data-dismiss="modal">OK</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    
+<div class="modal fade" id="myModalDeActivate" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Success</h4>
+            </div>
+            <div class="modal-body">
+                <p>Patient De Activated Successfully!</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="btnModalokDeActivate" class="btn btn-primary" data-dismiss="modal">OK</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

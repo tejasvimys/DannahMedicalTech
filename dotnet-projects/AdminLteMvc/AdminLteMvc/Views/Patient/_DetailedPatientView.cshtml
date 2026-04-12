@@ -1,0 +1,33 @@
+﻿@model List<AdminLteModels.UniqueIds>
+    <table id="tblPatientDetails" class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <td>Patient ID</td>
+                <td>Unique ID</td>
+                <td>Is Active</td>
+                <td>Doctor Code</td>
+                <td></td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Patiendid</td>
+                    <td>@item.Uniqueid</td>
+                    <td>@item.IsActive</td>
+                    <td>@item.DoctorCode</td>
+                    @if (item.IsActive == false)
+                    {
+                        <td><button type="button" id="btnSave" class="btn btn-block btn-success btn-sm">Re-Activate Patient</button></td>
+                    }
+
+                    else
+                    {
+                        <td><button type="button" id="btnSavebtn" class="btn btn-block btn-default btn-sm" disabled="disabled">Patient Active</button></td>
+                    }
+
+                </tr>
+            }
+        </tbody>
+    </table>

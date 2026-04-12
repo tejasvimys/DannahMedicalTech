@@ -1,0 +1,32 @@
+﻿@model List<AdminLteModels.UserAuthentication>
+    
+<style>
+    #tblUserAuth tbody tr {
+        cursor: pointer;
+    }
+
+    #tblUserAuth tbody tr:hover {
+        background-color: #BAE4FF;
+    }
+</style>
+<table id="tblUserAuth" class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <td>Unique Id</td>
+            <td>Mac ID</td>
+            @*<td>Unique String</td>*@
+            <td>Is Active</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.UserId</td>
+                <td>@item.MacId</td>
+                @*<td>@item.UniqueString</td>*@
+                <td>@item.IsActive</td>
+            </tr>
+        }
+    </tbody>
+</table>

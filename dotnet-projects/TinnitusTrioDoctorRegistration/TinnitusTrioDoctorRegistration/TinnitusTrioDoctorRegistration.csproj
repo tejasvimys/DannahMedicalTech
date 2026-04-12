@@ -1,0 +1,543 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6377026F-CB2D-47EE-8D8C-CC118229C7B3}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TinnitusTrioDoctorRegistration</RootNamespace>
+    <AssemblyName>TinnitusTrioDoctorRegistration</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ChangeSubscription.aspx" />
+    <Content Include="css\datatables-plugins\api\average%28%29.js" />
+    <Content Include="css\datatables-plugins\api\column%28%29.title%28%29.js" />
+    <Content Include="css\datatables-plugins\api\columns%28%29.order%28%29.js" />
+    <Content Include="css\datatables-plugins\api\fnAddDataAndDisplay.js" />
+    <Content Include="css\datatables-plugins\api\fnAddTr.js" />
+    <Content Include="css\datatables-plugins\api\fnColumnIndexToVisible.js" />
+    <Content Include="css\datatables-plugins\api\fnDataUpdate.js" />
+    <Content Include="css\datatables-plugins\api\fnDisplayRow.js" />
+    <Content Include="css\datatables-plugins\api\fnDisplayStart.js" />
+    <Content Include="css\datatables-plugins\api\fnFakeRowspan.js" />
+    <Content Include="css\datatables-plugins\api\fnFilterAll.js" />
+    <Content Include="css\datatables-plugins\api\fnFilterClear.js" />
+    <Content Include="css\datatables-plugins\api\fnFilterOnReturn.js" />
+    <Content Include="css\datatables-plugins\api\fnFindCellRowIndexes.js" />
+    <Content Include="css\datatables-plugins\api\fnFindCellRowNodes.js" />
+    <Content Include="css\datatables-plugins\api\fnGetAdjacentTr.js" />
+    <Content Include="css\datatables-plugins\api\fnGetColumnData.js" />
+    <Content Include="css\datatables-plugins\api\fnGetColumnIndex.js" />
+    <Content Include="css\datatables-plugins\api\fnGetHiddenNodes.js" />
+    <Content Include="css\datatables-plugins\api\fnGetTd.js" />
+    <Content Include="css\datatables-plugins\api\fnGetTds.js" />
+    <Content Include="css\datatables-plugins\api\fnLengthChange.js" />
+    <Content Include="css\datatables-plugins\api\fnMultiFilter.js" />
+    <Content Include="css\datatables-plugins\api\fnPagingInfo.js" />
+    <Content Include="css\datatables-plugins\api\fnProcessingIndicator.js" />
+    <Content Include="css\datatables-plugins\api\fnReloadAjax.js" />
+    <Content Include="css\datatables-plugins\api\fnSetFilteringDelay.js" />
+    <Content Include="css\datatables-plugins\api\fnSortNeutral.js" />
+    <Content Include="css\datatables-plugins\api\fnStandingRedraw.js" />
+    <Content Include="css\datatables-plugins\api\fnVisibleToColumnIndex.js" />
+    <Content Include="css\datatables-plugins\api\index.html" />
+    <Content Include="css\datatables-plugins\api\page.jumpToData%28%29.js" />
+    <Content Include="css\datatables-plugins\api\sum%28%29.js" />
+    <Content Include="css\datatables-plugins\features\alphabetSearch\dataTables.alphabetSearch.css" />
+    <Content Include="css\datatables-plugins\features\alphabetSearch\dataTables.alphabetSearch.js" />
+    <Content Include="css\datatables-plugins\features\alphabetSearch\dataTables.alphabetSearch.min.js" />
+    <Content Include="css\datatables-plugins\features\lengthLinks\dataTables.lengthLinks.css" />
+    <Content Include="css\datatables-plugins\features\lengthLinks\dataTables.lengthLinks.js" />
+    <Content Include="css\datatables-plugins\features\lengthLinks\dataTables.lengthLinks.min.js" />
+    <Content Include="css\datatables-plugins\features\searchHighlight\dataTables.searchHighlight.css" />
+    <Content Include="css\datatables-plugins\features\searchHighlight\dataTables.searchHighlight.js" />
+    <Content Include="css\datatables-plugins\features\searchHighlight\dataTables.searchHighlight.min.js" />
+    <Content Include="css\datatables-plugins\filtering\index.html" />
+    <Content Include="css\datatables-plugins\filtering\row-based\range_dates.js" />
+    <Content Include="css\datatables-plugins\filtering\row-based\range_numbers.js" />
+    <Content Include="css\datatables-plugins\filtering\row-based\TableTools.ShowSelectedOnly.js" />
+    <Content Include="css\datatables-plugins\filtering\type-based\accent-neutralise.js" />
+    <Content Include="css\datatables-plugins\filtering\type-based\html.js" />
+    <Content Include="css\datatables-plugins\filtering\type-based\phoneNumber.js" />
+    <Content Include="css\datatables-plugins\i18n\index.html" />
+    <Content Include="css\datatables-plugins\integration\bootstrap\1\dataTables.bootstrap.css" />
+    <Content Include="css\datatables-plugins\integration\bootstrap\1\dataTables.bootstrap.js" />
+    <Content Include="css\datatables-plugins\integration\bootstrap\2\dataTables.bootstrap.css" />
+    <Content Include="css\datatables-plugins\integration\bootstrap\2\dataTables.bootstrap.js" />
+    <Content Include="css\datatables-plugins\integration\bootstrap\2\dataTables.bootstrap.min.js" />
+    <Content Include="css\datatables-plugins\integration\bootstrap\2\index.html" />
+    <Content Include="css\datatables-plugins\integration\bootstrap\3\dataTables.bootstrap.css" />
+    <Content Include="css\datatables-plugins\integration\bootstrap\3\dataTables.bootstrap.js" />
+    <Content Include="css\datatables-plugins\integration\bootstrap\3\dataTables.bootstrap.min.js" />
+    <Content Include="css\datatables-plugins\integration\bootstrap\3\index.html" />
+    <Content Include="css\datatables-plugins\integration\bootstrap\images\sort_asc.png" />
+    <Content Include="css\datatables-plugins\integration\bootstrap\images\sort_asc_disabled.png" />
+    <Content Include="css\datatables-plugins\integration\bootstrap\images\sort_both.png" />
+    <Content Include="css\datatables-plugins\integration\bootstrap\images\sort_desc.png" />
+    <Content Include="css\datatables-plugins\integration\bootstrap\images\sort_desc_disabled.png" />
+    <Content Include="css\datatables-plugins\integration\font-awesome\bootstrap.html" />
+    <Content Include="css\datatables-plugins\integration\font-awesome\dataTables.fontAwesome.css" />
+    <Content Include="css\datatables-plugins\integration\font-awesome\datatables.html" />
+    <Content Include="css\datatables-plugins\integration\font-awesome\foundation.html" />
+    <Content Include="css\datatables-plugins\integration\foundation\dataTables.foundation.css" />
+    <Content Include="css\datatables-plugins\integration\foundation\dataTables.foundation.js" />
+    <Content Include="css\datatables-plugins\integration\foundation\dataTables.foundation.min.js" />
+    <Content Include="css\datatables-plugins\integration\foundation\images\sort_asc.png" />
+    <Content Include="css\datatables-plugins\integration\foundation\images\sort_asc_disabled.png" />
+    <Content Include="css\datatables-plugins\integration\foundation\images\sort_both.png" />
+    <Content Include="css\datatables-plugins\integration\foundation\images\sort_desc.png" />
+    <Content Include="css\datatables-plugins\integration\foundation\images\sort_desc_disabled.png" />
+    <Content Include="css\datatables-plugins\integration\foundation\index.html" />
+    <Content Include="css\datatables-plugins\integration\jqueryui\dataTables.jqueryui.css" />
+    <Content Include="css\datatables-plugins\integration\jqueryui\dataTables.jqueryui.js" />
+    <Content Include="css\datatables-plugins\integration\jqueryui\dataTables.jqueryui.min.js" />
+    <Content Include="css\datatables-plugins\integration\jqueryui\index.html" />
+    <Content Include="css\datatables-plugins\pagination\ellipses.js" />
+    <Content Include="css\datatables-plugins\pagination\extjs.js" />
+    <Content Include="css\datatables-plugins\pagination\four_button.js" />
+    <Content Include="css\datatables-plugins\pagination\index.html" />
+    <Content Include="css\datatables-plugins\pagination\input.js" />
+    <Content Include="css\datatables-plugins\pagination\jPaginator\dataTables.jPaginator.js" />
+    <Content Include="css\datatables-plugins\pagination\scrolling.js" />
+    <Content Include="css\datatables-plugins\pagination\select.js" />
+    <Content Include="css\datatables-plugins\sorting\alt-string.js" />
+    <Content Include="css\datatables-plugins\sorting\anti-the.js" />
+    <Content Include="css\datatables-plugins\sorting\chinese-string.js" />
+    <Content Include="css\datatables-plugins\sorting\currency.js" />
+    <Content Include="css\datatables-plugins\sorting\custom-data-source\dom-checkbox.js" />
+    <Content Include="css\datatables-plugins\sorting\custom-data-source\dom-select.js" />
+    <Content Include="css\datatables-plugins\sorting\custom-data-source\dom-text.js" />
+    <Content Include="css\datatables-plugins\sorting\date-dd-MMM-yyyy.js" />
+    <Content Include="css\datatables-plugins\sorting\date-de.js" />
+    <Content Include="css\datatables-plugins\sorting\date-eu.js" />
+    <Content Include="css\datatables-plugins\sorting\date-euro.js" />
+    <Content Include="css\datatables-plugins\sorting\date-uk.js" />
+    <Content Include="css\datatables-plugins\sorting\datetime-moment.js" />
+    <Content Include="css\datatables-plugins\sorting\datetime-us.js" />
+    <Content Include="css\datatables-plugins\sorting\enum.js" />
+    <Content Include="css\datatables-plugins\sorting\file-size.js" />
+    <Content Include="css\datatables-plugins\sorting\formatted-numbers.js" />
+    <Content Include="css\datatables-plugins\sorting\index.html" />
+    <Content Include="css\datatables-plugins\sorting\ip-address.js" />
+    <Content Include="css\datatables-plugins\sorting\monthYear.js" />
+    <Content Include="css\datatables-plugins\sorting\natural.js" />
+    <Content Include="css\datatables-plugins\sorting\num-html.js" />
+    <Content Include="css\datatables-plugins\sorting\numeric-comma.js" />
+    <Content Include="css\datatables-plugins\sorting\percent.js" />
+    <Content Include="css\datatables-plugins\sorting\persian.js" />
+    <Content Include="css\datatables-plugins\sorting\scientific.js" />
+    <Content Include="css\datatables-plugins\sorting\signed-num.js" />
+    <Content Include="css\datatables-plugins\sorting\stringMonthYear.js" />
+    <Content Include="css\datatables-plugins\sorting\time.js" />
+    <Content Include="css\datatables-plugins\sorting\title-numeric.js" />
+    <Content Include="css\datatables-plugins\sorting\title-string.js" />
+    <Content Include="css\datatables-plugins\sorting\turkish-string.js" />
+    <Content Include="css\datatables-plugins\type-detection\currency.js" />
+    <Content Include="css\datatables-plugins\type-detection\date-uk.js" />
+    <Content Include="css\datatables-plugins\type-detection\file-size.js" />
+    <Content Include="css\datatables-plugins\type-detection\formatted-num.js" />
+    <Content Include="css\datatables-plugins\type-detection\index.html" />
+    <Content Include="css\datatables-plugins\type-detection\ip-address.js" />
+    <Content Include="css\datatables-plugins\type-detection\num-html.js" />
+    <Content Include="css\datatables-plugins\type-detection\numeric-comma.js" />
+    <Content Include="css\datatables-responsive\docs\api\responsive.index%28%29.xml" />
+    <Content Include="css\datatables-responsive\docs\api\responsive.rebuild%28%29.xml" />
+    <Content Include="css\datatables-responsive\docs\api\responsive.recalc%28%29.xml" />
+    <Content Include="css\datatables-responsive\docs\option\responsive.breakpoints.xml" />
+    <Content Include="css\datatables-responsive\docs\option\responsive.details.renderer.xml" />
+    <Content Include="css\datatables-responsive\docs\option\responsive.details.target.xml" />
+    <Content Include="css\datatables-responsive\docs\option\responsive.details.type.xml" />
+    <Content Include="css\datatables-responsive\docs\option\responsive.details.xml" />
+    <Content Include="css\datatables-responsive\docs\option\responsive.xml" />
+    <Content Include="css\datatables-responsive\examples\child-rows\column-control.xml" />
+    <Content Include="css\datatables-responsive\examples\child-rows\custom-renderer.xml" />
+    <Content Include="css\datatables-responsive\examples\child-rows\disable-child-rows.xml" />
+    <Content Include="css\datatables-responsive\examples\child-rows\index.xml" />
+    <Content Include="css\datatables-responsive\examples\child-rows\right-column.xml" />
+    <Content Include="css\datatables-responsive\examples\child-rows\whole-row-control.xml" />
+    <Content Include="css\datatables-responsive\examples\display-control\auto.xml" />
+    <Content Include="css\datatables-responsive\examples\display-control\classes.xml" />
+    <Content Include="css\datatables-responsive\examples\display-control\complexHeader.xml" />
+    <Content Include="css\datatables-responsive\examples\display-control\fixedHeader.xml" />
+    <Content Include="css\datatables-responsive\examples\display-control\index.xml" />
+    <Content Include="css\datatables-responsive\examples\display-control\init-classes.xml" />
+    <Content Include="css\datatables-responsive\examples\index.xml" />
+    <Content Include="css\datatables-responsive\examples\initialisation\ajax.xml" />
+    <Content Include="css\datatables-responsive\examples\initialisation\className.xml" />
+    <Content Include="css\datatables-responsive\examples\initialisation\default.xml" />
+    <Content Include="css\datatables-responsive\examples\initialisation\index.xml" />
+    <Content Include="css\datatables-responsive\examples\initialisation\new.xml" />
+    <Content Include="css\datatables-responsive\examples\initialisation\option.xml" />
+    <Content Include="css\datatables-responsive\examples\styling\bootstrap.xml" />
+    <Content Include="css\datatables-responsive\examples\styling\compact.xml" />
+    <Content Include="css\datatables-responsive\examples\styling\foundation.xml" />
+    <Content Include="css\datatables-responsive\examples\styling\index.xml" />
+    <Content Include="css\datatables-responsive\examples\styling\jqueryui.xml" />
+    <Content Include="css\datatables-responsive\examples\styling\scrolling.xml" />
+    <Content Include="css\datatables-responsive\js\dataTables.responsive.js" />
+    <Content Include="css\datatables-responsive\License.txt" />
+    <Content Include="css\datatables\license.txt" />
+    <Content Include="css\datatables\media\css\dataTables.bootstrap.css" />
+    <Content Include="css\datatables\media\css\dataTables.bootstrap.min.css" />
+    <Content Include="css\datatables\media\css\dataTables.foundation.css" />
+    <Content Include="css\datatables\media\css\dataTables.foundation.min.css" />
+    <Content Include="css\datatables\media\css\dataTables.jqueryui.css" />
+    <Content Include="css\datatables\media\css\dataTables.jqueryui.min.css" />
+    <Content Include="css\datatables\media\css\jquery.dataTables.css" />
+    <Content Include="css\datatables\media\css\jquery.dataTables.min.css" />
+    <Content Include="css\datatables\media\css\jquery.dataTables_themeroller.css" />
+    <Content Include="css\datatables\media\images\favicon.ico" />
+    <Content Include="css\datatables\media\images\sort_asc.png" />
+    <Content Include="css\datatables\media\images\sort_asc_disabled.png" />
+    <Content Include="css\datatables\media\images\sort_both.png" />
+    <Content Include="css\datatables\media\images\sort_desc.png" />
+    <Content Include="css\datatables\media\images\sort_desc_disabled.png" />
+    <Content Include="css\datatables\media\js\dataTables.bootstrap.js" />
+    <Content Include="css\datatables\media\js\dataTables.bootstrap.min.js" />
+    <Content Include="css\datatables\media\js\dataTables.foundation.js" />
+    <Content Include="css\datatables\media\js\dataTables.foundation.min.js" />
+    <Content Include="css\datatables\media\js\dataTables.jqueryui.js" />
+    <Content Include="css\datatables\media\js\dataTables.jqueryui.min.js" />
+    <Content Include="css\datatables\media\js\jquery.dataTables.js" />
+    <Content Include="css\datatables\media\js\jquery.dataTables.min.js" />
+    <Content Include="css\datatables\media\js\jquery.js" />
+    <Content Include="css\jqueryui.css" />
+    <Content Include="DoctorDetails.aspx" />
+    <Content Include="ExtendSubscription.aspx" />
+    <Content Include="font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="font-awesome\less\bordered-pulled.less" />
+    <Content Include="font-awesome\less\core.less" />
+    <Content Include="font-awesome\less\fixed-width.less" />
+    <Content Include="font-awesome\less\font-awesome.less" />
+    <Content Include="font-awesome\less\icons.less" />
+    <Content Include="font-awesome\less\larger.less" />
+    <Content Include="font-awesome\less\list.less" />
+    <Content Include="font-awesome\less\mixins.less" />
+    <Content Include="font-awesome\less\path.less" />
+    <Content Include="font-awesome\less\rotated-flipped.less" />
+    <Content Include="font-awesome\less\spinning.less" />
+    <Content Include="font-awesome\less\stacked.less" />
+    <Content Include="font-awesome\less\variables.less" />
+    <Content Include="font-awesome\scss\font-awesome.scss" />
+    <Content Include="font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="font-awesome\scss\_core.scss" />
+    <Content Include="font-awesome\scss\_fixed-width.scss" />
+    <Content Include="font-awesome\scss\_icons.scss" />
+    <Content Include="font-awesome\scss\_larger.scss" />
+    <Content Include="font-awesome\scss\_list.scss" />
+    <Content Include="font-awesome\scss\_mixins.scss" />
+    <Content Include="font-awesome\scss\_path.scss" />
+    <Content Include="font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="font-awesome\scss\_spinning.scss" />
+    <Content Include="font-awesome\scss\_stacked.scss" />
+    <Content Include="font-awesome\scss\_variables.scss" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Images\loading.gif" />
+    <Content Include="Images\ui-icons_444444_256x240.png" />
+    <Content Include="Images\ui-icons_555555_256x240.png" />
+    <Content Include="Images\ui-icons_777620_256x240.png" />
+    <Content Include="Images\ui-icons_777777_256x240.png" />
+    <Content Include="Images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Images\ui-icons_ffffff_256x240.png" />
+    <Content Include="js\JavaScript1.js" />
+    <Content Include="js\Jquery1.2.js" />
+    <Content Include="js\jqueryui.js" />
+    <Content Include="MasterPage.Master" />
+    <Content Include="css\datatables-plugins\.bower.json" />
+    <Content Include="css\datatables-plugins\i18n\Afrikaans.lang" />
+    <Content Include="css\datatables-plugins\i18n\Albanian.lang" />
+    <Content Include="css\datatables-plugins\i18n\Arabic.lang" />
+    <Content Include="css\datatables-plugins\i18n\Azerbaijan.lang" />
+    <Content Include="css\datatables-plugins\i18n\Bangla.lang" />
+    <Content Include="css\datatables-plugins\i18n\Belarusian.lang" />
+    <Content Include="css\datatables-plugins\i18n\Bulgarian.lang" />
+    <Content Include="css\datatables-plugins\i18n\Catalan.lang" />
+    <Content Include="css\datatables-plugins\i18n\Chinese-traditional.lang" />
+    <Content Include="css\datatables-plugins\i18n\Chinese.lang" />
+    <Content Include="css\datatables-plugins\i18n\Croatian.lang" />
+    <Content Include="css\datatables-plugins\i18n\Czech.lang" />
+    <Content Include="css\datatables-plugins\i18n\Danish.lang" />
+    <Content Include="css\datatables-plugins\i18n\Dutch.lang" />
+    <Content Include="css\datatables-plugins\i18n\English.lang" />
+    <Content Include="css\datatables-plugins\i18n\Estonian.lang" />
+    <Content Include="css\datatables-plugins\i18n\Filipino.lang" />
+    <Content Include="css\datatables-plugins\i18n\Finnish.lang" />
+    <Content Include="css\datatables-plugins\i18n\French.lang" />
+    <Content Include="css\datatables-plugins\i18n\Galician.lang" />
+    <Content Include="css\datatables-plugins\i18n\Georgian.lang" />
+    <Content Include="css\datatables-plugins\i18n\German.lang" />
+    <Content Include="css\datatables-plugins\i18n\Greek.lang" />
+    <Content Include="css\datatables-plugins\i18n\Gujarati.lang" />
+    <Content Include="css\datatables-plugins\i18n\Hebrew.lang" />
+    <Content Include="css\datatables-plugins\i18n\Hindi.lang" />
+    <Content Include="css\datatables-plugins\i18n\Hungarian.lang" />
+    <Content Include="css\datatables-plugins\i18n\Icelandic.lang" />
+    <Content Include="css\datatables-plugins\i18n\Indonesian-Alternative.lang" />
+    <Content Include="css\datatables-plugins\i18n\Indonesian.lang" />
+    <Content Include="css\datatables-plugins\i18n\Irish.lang" />
+    <Content Include="css\datatables-plugins\i18n\Italian.lang" />
+    <Content Include="css\datatables-plugins\i18n\Japanese.lang" />
+    <Content Include="css\datatables-plugins\i18n\Korean.lang" />
+    <Content Include="css\datatables-plugins\i18n\Latvian.lang" />
+    <Content Include="css\datatables-plugins\i18n\Lithuanian.lang" />
+    <Content Include="css\datatables-plugins\i18n\Macedonian.lang" />
+    <Content Include="css\datatables-plugins\i18n\Malay.lang" />
+    <Content Include="css\datatables-plugins\i18n\Norwegian.lang" />
+    <Content Include="css\datatables-plugins\i18n\Persian.lang" />
+    <Content Include="css\datatables-plugins\i18n\Polish.lang" />
+    <Content Include="css\datatables-plugins\i18n\Portuguese-Brasil.lang" />
+    <Content Include="css\datatables-plugins\i18n\Portuguese.lang" />
+    <Content Include="css\datatables-plugins\i18n\Romanian.lang" />
+    <Content Include="css\datatables-plugins\i18n\Russian.lang" />
+    <Content Include="css\datatables-plugins\i18n\Serbian.lang" />
+    <Content Include="css\datatables-plugins\i18n\Slovak.lang" />
+    <Content Include="css\datatables-plugins\i18n\Slovenian.lang" />
+    <Content Include="css\datatables-plugins\i18n\Spanish.lang" />
+    <Content Include="css\datatables-plugins\i18n\Swahili.lang" />
+    <Content Include="css\datatables-plugins\i18n\Swedish.lang" />
+    <Content Include="css\datatables-plugins\i18n\Tamil.lang" />
+    <Content Include="css\datatables-plugins\i18n\Thai.lang" />
+    <Content Include="css\datatables-plugins\i18n\Turkish.lang" />
+    <Content Include="css\datatables-plugins\i18n\Ukranian.lang" />
+    <Content Include="css\datatables-plugins\i18n\Urdu.lang" />
+    <Content Include="css\datatables-plugins\i18n\Uzbek.lang" />
+    <Content Include="css\datatables-plugins\i18n\Vietnamese.lang" />
+    <Content Include="css\datatables-plugins\integration\jqueryui\dataTables.jqueryui.scss" />
+    <Content Include="css\datatables-plugins\make.sh" />
+    <Content Include="css\datatables-plugins\README.md" />
+    <Content Include="css\datatables-plugins\sorting\.DS_Store" />
+    <Content Include="css\datatables-responsive\.bower.json" />
+    <Content Include="css\datatables-responsive\.gitignore" />
+    <Content Include="css\datatables-responsive\bower.json" />
+    <Content Include="css\datatables-responsive\css\responsive.bootstrap.scss" />
+    <Content Include="css\datatables-responsive\css\responsive.dataTables.scss" />
+    <Content Include="css\datatables-responsive\css\responsive.foundation.scss" />
+    <Content Include="css\datatables-responsive\css\responsive.jqueryui.scss" />
+    <Content Include="css\datatables-responsive\examples\.DS_Store" />
+    <Content Include="css\datatables-responsive\examples\initialisation\.DS_Store" />
+    <Content Include="css\datatables-responsive\make.sh" />
+    <Content Include="css\datatables-responsive\Readme.md" />
+    <Content Include="css\datatables\.bower.json" />
+    <Content Include="css\datatables\bower.json" />
+    <Content Include="css\datatables\Contributing.md" />
+    <Content Include="css\datatables\media\images\Sorting icons.psd" />
+    <Content Include="css\datatables\Readme.md" />
+    <None Include="Properties\PublishProfiles\Publish.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="css\bootstrap-rtl.css" />
+    <Content Include="css\bootstrap-rtl.min.css" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\FontStyleAwesome.css" />
+    <Content Include="css\LoginStyle.css" />
+    <Content Include="css\plugins\morris.css" />
+    <Content Include="css\sb-admin-rtl.css" />
+    <Content Include="css\sb-admin.css" />
+    <Content Include="Dashboard.aspx" />
+    <Content Include="FirstLogin.aspx" />
+    <Content Include="font-awesome\css\font-awesome.css" />
+    <Content Include="font-awesome\css\font-awesome.min.css" />
+    <Content Include="font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\500x300.png" />
+    <Content Include="js\bootstrap.js" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\countries.js" />
+    <Content Include="js\jquery.js" />
+    <Content Include="js\LoginJS.js" />
+    <Content Include="js\plugins\flot\excanvas.min.js" />
+    <Content Include="js\plugins\flot\flot-data.js" />
+    <Content Include="js\plugins\flot\jquery.flot.js" />
+    <Content Include="js\plugins\flot\jquery.flot.pie.js" />
+    <Content Include="js\plugins\flot\jquery.flot.resize.js" />
+    <Content Include="js\plugins\flot\jquery.flot.tooltip.min.js" />
+    <Content Include="js\json2.js" />
+    <Content Include="js\plugins\morris\morris-data.js" />
+    <Content Include="js\plugins\morris\morris.js" />
+    <Content Include="js\plugins\morris\morris.min.js" />
+    <Content Include="js\plugins\morris\raphael.min.js" />
+    <Content Include="Login.aspx" />
+    <Content Include="PatientDetails.aspx" />
+    <Content Include="RegisterDoctor.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ChangeSubscription.aspx.cs">
+      <DependentUpon>ChangeSubscription.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChangeSubscription.aspx.designer.cs">
+      <DependentUpon>ChangeSubscription.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DoctorDetails.aspx.cs">
+      <DependentUpon>DoctorDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DoctorDetails.aspx.designer.cs">
+      <DependentUpon>DoctorDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExtendSubscription.aspx.cs">
+      <DependentUpon>ExtendSubscription.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExtendSubscription.aspx.designer.cs">
+      <DependentUpon>ExtendSubscription.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FirstLogin.aspx.cs">
+      <DependentUpon>FirstLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FirstLogin.aspx.designer.cs">
+      <DependentUpon>FirstLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPage.Master.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage.Master.designer.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="PatientDetails.aspx.cs">
+      <DependentUpon>PatientDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PatientDetails.aspx.designer.cs">
+      <DependentUpon>PatientDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegisterDoctor.aspx.cs">
+      <DependentUpon>RegisterDoctor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegisterDoctor.aspx.designer.cs">
+      <DependentUpon>RegisterDoctor.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TinnitusTrioBAL\TinnitusTrioBAL.csproj">
+      <Project>{645de3fd-c0f1-4769-89ea-907be7ecf68a}</Project>
+      <Name>TinnitusTrioBAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TinnitusTrioBO\TinnitusTrioBO.csproj">
+      <Project>{4e7758bd-61f0-4f29-89a1-153af2e32ed0}</Project>
+      <Name>TinnitusTrioBO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>60909</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:60909/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

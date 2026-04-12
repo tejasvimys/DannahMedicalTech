@@ -1,0 +1,74 @@
+﻿@model AdminLteModels.Roles
+@{
+    // TODO: Consider setting Layout set automatially in _ViewStart.cshtml
+    Layout = "~/Views/Shared/_AdminLteLayout.cshtml";
+
+    ViewBag.Title = "Role Creation";
+
+    ViewBag.Breadcrumb = new Breadcrumb(new Crumb[] {
+        new Crumb("Role Creation", "", "fa-floppy-o")
+    });
+}
+<script src='@Url.Content("~/Scripts/jquery.validate.js")' type='text/javascript'></script>
+<script src='@Url.Content("~/Scripts/jquery.validate.unobtrusive.js")' type='text/javascript'></script>
+<style>
+    .asterik {
+        color: red;
+    }
+</style>
+
+<div class="row">
+
+    @using (Html.BeginForm("CreateRoles", "User", FormMethod.Post))
+    {
+        if ((ViewData.ModelState["RoleName"]) != null && ViewData.ModelState["Username"].Errors.Count > 0)
+        {
+            <div class="alert alert-error alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <h4><i class="icon fa fa-check"></i> Error!</h4>
+                @Html.ValidationSummary("Role Exists!")
+            </div>
+        }
+
+        else if (ViewData.ModelState["Success"] != null && ViewData.ModelState["Success"].Errors.Count > 0)
+        {
+            <div class="alert alert-success alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <h4><i class="icon fa fa-check"></i> Success!</h4>
+                @Html.ValidationSummary("Role Added Successfully!")
+            </div>
+        }
+
+        <div class="col-md-6">
+            <div class="box box-warning">
+                <div class="box-body">
+                    <div class="form-group">
+                        <label>Role Name<span class="asterik">*</span></label>
+                        @Html.TextBoxFor(m => m.RoleName, new { @class = "form-control", @placeholder = "Enter Role Name", @maxlength = "15" })
+                        @Html.ValidationMessageFor(model => model.RoleName, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label>Role Description</label>
+                            @Html.TextAreaFor(m => m.RoleDescription, new { @class = "form-control", @placeholder = "Enter Role Description", @maxlength = "300" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" id="btnSave" class="btn btn-block btn-success btn-lg">Save</button>
+                        <button type="button" id="btnReset" class="btn btn-block btn-primary btn-lg">Reset Data</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+
+    <div class="col-md-12">
+        <div class="box box-warning">
+            <div class="box-body">
+                @Html.Action("GetRoles", "User")
+            </div>
+        </div>
+        </div>
+</div>

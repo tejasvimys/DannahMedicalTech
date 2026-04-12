@@ -1,0 +1,1954 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="TinnitusTrioModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="admin_Employee">
+          <Key>
+            <PropertyRef Name="Employeeid" />
+          </Key>
+          <Property Name="Employeeid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="userid" Type="varchar" MaxLength="300" />
+          <Property Name="password" Type="varchar(max)" />
+          <Property Name="firstname" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="middlename" Type="varchar" MaxLength="50" />
+          <Property Name="lastname" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="addressline1" Type="varchar" MaxLength="100" />
+          <Property Name="addressline2" Type="varchar" MaxLength="100" />
+          <Property Name="country" Type="varchar" MaxLength="50" />
+          <Property Name="state" Type="varchar" MaxLength="50" />
+          <Property Name="city" Type="varchar" MaxLength="50" />
+          <Property Name="pincode" Type="varchar" MaxLength="50" />
+          <Property Name="telephone" Type="varchar" MaxLength="30" />
+          <Property Name="mobileno" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="emailaddress" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="isAdmin" Type="bit" />
+          <Property Name="isSuperAdmin" Type="bit" />
+          <Property Name="isactive" Type="bit" />
+          <Property Name="createdBy" Type="int" />
+          <Property Name="createdDate" Type="date" />
+          <Property Name="Field1" Type="varchar" MaxLength="50" />
+          <Property Name="Field2" Type="varchar" MaxLength="50" />
+          <Property Name="Field3" Type="varchar" MaxLength="50" />
+          <Property Name="Field4" Type="varchar" MaxLength="50" />
+          <Property Name="Field5" Type="varchar" MaxLength="50" />
+          <Property Name="isFirstLogin" Type="bit" />
+        </EntityType>
+        <EntityType Name="MenuList">
+          <Key>
+            <PropertyRef Name="MenuId" />
+          </Key>
+          <Property Name="MenuId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MenuName" Type="varchar" MaxLength="100" />
+          <Property Name="MenuDesc" Type="varchar" MaxLength="1000" />
+          <Property Name="MenuLink" Type="varchar" MaxLength="500" />
+          <Property Name="isActive" Type="bit" />
+          <Property Name="createdBy" Type="int" />
+          <Property Name="createdDate" Type="date" />
+          <Property Name="Field1" Type="varchar" MaxLength="50" />
+          <Property Name="Field2" Type="varchar" MaxLength="50" />
+          <Property Name="Field3" Type="varchar" MaxLength="50" />
+          <Property Name="Field4" Type="varchar" MaxLength="50" />
+          <Property Name="Field5" Type="varchar" MaxLength="50" />
+          <Property Name="parentmenuid" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RoleMenuMapping">
+          <Key>
+            <PropertyRef Name="RoleMenuMappingId" />
+          </Key>
+          <Property Name="RoleMenuMappingId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Roleid" Type="int" Nullable="false" />
+          <Property Name="Menuid" Type="int" Nullable="false" />
+          <Property Name="isActive" Type="bit" />
+          <Property Name="createdBy" Type="int" />
+          <Property Name="createdDate" Type="date" />
+          <Property Name="Field1" Type="varchar" MaxLength="50" />
+          <Property Name="Field2" Type="varchar" MaxLength="50" />
+          <Property Name="Field3" Type="varchar" MaxLength="50" />
+          <Property Name="Field4" Type="varchar" MaxLength="50" />
+          <Property Name="Field5" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Roles">
+          <Key>
+            <PropertyRef Name="Roleid" />
+          </Key>
+          <Property Name="Roleid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RoleName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="RoleDescription" Type="varchar" MaxLength="500" />
+          <Property Name="isActive" Type="bit" />
+          <Property Name="createdBy" Type="int" />
+          <Property Name="createdDate" Type="date" />
+          <Property Name="Field1" Type="varchar" MaxLength="50" />
+          <Property Name="Field2" Type="varchar" MaxLength="50" />
+          <Property Name="Field3" Type="varchar" MaxLength="50" />
+          <Property Name="Field4" Type="varchar" MaxLength="50" />
+          <Property Name="Field5" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="UserRoleMapping">
+          <Key>
+            <PropertyRef Name="UserRoleMappingId" />
+          </Key>
+          <Property Name="UserRoleMappingId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Roleid" Type="int" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="isActive" Type="bit" />
+          <Property Name="createdBy" Type="int" />
+          <Property Name="createdDate" Type="date" />
+          <Property Name="Field1" Type="varchar" MaxLength="50" />
+          <Property Name="Field2" Type="varchar" MaxLength="50" />
+          <Property Name="Field3" Type="varchar" MaxLength="50" />
+          <Property Name="Field4" Type="varchar" MaxLength="50" />
+          <Property Name="Field5" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="APPINSTALLERLOG">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="installDoctorId" Type="varchar" MaxLength="10" />
+          <Property Name="installDoctorName" Type="varchar" MaxLength="100" />
+          <Property Name="installPatientid" Type="varchar" MaxLength="10" />
+          <Property Name="AppinstallDate" Type="date" />
+          <Property Name="InstalledAppName" Type="varchar" MaxLength="4" />
+        </EntityType>
+        <EntityType Name="CMESLogger">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PatientId" Type="varchar" MaxLength="10" />
+          <Property Name="LogDate" Type="varchar" MaxLength="20" />
+          <Property Name="LogTime" Type="varchar" MaxLength="20" />
+          <Property Name="Track" Type="varchar" MaxLength="300" />
+          <Property Name="Duration" Type="varchar" MaxLength="20" />
+          <Property Name="isActive" Type="varchar" MaxLength="2" />
+          <Property Name="isSync" Type="varchar" MaxLength="2" />
+          <Property Name="SyncDateTimeStamp" Type="datetime" />
+        </EntityType>
+        <EntityType Name="CMMLogger">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PatientId" Type="varchar" MaxLength="10" />
+          <Property Name="LogDate" Type="varchar" MaxLength="20" />
+          <Property Name="LogTime" Type="varchar" MaxLength="20" />
+          <Property Name="Track" Type="varchar" MaxLength="300" />
+          <Property Name="Duration" Type="varchar" MaxLength="20" />
+          <Property Name="isActive" Type="varchar" MaxLength="2" />
+          <Property Name="isSync" Type="varchar" MaxLength="2" />
+          <Property Name="SyncDateTimeStamp" Type="datetime" />
+        </EntityType>
+        <EntityType Name="CMNLogger">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PatientId" Type="varchar" MaxLength="10" />
+          <Property Name="LogDate" Type="varchar" MaxLength="20" />
+          <Property Name="LogTime" Type="varchar" MaxLength="20" />
+          <Property Name="Duration" Type="varchar" MaxLength="20" />
+          <Property Name="isActive" Type="varchar" MaxLength="2" />
+          <Property Name="isSync" Type="varchar" MaxLength="2" />
+          <Property Name="SyncDateTimeStamp" Type="datetime" />
+        </EntityType>
+        <EntityType Name="CMTLOGGER">
+          <Key>
+            <PropertyRef Name="LOGID" />
+          </Key>
+          <Property Name="LOGID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PATIENTID" Type="varchar" MaxLength="10" />
+          <Property Name="LOGDATE" Type="varchar" MaxLength="20" />
+          <Property Name="LOGTIME" Type="varchar" MaxLength="20" />
+          <Property Name="DURATION" Type="varchar" MaxLength="10" />
+          <Property Name="ISACTIVE" Type="varchar" MaxLength="2" />
+          <Property Name="ISSYNC" Type="varchar" MaxLength="2" />
+          <Property Name="SyncDateTimeStamp" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CMTSetFrequency">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="patientid" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Frequency" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="SetDateTime" Type="datetime" Nullable="false" />
+          <Property Name="isActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DoctorDetails">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MiddleName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Address1" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address2" Type="nvarchar" MaxLength="50" />
+          <Property Name="city" Type="nvarchar" MaxLength="30" />
+          <Property Name="state" Type="nvarchar" MaxLength="30" />
+          <Property Name="country" Type="nvarchar" MaxLength="30" />
+          <Property Name="ZipCode" Type="nvarchar" MaxLength="30" />
+          <Property Name="phone" Type="nvarchar" MaxLength="20" />
+          <Property Name="mobileno" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="fax" Type="nvarchar" MaxLength="20" />
+          <Property Name="email" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="website" Type="nvarchar" MaxLength="30" />
+          <Property Name="uniqueId" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="HospitalNme" Type="nvarchar" MaxLength="50" />
+          <Property Name="appdemodate" Type="nvarchar" MaxLength="50" />
+          <Property Name="useragreementGenerated" Type="bit" />
+          <Property Name="Isactive" Type="bit" Nullable="false" />
+          <Property Name="DoctorCode" Type="varchar" MaxLength="10" />
+          <Property Name="password" Type="varchar(max)" />
+          <Property Name="pin" Type="int" />
+          <Property Name="isFirstLogin" Type="bit" />
+          <Property Name="SubscriptionType" Type="int" />
+          <Property Name="SubscriptionDate" Type="date" />
+          <Property Name="macId" Type="varchar" MaxLength="100" />
+          <Property Name="softwareKey" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="FrequencyInstallerLog">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="installDoctorid" Type="varchar" MaxLength="10" />
+          <Property Name="installDoctorName" Type="varchar" MaxLength="100" />
+          <Property Name="installPatientid" Type="varchar" MaxLength="10" />
+          <Property Name="FrequencyInstallDate" Type="date" />
+          <Property Name="FrequencyChangeValue" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="OfflineLicenseRequest">
+          <Key>
+            <PropertyRef Name="requestId" />
+          </Key>
+          <Property Name="requestId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="doctorCode" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="requestActiveStatus" Type="bit" />
+          <Property Name="remarks" Type="varchar" MaxLength="1000" />
+          <Property Name="licenseQuantity" Type="int" />
+          <Property Name="requestdate" Type="date" />
+          <Property Name="requestenddate" Type="date" />
+          <Property Name="requestisserviced" Type="bit" />
+        </EntityType>
+        <EntityType Name="OFFLINELICENSESTRACKER">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="DoctorCode" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="lastSerialNumber" Type="int" />
+          <Property Name="requestId" Type="int" />
+          <Property Name="SerialKey" Type="varchar(max)" />
+          <Property Name="isActive" Type="bit" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PatientRegistration">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="patientID" Type="varchar" MaxLength="10" />
+          <Property Name="firstname" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="middlename" Type="varchar" MaxLength="50" />
+          <Property Name="lastname" Type="varchar" MaxLength="50" />
+          <Property Name="addressline1" Type="varchar" MaxLength="100" />
+          <Property Name="addressline2" Type="varchar" MaxLength="100" />
+          <Property Name="city" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="state" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="country" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="zipcode" Type="varchar" MaxLength="10" />
+          <Property Name="email" Type="varchar" MaxLength="70" Nullable="false" />
+          <Property Name="telephone" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="mobile" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="isActive" Type="bit" Nullable="false" />
+          <Property Name="referredDoctor" Type="varchar" MaxLength="100" />
+          <Property Name="cmtLoaded" Type="bit" Nullable="false" />
+          <Property Name="cmmLoaded" Type="bit" Nullable="false" />
+          <Property Name="cmesLoaded" Type="bit" Nullable="false" />
+          <Property Name="cmnLoaded" Type="bit" Nullable="false" />
+          <Property Name="cmmActive" Type="bit" Nullable="false" />
+          <Property Name="cmtActive" Type="bit" Nullable="false" />
+          <Property Name="cmnActive" Type="bit" Nullable="false" />
+          <Property Name="cmesActive" Type="bit" Nullable="false" />
+          <Property Name="SyncActive" Type="bit" />
+          <Property Name="Field1" Type="varchar" MaxLength="50" />
+          <Property Name="Field2" Type="varchar" MaxLength="50" />
+          <Property Name="Field3" Type="varchar" MaxLength="50" />
+          <Property Name="Field4" Type="varchar" MaxLength="50" />
+          <Property Name="Field5" Type="varchar" MaxLength="50" />
+          <Property Name="patientNumber" Type="varchar" MaxLength="10" />
+          <Property Name="registration_date" Type="datetime" />
+          <Property Name="cmtinstallationdate" Type="datetime" />
+          <Property Name="cmminstallationdate" Type="datetime" />
+          <Property Name="cmesinstallationdate" Type="datetime" />
+          <Property Name="cmninstallationdate" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TinnitusTrio.dbo.SerialNumber' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="SerialNumber">
+          <Key>
+            <PropertyRef Name="DoctorID" />
+            <PropertyRef Name="Serial1" />
+            <PropertyRef Name="Serial2" />
+            <PropertyRef Name="Serial3" />
+            <PropertyRef Name="Serial4" />
+            <PropertyRef Name="Serial5" />
+            <PropertyRef Name="isActive" />
+          </Key>
+          <Property Name="DoctorID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Serial1" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="Serial2" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="Serial3" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="Serial4" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="Serial5" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="isActive" Type="bit" Nullable="false" />
+          <Property Name="Field1" Type="varchar" MaxLength="50" />
+          <Property Name="Field2" Type="varchar" MaxLength="50" />
+          <Property Name="Field3" Type="varchar" MaxLength="50" />
+          <Property Name="Field4" Type="varchar" MaxLength="50" />
+          <Property Name="Field5" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="uniqueID">
+          <Key>
+            <PropertyRef Name="uniqueid" />
+          </Key>
+          <Property Name="uniqueid" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="isActive" Type="bit" />
+          <Property Name="patiendid" Type="varchar" MaxLength="10" />
+          <Property Name="DoctorCode" Type="varchar" MaxLength="5" />
+          <Property Name="offlineSerial" Type="int" />
+        </EntityType>
+        <EntityType Name="userauthentication">
+          <Key>
+            <PropertyRef Name="userId" />
+          </Key>
+          <Property Name="userId" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="macID" Type="varchar" MaxLength="20" />
+          <Property Name="serialNo" Type="varchar" MaxLength="30" />
+          <Property Name="uniqueString" Type="varchar(max)" />
+          <Property Name="isActive" Type="bit" />
+        </EntityType>
+        <Association Name="FK__RoleMenuM__Menui__7A672E12">
+          <End Role="MenuList" Type="Self.MenuList" Multiplicity="1" />
+          <End Role="RoleMenuMapping" Type="Self.RoleMenuMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MenuList">
+              <PropertyRef Name="MenuId" />
+            </Principal>
+            <Dependent Role="RoleMenuMapping">
+              <PropertyRef Name="Menuid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RoleMenuM__Rolei__7B5B524B">
+          <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
+          <End Role="RoleMenuMapping" Type="Self.RoleMenuMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="Roleid" />
+            </Principal>
+            <Dependent Role="RoleMenuMapping">
+              <PropertyRef Name="Roleid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UserRoleM__Rolei__7C4F7684">
+          <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
+          <End Role="UserRoleMapping" Type="Self.UserRoleMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="Roleid" />
+            </Principal>
+            <Dependent Role="UserRoleMapping">
+              <PropertyRef Name="Roleid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UserRoleM__UserI__7D439ABD">
+          <End Role="admin_Employee" Type="Self.admin_Employee" Multiplicity="1" />
+          <End Role="UserRoleMapping" Type="Self.UserRoleMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="admin_Employee">
+              <PropertyRef Name="Employeeid" />
+            </Principal>
+            <Dependent Role="UserRoleMapping">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="ActivateApps" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="AppName" Type="varchar" Mode="In" />
+          <Parameter Name="PATIENTID" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="APPINSTALLHISTORY" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="patientid" Type="varchar" Mode="In" />
+          <Parameter Name="doctorid" Type="int" Mode="In" />
+          <Parameter Name="indate" Type="date" Mode="In" />
+          <Parameter Name="outdate" Type="date" Mode="In" />
+          <Parameter Name="flg" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="APPINSTALLHISTORYWILDCARD" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="appinstallhistoryWithoutDoctorId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="flag" Type="varchar" Mode="In" />
+          <Parameter Name="intime" Type="date" Mode="In" />
+          <Parameter Name="outtime" Type="date" Mode="In" />
+        </Function>
+        <Function Name="AppInstallLogger" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="installDoctorId" Type="varchar" Mode="In" />
+          <Parameter Name="installDoctorName" Type="varchar" Mode="In" />
+          <Parameter Name="installPatientid" Type="varchar" Mode="In" />
+          <Parameter Name="InstalledAppName" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="AuthUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="uniqueID" Type="int" Mode="In" />
+          <Parameter Name="macid" Type="varchar" Mode="In" />
+          <Parameter Name="serialno" Type="varchar" Mode="In" />
+          <Parameter Name="hashid" Type="varchar(max)" Mode="In" />
+        </Function>
+        <Function Name="checkActiveStatus" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="uniqueid" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="CheckActiveStatusDoctor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="doctorid" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="CHECKISFIRSTLOGIN" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="doctorid" Type="int" Mode="In" />
+        </Function>
+        <Function Name="DeActivateApps" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="AppName" Type="varchar" Mode="In" />
+          <Parameter Name="PATIENTID" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="fetchDoctorDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="FreqInstallerLogger" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="installDoctorId" Type="varchar" Mode="In" />
+          <Parameter Name="installDoctorName" Type="varchar" Mode="In" />
+          <Parameter Name="installPatientid" Type="varchar" Mode="In" />
+          <Parameter Name="InstalledFreqValue" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="FREQINSTALLHISTORY" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="patientid" Type="varchar" Mode="In" />
+          <Parameter Name="doctorid" Type="int" Mode="In" />
+          <Parameter Name="indate" Type="date" Mode="In" />
+          <Parameter Name="outdate" Type="date" Mode="In" />
+          <Parameter Name="flg" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="GenerateCmesReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PATIENTID" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="GenerateCmesReportDateWise" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PATIENTID" Type="varchar" Mode="In" />
+          <Parameter Name="indate" Type="date" Mode="In" />
+          <Parameter Name="outdate" Type="date" Mode="In" />
+        </Function>
+        <Function Name="GenerateCmmReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PATIENTID" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="GenerateCmmReportDateWise" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PATIENTID" Type="varchar" Mode="In" />
+          <Parameter Name="indate" Type="date" Mode="In" />
+          <Parameter Name="outdate" Type="date" Mode="In" />
+        </Function>
+        <Function Name="GenerateCmnReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PATIENTID" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="GenerateCmnReportDateWise" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PATIENTID" Type="varchar" Mode="In" />
+          <Parameter Name="indate" Type="date" Mode="In" />
+          <Parameter Name="outdate" Type="date" Mode="In" />
+        </Function>
+        <Function Name="GenerateCmtReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PATIENTID" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="GenerateCmtReportDateWise" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PATIENTID" Type="varchar" Mode="In" />
+          <Parameter Name="indate" Type="date" Mode="In" />
+          <Parameter Name="outdate" Type="date" Mode="In" />
+        </Function>
+        <Function Name="getUniqueID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="insertDevicedetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UniqueID" Type="varchar" Mode="In" />
+          <Parameter Name="macid" Type="varchar" Mode="In" />
+          <Parameter Name="serialno" Type="varchar" Mode="In" />
+          <Parameter Name="hashString" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="InsertFrequencyDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="FREQUENCY" Type="varchar" Mode="In" />
+          <Parameter Name="PATIENTID" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="insertPatientDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PatientID" Type="varchar" Mode="In" />
+          <Parameter Name="firstname" Type="varchar" Mode="In" />
+          <Parameter Name="middlename" Type="varchar" Mode="In" />
+          <Parameter Name="lastname" Type="varchar" Mode="In" />
+          <Parameter Name="addressline1" Type="varchar" Mode="In" />
+          <Parameter Name="addressline2" Type="varchar" Mode="In" />
+          <Parameter Name="city" Type="varchar" Mode="In" />
+          <Parameter Name="state" Type="varchar" Mode="In" />
+          <Parameter Name="country" Type="varchar" Mode="In" />
+          <Parameter Name="zipcode" Type="varchar" Mode="In" />
+          <Parameter Name="email" Type="varchar" Mode="In" />
+          <Parameter Name="telephone" Type="varchar" Mode="In" />
+          <Parameter Name="mobile" Type="varchar" Mode="In" />
+          <Parameter Name="doctorCode" Type="varchar" Mode="In" />
+          <Parameter Name="UniqueId" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="LoginDoctor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="loginid" Type="varchar" Mode="In" />
+          <Parameter Name="doctorid" Type="int" Mode="In" />
+          <Parameter Name="password" Type="varchar(max)" Mode="In" />
+          <Parameter Name="pin" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="serialValidation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="serial1" Type="varchar" Mode="In" />
+          <Parameter Name="serial2" Type="varchar" Mode="In" />
+          <Parameter Name="serial3" Type="varchar" Mode="In" />
+          <Parameter Name="serial4" Type="varchar" Mode="In" />
+          <Parameter Name="serial5" Type="varchar" Mode="In" />
+          <Parameter Name="DoctorID" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spAdminDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ADMINID" Type="varchar" Mode="In" />
+          <Parameter Name="PIN" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spAdminUpdatePasswordDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ADMINID" Type="varchar" Mode="In" />
+          <Parameter Name="PIN" Type="varchar" Mode="In" />
+          <Parameter Name="Password" Type="varchar(max)" Mode="In" />
+        </Function>
+        <Function Name="spCheckActivationStatusDoctoronDate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="spCreateDoctor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="FirstName" Type="varchar" Mode="In" />
+          <Parameter Name="MiddleName" Type="varchar" Mode="In" />
+          <Parameter Name="LastName" Type="varchar" Mode="In" />
+          <Parameter Name="Address1" Type="varchar" Mode="In" />
+          <Parameter Name="Address2" Type="varchar" Mode="In" />
+          <Parameter Name="Country" Type="varchar" Mode="In" />
+          <Parameter Name="State" Type="varchar" Mode="In" />
+          <Parameter Name="City" Type="varchar" Mode="In" />
+          <Parameter Name="ZipCode" Type="varchar" Mode="In" />
+          <Parameter Name="Phone" Type="varchar" Mode="In" />
+          <Parameter Name="Mobile" Type="varchar" Mode="In" />
+          <Parameter Name="Fax" Type="varchar" Mode="In" />
+          <Parameter Name="Email" Type="varchar" Mode="In" />
+          <Parameter Name="Website" Type="varchar" Mode="In" />
+          <Parameter Name="HospitalName" Type="varchar" Mode="In" />
+          <Parameter Name="DoctorCode" Type="varchar" Mode="In" />
+          <Parameter Name="SubscriptionType" Type="int" Mode="In" />
+          <Parameter Name="SubscriptionDate" Type="date" Mode="In" />
+          <Parameter Name="GUID1" Type="varchar" Mode="In" />
+          <Parameter Name="GUID2" Type="varchar" Mode="In" />
+          <Parameter Name="GUID3" Type="varchar" Mode="In" />
+          <Parameter Name="GUID4" Type="varchar" Mode="In" />
+          <Parameter Name="GUID5" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spUpdateDoctorSubscription" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="doctorid" Type="varchar" Mode="In" />
+          <Parameter Name="subscriptiondate" Type="date" Mode="In" />
+        </Function>
+        <Function Name="spUpdateDoctorSubscriptionTypenDate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="doctorid" Type="varchar" Mode="In" />
+          <Parameter Name="subscriptiondate" Type="date" Mode="In" />
+          <Parameter Name="subscriptionType" Type="int" Mode="In" />
+        </Function>
+        <Function Name="UpdateDesktopAppLoginDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Userid" Type="int" Mode="In" />
+          <Parameter Name="password" Type="varchar(max)" Mode="In" />
+          <Parameter Name="pin" Type="varchar" Mode="In" />
+          <Parameter Name="doctorcode" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="UpdateLogindetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+          <Parameter Name="Password" Type="nvarchar" Mode="In" />
+          <Parameter Name="Pin" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="XMLLogSync" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="XML" Type="xml" Mode="In" />
+          <Parameter Name="Module" Type="varchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="TinnitusTrioModelStoreContainer">
+          <EntitySet Name="admin_Employee" EntityType="Self.admin_Employee" Schema="adminfns" store:Type="Tables" />
+          <EntitySet Name="MenuList" EntityType="Self.MenuList" Schema="adminfns" store:Type="Tables" />
+          <EntitySet Name="RoleMenuMapping" EntityType="Self.RoleMenuMapping" Schema="adminfns" store:Type="Tables" />
+          <EntitySet Name="Roles" EntityType="Self.Roles" Schema="adminfns" store:Type="Tables" />
+          <EntitySet Name="UserRoleMapping" EntityType="Self.UserRoleMapping" Schema="adminfns" store:Type="Tables" />
+          <EntitySet Name="APPINSTALLERLOG" EntityType="Self.APPINSTALLERLOG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CMESLogger" EntityType="Self.CMESLogger" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CMMLogger" EntityType="Self.CMMLogger" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CMNLogger" EntityType="Self.CMNLogger" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CMTLOGGER" EntityType="Self.CMTLOGGER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CMTSetFrequency" EntityType="Self.CMTSetFrequency" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DoctorDetails" EntityType="Self.DoctorDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FrequencyInstallerLog" EntityType="Self.FrequencyInstallerLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OfflineLicenseRequest" EntityType="Self.OfflineLicenseRequest" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OFFLINELICENSESTRACKER" EntityType="Self.OFFLINELICENSESTRACKER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PatientRegistration" EntityType="Self.PatientRegistration" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="uniqueID" EntityType="Self.uniqueID" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="userauthentication" EntityType="Self.userauthentication" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SerialNumber" EntityType="Self.SerialNumber" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [SerialNumber].[DoctorID] AS [DoctorID], 
+    [SerialNumber].[Serial1] AS [Serial1], 
+    [SerialNumber].[Serial2] AS [Serial2], 
+    [SerialNumber].[Serial3] AS [Serial3], 
+    [SerialNumber].[Serial4] AS [Serial4], 
+    [SerialNumber].[Serial5] AS [Serial5], 
+    [SerialNumber].[isActive] AS [isActive], 
+    [SerialNumber].[Field1] AS [Field1], 
+    [SerialNumber].[Field2] AS [Field2], 
+    [SerialNumber].[Field3] AS [Field3], 
+    [SerialNumber].[Field4] AS [Field4], 
+    [SerialNumber].[Field5] AS [Field5]
+    FROM [dbo].[SerialNumber] AS [SerialNumber]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK__RoleMenuM__Menui__7A672E12" Association="Self.FK__RoleMenuM__Menui__7A672E12">
+            <End Role="MenuList" EntitySet="MenuList" />
+            <End Role="RoleMenuMapping" EntitySet="RoleMenuMapping" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RoleMenuM__Rolei__7B5B524B" Association="Self.FK__RoleMenuM__Rolei__7B5B524B">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="RoleMenuMapping" EntitySet="RoleMenuMapping" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UserRoleM__Rolei__7C4F7684" Association="Self.FK__UserRoleM__Rolei__7C4F7684">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="UserRoleMapping" EntitySet="UserRoleMapping" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UserRoleM__UserI__7D439ABD" Association="Self.FK__UserRoleM__UserI__7D439ABD">
+            <End Role="admin_Employee" EntitySet="admin_Employee" />
+            <End Role="UserRoleMapping" EntitySet="UserRoleMapping" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TinnitusTrioModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="APPINSTALLERLOG">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="installDoctorId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="installDoctorName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="installPatientid" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="AppinstallDate" Type="DateTime" Precision="0" />
+          <Property Name="InstalledAppName" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="CMESLogger">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PatientId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="LogDate" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="LogTime" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Track" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Duration" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="isActive" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="isSync" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="SyncDateTimeStamp" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="CMMLogger">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PatientId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="LogDate" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="LogTime" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Track" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Duration" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="isActive" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="isSync" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="SyncDateTimeStamp" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="CMNLogger">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PatientId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="LogDate" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="LogTime" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Duration" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="isActive" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="isSync" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="SyncDateTimeStamp" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="CMTLOGGER">
+          <Key>
+            <PropertyRef Name="LOGID" />
+          </Key>
+          <Property Name="LOGID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PATIENTID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="LOGDATE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="LOGTIME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DURATION" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ISACTIVE" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="ISSYNC" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="SyncDateTimeStamp" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="CMTSetFrequency">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="patientid" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Frequency" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SetDateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="isActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DoctorDetail">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Address1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="city" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="state" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="country" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="ZipCode" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="mobileno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="fax" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="website" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="uniqueId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HospitalNme" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="appdemodate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="useragreementGenerated" Type="Boolean" />
+          <Property Name="Isactive" Type="Boolean" Nullable="false" />
+          <Property Name="DoctorCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="pin" Type="Int32" />
+          <Property Name="isFirstLogin" Type="Boolean" />
+          <Property Name="SubscriptionType" Type="Int32" />
+          <Property Name="SubscriptionDate" Type="DateTime" Precision="0" />
+          <Property Name="macId" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="softwareKey" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="FrequencyInstallerLog">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="installDoctorid" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="installDoctorName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="installPatientid" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="FrequencyInstallDate" Type="DateTime" Precision="0" />
+          <Property Name="FrequencyChangeValue" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="PatientRegistration">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="patientID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="firstname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="middlename" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="addressline1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="addressline2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="city" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="state" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="country" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="zipcode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="70" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="telephone" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="mobile" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="isActive" Type="Boolean" Nullable="false" />
+          <Property Name="referredDoctor" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="cmtLoaded" Type="Boolean" Nullable="false" />
+          <Property Name="cmmLoaded" Type="Boolean" Nullable="false" />
+          <Property Name="cmesLoaded" Type="Boolean" Nullable="false" />
+          <Property Name="cmnLoaded" Type="Boolean" Nullable="false" />
+          <Property Name="cmmActive" Type="Boolean" Nullable="false" />
+          <Property Name="cmtActive" Type="Boolean" Nullable="false" />
+          <Property Name="cmnActive" Type="Boolean" Nullable="false" />
+          <Property Name="cmesActive" Type="Boolean" Nullable="false" />
+          <Property Name="SyncActive" Type="Boolean" />
+          <Property Name="Field1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Field2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Field3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Field4" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Field5" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="patientNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="registration_date" Type="DateTime" Precision="3" />
+          <Property Name="cmtinstallationdate" Type="DateTime" Precision="3" />
+          <Property Name="cmminstallationdate" Type="DateTime" Precision="3" />
+          <Property Name="cmesinstallationdate" Type="DateTime" Precision="3" />
+          <Property Name="cmninstallationdate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="uniqueID">
+          <Key>
+            <PropertyRef Name="uniqueid1" />
+          </Key>
+          <Property Name="uniqueid1" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="isActive" Type="Boolean" />
+          <Property Name="patiendid" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="DoctorCode" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="offlineSerial" Type="Int32" />
+        </EntityType>
+        <EntityType Name="SerialNumber">
+          <Key>
+            <PropertyRef Name="DoctorID" />
+            <PropertyRef Name="Serial1" />
+            <PropertyRef Name="Serial2" />
+            <PropertyRef Name="Serial3" />
+            <PropertyRef Name="Serial4" />
+            <PropertyRef Name="Serial5" />
+            <PropertyRef Name="isActive" />
+          </Key>
+          <Property Name="DoctorID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Serial1" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Serial2" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Serial3" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Serial4" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Serial5" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="isActive" Type="Boolean" Nullable="false" />
+          <Property Name="Field1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Field2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Field3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Field4" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Field5" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="userauthentication">
+          <Key>
+            <PropertyRef Name="userId" />
+          </Key>
+          <Property Name="userId" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="macID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="serialNo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="uniqueString" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="isActive" Type="Boolean" />
+        </EntityType>
+        <EntityContainer Name="TinnitusTrioEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="APPINSTALLERLOGs" EntityType="Self.APPINSTALLERLOG" />
+          <EntitySet Name="CMESLoggers" EntityType="Self.CMESLogger" />
+          <EntitySet Name="CMMLoggers" EntityType="Self.CMMLogger" />
+          <EntitySet Name="CMNLoggers" EntityType="Self.CMNLogger" />
+          <EntitySet Name="CMTLOGGERs" EntityType="Self.CMTLOGGER" />
+          <EntitySet Name="CMTSetFrequencies" EntityType="Self.CMTSetFrequency" />
+          <EntitySet Name="DoctorDetails" EntityType="Self.DoctorDetail" />
+          <EntitySet Name="FrequencyInstallerLogs" EntityType="Self.FrequencyInstallerLog" />
+          <EntitySet Name="PatientRegistrations" EntityType="Self.PatientRegistration" />
+          <EntitySet Name="uniqueIDs" EntityType="Self.uniqueID" />
+          <EntitySet Name="SerialNumbers" EntityType="Self.SerialNumber" />
+          <EntitySet Name="userauthentications" EntityType="TinnitusTrioModel.userauthentication" />
+          <FunctionImport Name="ActivateApps">
+            <Parameter Name="AppName" Mode="In" Type="String" />
+            <Parameter Name="PATIENTID" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="APPINSTALLHISTORY" ReturnType="Collection(TinnitusTrioModel.APPINSTALLHISTORY_Result)">
+            <Parameter Name="patientid" Mode="In" Type="String" />
+            <Parameter Name="doctorid" Mode="In" Type="Int32" />
+            <Parameter Name="indate" Mode="In" Type="DateTime" />
+            <Parameter Name="outdate" Mode="In" Type="DateTime" />
+            <Parameter Name="flg" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="APPINSTALLHISTORYWILDCARD" ReturnType="Collection(TinnitusTrioModel.APPINSTALLHISTORYWILDCARD_Result)" />
+          <FunctionImport Name="appinstallhistoryWithoutDoctorId" ReturnType="Collection(TinnitusTrioModel.appinstallhistoryWithoutDoctorId_Result)">
+            <Parameter Name="flag" Mode="In" Type="String" />
+            <Parameter Name="intime" Mode="In" Type="DateTime" />
+            <Parameter Name="outtime" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="AppInstallLogger" ReturnType="Collection(String)">
+            <Parameter Name="installDoctorId" Mode="In" Type="String" />
+            <Parameter Name="installDoctorName" Mode="In" Type="String" />
+            <Parameter Name="installPatientid" Mode="In" Type="String" />
+            <Parameter Name="InstalledAppName" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="AuthUser" ReturnType="Collection(Int32)">
+            <Parameter Name="uniqueID" Mode="In" Type="Int32" />
+            <Parameter Name="macid" Mode="In" Type="String" />
+            <Parameter Name="serialno" Mode="In" Type="String" />
+            <Parameter Name="hashid" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="checkActiveStatus" ReturnType="Collection(String)">
+          <Parameter Name="uniqueid" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="CheckActiveStatusDoctor" ReturnType="Collection(String)">
+          <Parameter Name="doctorid" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="CHECKISFIRSTLOGIN" ReturnType="Collection(String)">
+          <Parameter Name="doctorid" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="DeActivateApps" ReturnType="Collection(TinnitusTrioModel.DeActivateApps_Result)">
+            <Parameter Name="AppName" Mode="In" Type="String" />
+            <Parameter Name="PATIENTID" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="fetchDoctorDetails" ReturnType="Collection(TinnitusTrioModel.fetchDoctorDetails_Result)" />
+          <FunctionImport Name="FreqInstallerLogger" ReturnType="Collection(String)">
+            <Parameter Name="installDoctorId" Mode="In" Type="String" />
+            <Parameter Name="installDoctorName" Mode="In" Type="String" />
+            <Parameter Name="installPatientid" Mode="In" Type="String" />
+            <Parameter Name="InstalledFreqValue" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="FREQINSTALLHISTORY" ReturnType="Collection(TinnitusTrioModel.FREQINSTALLHISTORY_Result)">
+            <Parameter Name="patientid" Mode="In" Type="String" />
+            <Parameter Name="doctorid" Mode="In" Type="Int32" />
+            <Parameter Name="indate" Mode="In" Type="DateTime" />
+            <Parameter Name="outdate" Mode="In" Type="DateTime" />
+            <Parameter Name="flg" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GenerateCmesReport" ReturnType="Collection(TinnitusTrioModel.GenerateCmesReport_Result)">
+          <Parameter Name="PATIENTID" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GenerateCmesReportDateWise" ReturnType="Collection(TinnitusTrioModel.GenerateCmesReportDateWise_Result)">
+            <Parameter Name="PATIENTID" Mode="In" Type="String" />
+            <Parameter Name="indate" Mode="In" Type="DateTime" />
+            <Parameter Name="outdate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="GenerateCmmReport" ReturnType="Collection(TinnitusTrioModel.GenerateCmmReport_Result)">
+          <Parameter Name="PATIENTID" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GenerateCmmReportDateWise" ReturnType="Collection(TinnitusTrioModel.GenerateCmmReportDateWise_Result)">
+            <Parameter Name="PATIENTID" Mode="In" Type="String" />
+            <Parameter Name="indate" Mode="In" Type="DateTime" />
+            <Parameter Name="outdate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="GenerateCmnReport" ReturnType="Collection(TinnitusTrioModel.GenerateCmnReport_Result)">
+          <Parameter Name="PATIENTID" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GenerateCmnReportDateWise" ReturnType="Collection(TinnitusTrioModel.GenerateCmnReportDateWise_Result)">
+            <Parameter Name="PATIENTID" Mode="In" Type="String" />
+            <Parameter Name="indate" Mode="In" Type="DateTime" />
+            <Parameter Name="outdate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="GenerateCmtReport" ReturnType="Collection(TinnitusTrioModel.GenerateCmtReport_Result)">
+          <Parameter Name="PATIENTID" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GenerateCmtReportDateWise" ReturnType="Collection(TinnitusTrioModel.GenerateCmtReportDateWise_Result)">
+            <Parameter Name="PATIENTID" Mode="In" Type="String" />
+            <Parameter Name="indate" Mode="In" Type="DateTime" />
+            <Parameter Name="outdate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="getUniqueID" ReturnType="Collection(String)" />
+          <FunctionImport Name="insertDevicedetails" ReturnType="Collection(String)">
+            <Parameter Name="UniqueID" Mode="In" Type="String" />
+            <Parameter Name="macid" Mode="In" Type="String" />
+            <Parameter Name="serialno" Mode="In" Type="String" />
+            <Parameter Name="hashString" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="InsertFrequencyDetails">
+            <Parameter Name="FREQUENCY" Mode="In" Type="String" />
+            <Parameter Name="PATIENTID" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="insertPatientDetails" ReturnType="Collection(String)">
+            <Parameter Name="PatientID" Mode="In" Type="String" />
+            <Parameter Name="firstname" Mode="In" Type="String" />
+            <Parameter Name="middlename" Mode="In" Type="String" />
+            <Parameter Name="lastname" Mode="In" Type="String" />
+            <Parameter Name="addressline1" Mode="In" Type="String" />
+            <Parameter Name="addressline2" Mode="In" Type="String" />
+            <Parameter Name="city" Mode="In" Type="String" />
+            <Parameter Name="state" Mode="In" Type="String" />
+            <Parameter Name="country" Mode="In" Type="String" />
+            <Parameter Name="zipcode" Mode="In" Type="String" />
+            <Parameter Name="email" Mode="In" Type="String" />
+            <Parameter Name="telephone" Mode="In" Type="String" />
+            <Parameter Name="mobile" Mode="In" Type="String" />
+            <Parameter Name="doctorCode" Mode="In" Type="String" />
+            <Parameter Name="UniqueId" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="LoginDoctor" ReturnType="Collection(String)">
+            <Parameter Name="loginid" Mode="In" Type="String" />
+            <Parameter Name="doctorid" Mode="In" Type="Int32" />
+            <Parameter Name="password" Mode="In" Type="String" />
+            <Parameter Name="pin" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="serialValidation" ReturnType="Collection(TinnitusTrioModel.serialValidation_Result)">
+            <Parameter Name="serial1" Mode="In" Type="String" />
+            <Parameter Name="serial2" Mode="In" Type="String" />
+            <Parameter Name="serial3" Mode="In" Type="String" />
+            <Parameter Name="serial4" Mode="In" Type="String" />
+            <Parameter Name="serial5" Mode="In" Type="String" />
+            <Parameter Name="DoctorID" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spAdminDetails" ReturnType="Collection(String)">
+            <Parameter Name="ADMINID" Mode="In" Type="String" />
+            <Parameter Name="PIN" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spAdminUpdatePasswordDetails" ReturnType="Collection(String)">
+            <Parameter Name="ADMINID" Mode="In" Type="String" />
+            <Parameter Name="PIN" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spCheckActivationStatusDoctoronDate" ReturnType="Collection(String)" />
+          <FunctionImport Name="spCreateDoctor" ReturnType="Collection(String)">
+            <Parameter Name="FirstName" Mode="In" Type="String" />
+            <Parameter Name="MiddleName" Mode="In" Type="String" />
+            <Parameter Name="LastName" Mode="In" Type="String" />
+            <Parameter Name="Address1" Mode="In" Type="String" />
+            <Parameter Name="Address2" Mode="In" Type="String" />
+            <Parameter Name="Country" Mode="In" Type="String" />
+            <Parameter Name="State" Mode="In" Type="String" />
+            <Parameter Name="City" Mode="In" Type="String" />
+            <Parameter Name="ZipCode" Mode="In" Type="String" />
+            <Parameter Name="Phone" Mode="In" Type="String" />
+            <Parameter Name="Mobile" Mode="In" Type="String" />
+            <Parameter Name="Fax" Mode="In" Type="String" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="Website" Mode="In" Type="String" />
+            <Parameter Name="HospitalName" Mode="In" Type="String" />
+            <Parameter Name="DoctorCode" Mode="In" Type="String" />
+            <Parameter Name="SubscriptionType" Mode="In" Type="Int32" />
+            <Parameter Name="SubscriptionDate" Mode="In" Type="DateTime" />
+            <Parameter Name="GUID1" Mode="In" Type="String" />
+            <Parameter Name="GUID2" Mode="In" Type="String" />
+            <Parameter Name="GUID3" Mode="In" Type="String" />
+            <Parameter Name="GUID4" Mode="In" Type="String" />
+            <Parameter Name="GUID5" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spUpdateDoctorSubscription" ReturnType="Collection(String)">
+            <Parameter Name="doctorid" Mode="In" Type="String" />
+            <Parameter Name="subscriptiondate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="spUpdateDoctorSubscriptionTypenDate" ReturnType="Collection(String)">
+            <Parameter Name="doctorid" Mode="In" Type="String" />
+            <Parameter Name="subscriptiondate" Mode="In" Type="DateTime" />
+            <Parameter Name="subscriptionType" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateDesktopAppLoginDetails" ReturnType="Collection(String)">
+            <Parameter Name="Userid" Mode="In" Type="Int32" />
+            <Parameter Name="password" Mode="In" Type="String" />
+            <Parameter Name="pin" Mode="In" Type="String" />
+            <Parameter Name="doctorcode" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateLogindetails">
+            <Parameter Name="UserName" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+            <Parameter Name="Pin" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="XMLLogSync" ReturnType="Collection(String)">
+            <Parameter Name="XML" Mode="In" Type="String" />
+            <Parameter Name="Module" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="OfflineLicenseRequests" EntityType="TinnitusTrioModel.OfflineLicenseRequest" />
+          <EntitySet Name="OFFLINELICENSESTRACKERs" EntityType="TinnitusTrioModel.OFFLINELICENSESTRACKER" />
+          <EntitySet Name="admin_Employee" EntityType="TinnitusTrioModel.admin_Employee" />
+          <EntitySet Name="MenuLists" EntityType="TinnitusTrioModel.MenuList" />
+          <EntitySet Name="RoleMenuMappings" EntityType="TinnitusTrioModel.RoleMenuMapping" />
+          <EntitySet Name="Roles" EntityType="TinnitusTrioModel.Role" />
+          <EntitySet Name="UserRoleMappings" EntityType="TinnitusTrioModel.UserRoleMapping" />
+          <AssociationSet Name="FK__UserRoleM__UserI__1BC821DD" Association="TinnitusTrioModel.FK__UserRoleM__UserI__1BC821DD">
+            <End Role="admin_Employee" EntitySet="admin_Employee" />
+            <End Role="UserRoleMapping" EntitySet="UserRoleMappings" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RoleMenuM__Menui__160F4887" Association="TinnitusTrioModel.FK__RoleMenuM__Menui__160F4887">
+            <End Role="MenuList" EntitySet="MenuLists" />
+            <End Role="RoleMenuMapping" EntitySet="RoleMenuMappings" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RoleMenuM__Rolei__151B244E" Association="TinnitusTrioModel.FK__RoleMenuM__Rolei__151B244E">
+            <End Role="Role" EntitySet="Roles" />
+            <End Role="RoleMenuMapping" EntitySet="RoleMenuMappings" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UserRoleM__Rolei__1AD3FDA4" Association="TinnitusTrioModel.FK__UserRoleM__Rolei__1AD3FDA4">
+            <End Role="Role" EntitySet="Roles" />
+            <End Role="UserRoleMapping" EntitySet="UserRoleMappings" />
+          </AssociationSet>
+        </EntityContainer>
+        <ComplexType Name="APPINSTALLHISTORY_Result">
+          <Property Type="String" Name="Patient_ID" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Patient_Name" Nullable="true" MaxLength="152" />
+          <Property Type="DateTime" Name="Application_Installation_Date" Nullable="true" />
+          <Property Type="String" Name="Installed_Application_Name" Nullable="true" MaxLength="4" />
+        </ComplexType>
+        <ComplexType Name="APPINSTALLHISTORYWILDCARD_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Patient_ID" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Doctor_ID" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Patient_Name" Nullable="true" MaxLength="152" />
+          <Property Type="DateTime" Name="Application_Installation_Date" Nullable="true" />
+          <Property Type="String" Name="Installed_Application_Name" Nullable="true" MaxLength="4" />
+        </ComplexType>
+        <ComplexType Name="appinstallhistoryWithoutDoctorId_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Patient_ID" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Doctor_ID" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Patient_Name" Nullable="true" MaxLength="152" />
+          <Property Type="DateTime" Name="Application_Installation_Date" Nullable="true" />
+          <Property Type="String" Name="Installed_Application_Name" Nullable="true" MaxLength="4" />
+        </ComplexType>
+        <ComplexType Name="DeActivateApps_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="patientID" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="firstname" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="middlename" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="lastname" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="addressline1" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="addressline2" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="city" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="state" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="country" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="zipcode" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="email" Nullable="false" MaxLength="70" />
+          <Property Type="String" Name="telephone" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="mobile" Nullable="false" MaxLength="20" />
+          <Property Type="Boolean" Name="isActive" Nullable="false" />
+          <Property Type="String" Name="referredDoctor" Nullable="true" MaxLength="100" />
+          <Property Type="Boolean" Name="cmtLoaded" Nullable="false" />
+          <Property Type="Boolean" Name="cmmLoaded" Nullable="false" />
+          <Property Type="Boolean" Name="cmesLoaded" Nullable="false" />
+          <Property Type="Boolean" Name="cmnLoaded" Nullable="false" />
+          <Property Type="Boolean" Name="cmmActive" Nullable="false" />
+          <Property Type="Boolean" Name="cmtActive" Nullable="false" />
+          <Property Type="Boolean" Name="cmnActive" Nullable="false" />
+          <Property Type="Boolean" Name="cmesActive" Nullable="false" />
+          <Property Type="Boolean" Name="SyncActive" Nullable="true" />
+          <Property Type="String" Name="Field1" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Field2" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Field3" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Field4" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Field5" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="patientNumber" Nullable="true" MaxLength="10" />
+          <Property Type="DateTime" Name="registration_date" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="cmtinstallationdate" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="cmminstallationdate" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="cmesinstallationdate" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="cmninstallationdate" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="fetchDoctorDetails_Result">
+          <Property Type="Int32" Name="Doctor_ID" Nullable="false" />
+          <Property Type="String" Name="First_Name" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Middle_Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Last_Name" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Address_Line_1" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Address_Line_2" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="City" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="State" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Country" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Pin___Zip_Code" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Phone_Number" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="Mobile_No" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Fax" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="E_Mail" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Website" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Registered_On" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="Active_Status" Nullable="false" />
+          <Property Type="String" Name="Doctor_Code" Nullable="true" MaxLength="10" />
+          <Property Type="Boolean" Name="First_Login_Pending" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="FREQINSTALLHISTORY_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Patient_ID" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Patient_Name" Nullable="true" MaxLength="152" />
+          <Property Type="DateTime" Name="Frequency_Installation_Date" Nullable="true" />
+          <Property Type="String" Name="Frequency" Nullable="true" MaxLength="10" />
+        </ComplexType>
+        <ComplexType Name="GenerateCmesReport_Result">
+          <Property Type="String" Name="LOGDATE" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="LOGTIME" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="Duration" Nullable="true" MaxLength="102" />
+          <Property Type="String" Name="track" Nullable="true" MaxLength="300" />
+        </ComplexType>
+        <ComplexType Name="GenerateCmesReportDateWise_Result">
+          <Property Type="String" Name="LOGDATE" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="LOGTIME" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="Duration" Nullable="true" MaxLength="102" />
+          <Property Type="String" Name="track" Nullable="true" MaxLength="300" />
+        </ComplexType>
+        <ComplexType Name="GenerateCmmReport_Result">
+          <Property Type="String" Name="LOGDATE" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="LOGTIME" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="Duration" Nullable="true" MaxLength="102" />
+          <Property Type="String" Name="track" Nullable="true" MaxLength="300" />
+        </ComplexType>
+        <ComplexType Name="GenerateCmmReportDateWise_Result">
+          <Property Type="String" Name="LOGDATE" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="LOGTIME" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="Duration" Nullable="true" MaxLength="102" />
+          <Property Type="String" Name="track" Nullable="true" MaxLength="300" />
+        </ComplexType>
+        <ComplexType Name="GenerateCmnReport_Result">
+          <Property Type="String" Name="LOGDATE" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="LOGTIME" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="Duration" Nullable="true" MaxLength="102" />
+        </ComplexType>
+        <ComplexType Name="GenerateCmnReportDateWise_Result">
+          <Property Type="String" Name="LOGDATE" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="LOGTIME" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="Duration" Nullable="true" MaxLength="102" />
+        </ComplexType>
+        <ComplexType Name="GenerateCmtReport_Result">
+          <Property Type="String" Name="LOGDATE" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="LOGTIME" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="Duration" Nullable="true" MaxLength="102" />
+        </ComplexType>
+        <ComplexType Name="GenerateCmtReportDateWise_Result">
+          <Property Type="String" Name="LOGDATE" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="LOGTIME" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="Duration" Nullable="true" MaxLength="102" />
+        </ComplexType>
+        <ComplexType Name="serialValidation_Result">
+          <Property Type="String" Name="Column1" Nullable="true" MaxLength="152" />
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="doctorcode" Nullable="true" MaxLength="10" />
+        </ComplexType>
+        <EntityType Name="OfflineLicenseRequest">
+          <Key>
+            <PropertyRef Name="requestId" />
+          </Key>
+          <Property Name="requestId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="doctorCode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="requestActiveStatus" Type="Boolean" />
+          <Property Name="remarks" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="licenseQuantity" Type="Int32" />
+          <Property Name="requestdate" Type="DateTime" Precision="0" />
+          <Property Name="requestenddate" Type="DateTime" Precision="0" />
+          <Property Name="requestisserviced" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="OFFLINELICENSESTRACKER">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="DoctorCode" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="lastSerialNumber" Type="Int32" />
+          <Property Name="requestId" Type="Int32" />
+          <Property Name="SerialKey" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="isActive" Type="Boolean" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="admin_Employee">
+          <Key>
+            <PropertyRef Name="Employeeid" />
+          </Key>
+          <Property Name="Employeeid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="userid" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="firstname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="middlename" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="lastname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="addressline1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="addressline2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="country" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="state" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="city" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="pincode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="telephone" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="mobileno" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="emailaddress" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="isAdmin" Type="Boolean" />
+          <Property Name="isSuperAdmin" Type="Boolean" />
+          <Property Name="isactive" Type="Boolean" />
+          <Property Name="createdBy" Type="Int32" />
+          <Property Name="createdDate" Type="DateTime" Precision="0" />
+          <Property Name="Field1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Field2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Field3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Field4" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Field5" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="isFirstLogin" Type="Boolean" />
+          <NavigationProperty Name="UserRoleMappings" Relationship="TinnitusTrioModel.FK__UserRoleM__UserI__1BC821DD" FromRole="admin_Employee" ToRole="UserRoleMapping" />
+        </EntityType>
+        <EntityType Name="MenuList">
+          <Key>
+            <PropertyRef Name="MenuId" />
+          </Key>
+          <Property Name="MenuId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MenuName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MenuDesc" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="MenuLink" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="isActive" Type="Boolean" />
+          <Property Name="createdBy" Type="Int32" />
+          <Property Name="createdDate" Type="DateTime" Precision="0" />
+          <Property Name="Field1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Field2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Field3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Field4" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Field5" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="RoleMenuMappings" Relationship="TinnitusTrioModel.FK__RoleMenuM__Menui__160F4887" FromRole="MenuList" ToRole="RoleMenuMapping" />
+          <Property Name="parentmenuid" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RoleMenuMapping">
+          <Key>
+            <PropertyRef Name="RoleMenuMappingId" />
+          </Key>
+          <Property Name="RoleMenuMappingId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Roleid" Type="Int32" Nullable="false" />
+          <Property Name="Menuid" Type="Int32" Nullable="false" />
+          <Property Name="isActive" Type="Boolean" />
+          <Property Name="createdBy" Type="Int32" />
+          <Property Name="createdDate" Type="DateTime" Precision="0" />
+          <Property Name="Field1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Field2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Field3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Field4" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Field5" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="MenuList" Relationship="TinnitusTrioModel.FK__RoleMenuM__Menui__160F4887" FromRole="RoleMenuMapping" ToRole="MenuList" />
+          <NavigationProperty Name="Role" Relationship="TinnitusTrioModel.FK__RoleMenuM__Rolei__151B244E" FromRole="RoleMenuMapping" ToRole="Role" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="Roleid" />
+          </Key>
+          <Property Name="Roleid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RoleName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RoleDescription" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="isActive" Type="Boolean" />
+          <Property Name="createdBy" Type="Int32" />
+          <Property Name="createdDate" Type="DateTime" Precision="0" />
+          <Property Name="Field1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Field2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Field3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Field4" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Field5" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="RoleMenuMappings" Relationship="TinnitusTrioModel.FK__RoleMenuM__Rolei__151B244E" FromRole="Role" ToRole="RoleMenuMapping" />
+          <NavigationProperty Name="UserRoleMappings" Relationship="TinnitusTrioModel.FK__UserRoleM__Rolei__1AD3FDA4" FromRole="Role" ToRole="UserRoleMapping" />
+        </EntityType>
+        <EntityType Name="UserRoleMapping">
+          <Key>
+            <PropertyRef Name="UserRoleMappingId" />
+          </Key>
+          <Property Name="UserRoleMappingId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Roleid" Type="Int32" Nullable="false" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="isActive" Type="Boolean" />
+          <Property Name="createdBy" Type="Int32" />
+          <Property Name="createdDate" Type="DateTime" Precision="0" />
+          <Property Name="Field1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Field2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Field3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Field4" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Field5" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="admin_Employee" Relationship="TinnitusTrioModel.FK__UserRoleM__UserI__1BC821DD" FromRole="UserRoleMapping" ToRole="admin_Employee" />
+          <NavigationProperty Name="Role" Relationship="TinnitusTrioModel.FK__UserRoleM__Rolei__1AD3FDA4" FromRole="UserRoleMapping" ToRole="Role" />
+        </EntityType>
+        <Association Name="FK__UserRoleM__UserI__1BC821DD">
+          <End Type="TinnitusTrioModel.admin_Employee" Role="admin_Employee" Multiplicity="1" />
+          <End Type="TinnitusTrioModel.UserRoleMapping" Role="UserRoleMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="admin_Employee">
+              <PropertyRef Name="Employeeid" />
+            </Principal>
+            <Dependent Role="UserRoleMapping">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RoleMenuM__Menui__160F4887">
+          <End Type="TinnitusTrioModel.MenuList" Role="MenuList" Multiplicity="1" />
+          <End Type="TinnitusTrioModel.RoleMenuMapping" Role="RoleMenuMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MenuList">
+              <PropertyRef Name="MenuId" />
+            </Principal>
+            <Dependent Role="RoleMenuMapping">
+              <PropertyRef Name="Menuid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RoleMenuM__Rolei__151B244E">
+          <End Type="TinnitusTrioModel.Role" Role="Role" Multiplicity="1" />
+          <End Type="TinnitusTrioModel.RoleMenuMapping" Role="RoleMenuMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="Roleid" />
+            </Principal>
+            <Dependent Role="RoleMenuMapping">
+              <PropertyRef Name="Roleid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UserRoleM__Rolei__1AD3FDA4">
+          <End Type="TinnitusTrioModel.Role" Role="Role" Multiplicity="1" />
+          <End Type="TinnitusTrioModel.UserRoleMapping" Role="UserRoleMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="Roleid" />
+            </Principal>
+            <Dependent Role="UserRoleMapping">
+              <PropertyRef Name="Roleid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TinnitusTrioModelStoreContainer" CdmEntityContainer="TinnitusTrioEntities">
+          <EntitySetMapping Name="APPINSTALLERLOGs">
+            <EntityTypeMapping TypeName="TinnitusTrioModel.APPINSTALLERLOG">
+              <MappingFragment StoreEntitySet="APPINSTALLERLOG">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="installDoctorId" ColumnName="installDoctorId" />
+                <ScalarProperty Name="installDoctorName" ColumnName="installDoctorName" />
+                <ScalarProperty Name="installPatientid" ColumnName="installPatientid" />
+                <ScalarProperty Name="AppinstallDate" ColumnName="AppinstallDate" />
+                <ScalarProperty Name="InstalledAppName" ColumnName="InstalledAppName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CMESLoggers">
+            <EntityTypeMapping TypeName="TinnitusTrioModel.CMESLogger">
+              <MappingFragment StoreEntitySet="CMESLogger">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+                <ScalarProperty Name="LogDate" ColumnName="LogDate" />
+                <ScalarProperty Name="LogTime" ColumnName="LogTime" />
+                <ScalarProperty Name="Track" ColumnName="Track" />
+                <ScalarProperty Name="Duration" ColumnName="Duration" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="isSync" ColumnName="isSync" />
+                <ScalarProperty Name="SyncDateTimeStamp" ColumnName="SyncDateTimeStamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CMMLoggers">
+            <EntityTypeMapping TypeName="TinnitusTrioModel.CMMLogger">
+              <MappingFragment StoreEntitySet="CMMLogger">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+                <ScalarProperty Name="LogDate" ColumnName="LogDate" />
+                <ScalarProperty Name="LogTime" ColumnName="LogTime" />
+                <ScalarProperty Name="Track" ColumnName="Track" />
+                <ScalarProperty Name="Duration" ColumnName="Duration" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="isSync" ColumnName="isSync" />
+                <ScalarProperty Name="SyncDateTimeStamp" ColumnName="SyncDateTimeStamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CMNLoggers">
+            <EntityTypeMapping TypeName="TinnitusTrioModel.CMNLogger">
+              <MappingFragment StoreEntitySet="CMNLogger">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+                <ScalarProperty Name="LogDate" ColumnName="LogDate" />
+                <ScalarProperty Name="LogTime" ColumnName="LogTime" />
+                <ScalarProperty Name="Duration" ColumnName="Duration" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="isSync" ColumnName="isSync" />
+                <ScalarProperty Name="SyncDateTimeStamp" ColumnName="SyncDateTimeStamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CMTLOGGERs">
+            <EntityTypeMapping TypeName="TinnitusTrioModel.CMTLOGGER">
+              <MappingFragment StoreEntitySet="CMTLOGGER">
+                <ScalarProperty Name="LOGID" ColumnName="LOGID" />
+                <ScalarProperty Name="PATIENTID" ColumnName="PATIENTID" />
+                <ScalarProperty Name="LOGDATE" ColumnName="LOGDATE" />
+                <ScalarProperty Name="LOGTIME" ColumnName="LOGTIME" />
+                <ScalarProperty Name="DURATION" ColumnName="DURATION" />
+                <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+                <ScalarProperty Name="ISSYNC" ColumnName="ISSYNC" />
+                <ScalarProperty Name="SyncDateTimeStamp" ColumnName="SyncDateTimeStamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CMTSetFrequencies">
+            <EntityTypeMapping TypeName="TinnitusTrioModel.CMTSetFrequency">
+              <MappingFragment StoreEntitySet="CMTSetFrequency">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="patientid" ColumnName="patientid" />
+                <ScalarProperty Name="Frequency" ColumnName="Frequency" />
+                <ScalarProperty Name="SetDateTime" ColumnName="SetDateTime" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DoctorDetails">
+            <EntityTypeMapping TypeName="TinnitusTrioModel.DoctorDetail">
+              <MappingFragment StoreEntitySet="DoctorDetails">
+                <ScalarProperty Name="softwareKey" ColumnName="softwareKey" />
+                <ScalarProperty Name="macId" ColumnName="macId" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="country" ColumnName="country" />
+                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="mobileno" ColumnName="mobileno" />
+                <ScalarProperty Name="fax" ColumnName="fax" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="website" ColumnName="website" />
+                <ScalarProperty Name="uniqueId" ColumnName="uniqueId" />
+                <ScalarProperty Name="HospitalNme" ColumnName="HospitalNme" />
+                <ScalarProperty Name="appdemodate" ColumnName="appdemodate" />
+                <ScalarProperty Name="useragreementGenerated" ColumnName="useragreementGenerated" />
+                <ScalarProperty Name="Isactive" ColumnName="Isactive" />
+                <ScalarProperty Name="DoctorCode" ColumnName="DoctorCode" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="pin" ColumnName="pin" />
+                <ScalarProperty Name="isFirstLogin" ColumnName="isFirstLogin" />
+                <ScalarProperty Name="SubscriptionType" ColumnName="SubscriptionType" />
+                <ScalarProperty Name="SubscriptionDate" ColumnName="SubscriptionDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FrequencyInstallerLogs">
+            <EntityTypeMapping TypeName="TinnitusTrioModel.FrequencyInstallerLog">
+              <MappingFragment StoreEntitySet="FrequencyInstallerLog">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="installDoctorid" ColumnName="installDoctorid" />
+                <ScalarProperty Name="installDoctorName" ColumnName="installDoctorName" />
+                <ScalarProperty Name="installPatientid" ColumnName="installPatientid" />
+                <ScalarProperty Name="FrequencyInstallDate" ColumnName="FrequencyInstallDate" />
+                <ScalarProperty Name="FrequencyChangeValue" ColumnName="FrequencyChangeValue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PatientRegistrations">
+            <EntityTypeMapping TypeName="TinnitusTrioModel.PatientRegistration">
+              <MappingFragment StoreEntitySet="PatientRegistration">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="patientID" ColumnName="patientID" />
+                <ScalarProperty Name="firstname" ColumnName="firstname" />
+                <ScalarProperty Name="middlename" ColumnName="middlename" />
+                <ScalarProperty Name="lastname" ColumnName="lastname" />
+                <ScalarProperty Name="addressline1" ColumnName="addressline1" />
+                <ScalarProperty Name="addressline2" ColumnName="addressline2" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="country" ColumnName="country" />
+                <ScalarProperty Name="zipcode" ColumnName="zipcode" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="telephone" ColumnName="telephone" />
+                <ScalarProperty Name="mobile" ColumnName="mobile" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="referredDoctor" ColumnName="referredDoctor" />
+                <ScalarProperty Name="cmtLoaded" ColumnName="cmtLoaded" />
+                <ScalarProperty Name="cmmLoaded" ColumnName="cmmLoaded" />
+                <ScalarProperty Name="cmesLoaded" ColumnName="cmesLoaded" />
+                <ScalarProperty Name="cmnLoaded" ColumnName="cmnLoaded" />
+                <ScalarProperty Name="cmmActive" ColumnName="cmmActive" />
+                <ScalarProperty Name="cmtActive" ColumnName="cmtActive" />
+                <ScalarProperty Name="cmnActive" ColumnName="cmnActive" />
+                <ScalarProperty Name="cmesActive" ColumnName="cmesActive" />
+                <ScalarProperty Name="SyncActive" ColumnName="SyncActive" />
+                <ScalarProperty Name="Field1" ColumnName="Field1" />
+                <ScalarProperty Name="Field2" ColumnName="Field2" />
+                <ScalarProperty Name="Field3" ColumnName="Field3" />
+                <ScalarProperty Name="Field4" ColumnName="Field4" />
+                <ScalarProperty Name="Field5" ColumnName="Field5" />
+                <ScalarProperty Name="patientNumber" ColumnName="patientNumber" />
+                <ScalarProperty Name="registration_date" ColumnName="registration_date" />
+                <ScalarProperty Name="cmtinstallationdate" ColumnName="cmtinstallationdate" />
+                <ScalarProperty Name="cmminstallationdate" ColumnName="cmminstallationdate" />
+                <ScalarProperty Name="cmesinstallationdate" ColumnName="cmesinstallationdate" />
+                <ScalarProperty Name="cmninstallationdate" ColumnName="cmninstallationdate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="uniqueIDs">
+            <EntityTypeMapping TypeName="TinnitusTrioModel.uniqueID">
+              <MappingFragment StoreEntitySet="uniqueID">
+                <ScalarProperty Name="offlineSerial" ColumnName="offlineSerial" />
+                <ScalarProperty Name="uniqueid1" ColumnName="uniqueid" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="patiendid" ColumnName="patiendid" />
+                <ScalarProperty Name="DoctorCode" ColumnName="DoctorCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SerialNumbers">
+            <EntityTypeMapping TypeName="TinnitusTrioModel.SerialNumber">
+              <MappingFragment StoreEntitySet="SerialNumber">
+                <ScalarProperty Name="DoctorID" ColumnName="DoctorID" />
+                <ScalarProperty Name="Serial1" ColumnName="Serial1" />
+                <ScalarProperty Name="Serial2" ColumnName="Serial2" />
+                <ScalarProperty Name="Serial3" ColumnName="Serial3" />
+                <ScalarProperty Name="Serial4" ColumnName="Serial4" />
+                <ScalarProperty Name="Serial5" ColumnName="Serial5" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="Field1" ColumnName="Field1" />
+                <ScalarProperty Name="Field2" ColumnName="Field2" />
+                <ScalarProperty Name="Field3" ColumnName="Field3" />
+                <ScalarProperty Name="Field4" ColumnName="Field4" />
+                <ScalarProperty Name="Field5" ColumnName="Field5" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="userauthentications">
+            <EntityTypeMapping TypeName="TinnitusTrioModel.userauthentication">
+              <MappingFragment StoreEntitySet="userauthentication">
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="macID" ColumnName="macID" />
+                <ScalarProperty Name="serialNo" ColumnName="serialNo" />
+                <ScalarProperty Name="uniqueString" ColumnName="uniqueString" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="ActivateApps" FunctionName="TinnitusTrioModel.Store.ActivateApps" />
+          <FunctionImportMapping FunctionImportName="APPINSTALLHISTORY" FunctionName="TinnitusTrioModel.Store.APPINSTALLHISTORY">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TinnitusTrioModel.APPINSTALLHISTORY_Result">
+                <ScalarProperty Name="Patient_ID" ColumnName="Patient ID" />
+                <ScalarProperty Name="Patient_Name" ColumnName="Patient Name" />
+                <ScalarProperty Name="Application_Installation_Date" ColumnName="Application Installation Date" />
+                <ScalarProperty Name="Installed_Application_Name" ColumnName="Installed Application Name" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="APPINSTALLHISTORYWILDCARD" FunctionName="TinnitusTrioModel.Store.APPINSTALLHISTORYWILDCARD">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TinnitusTrioModel.APPINSTALLHISTORYWILDCARD_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Patient_ID" ColumnName="Patient ID" />
+                <ScalarProperty Name="Doctor_ID" ColumnName="Doctor ID" />
+                <ScalarProperty Name="Patient_Name" ColumnName="Patient Name" />
+                <ScalarProperty Name="Application_Installation_Date" ColumnName="Application Installation Date" />
+                <ScalarProperty Name="Installed_Application_Name" ColumnName="Installed Application Name" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="appinstallhistoryWithoutDoctorId" FunctionName="TinnitusTrioModel.Store.appinstallhistoryWithoutDoctorId">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TinnitusTrioModel.appinstallhistoryWithoutDoctorId_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Patient_ID" ColumnName="Patient ID" />
+                <ScalarProperty Name="Doctor_ID" ColumnName="Doctor ID" />
+                <ScalarProperty Name="Patient_Name" ColumnName="Patient Name" />
+                <ScalarProperty Name="Application_Installation_Date" ColumnName="Application Installation Date" />
+                <ScalarProperty Name="Installed_Application_Name" ColumnName="Installed Application Name" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="AppInstallLogger" FunctionName="TinnitusTrioModel.Store.AppInstallLogger" />
+          <FunctionImportMapping FunctionImportName="AuthUser" FunctionName="TinnitusTrioModel.Store.AuthUser" />
+          <FunctionImportMapping FunctionImportName="checkActiveStatus" FunctionName="TinnitusTrioModel.Store.checkActiveStatus" />
+          <FunctionImportMapping FunctionImportName="CheckActiveStatusDoctor" FunctionName="TinnitusTrioModel.Store.CheckActiveStatusDoctor" />
+          <FunctionImportMapping FunctionImportName="CHECKISFIRSTLOGIN" FunctionName="TinnitusTrioModel.Store.CHECKISFIRSTLOGIN" />
+          <FunctionImportMapping FunctionImportName="DeActivateApps" FunctionName="TinnitusTrioModel.Store.DeActivateApps">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TinnitusTrioModel.DeActivateApps_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="patientID" ColumnName="patientID" />
+                <ScalarProperty Name="firstname" ColumnName="firstname" />
+                <ScalarProperty Name="middlename" ColumnName="middlename" />
+                <ScalarProperty Name="lastname" ColumnName="lastname" />
+                <ScalarProperty Name="addressline1" ColumnName="addressline1" />
+                <ScalarProperty Name="addressline2" ColumnName="addressline2" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="country" ColumnName="country" />
+                <ScalarProperty Name="zipcode" ColumnName="zipcode" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="telephone" ColumnName="telephone" />
+                <ScalarProperty Name="mobile" ColumnName="mobile" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="referredDoctor" ColumnName="referredDoctor" />
+                <ScalarProperty Name="cmtLoaded" ColumnName="cmtLoaded" />
+                <ScalarProperty Name="cmmLoaded" ColumnName="cmmLoaded" />
+                <ScalarProperty Name="cmesLoaded" ColumnName="cmesLoaded" />
+                <ScalarProperty Name="cmnLoaded" ColumnName="cmnLoaded" />
+                <ScalarProperty Name="cmmActive" ColumnName="cmmActive" />
+                <ScalarProperty Name="cmtActive" ColumnName="cmtActive" />
+                <ScalarProperty Name="cmnActive" ColumnName="cmnActive" />
+                <ScalarProperty Name="cmesActive" ColumnName="cmesActive" />
+                <ScalarProperty Name="SyncActive" ColumnName="SyncActive" />
+                <ScalarProperty Name="Field1" ColumnName="Field1" />
+                <ScalarProperty Name="Field2" ColumnName="Field2" />
+                <ScalarProperty Name="Field3" ColumnName="Field3" />
+                <ScalarProperty Name="Field4" ColumnName="Field4" />
+                <ScalarProperty Name="Field5" ColumnName="Field5" />
+                <ScalarProperty Name="patientNumber" ColumnName="patientNumber" />
+                <ScalarProperty Name="registration_date" ColumnName="registration_date" />
+                <ScalarProperty Name="cmtinstallationdate" ColumnName="cmtinstallationdate" />
+                <ScalarProperty Name="cmminstallationdate" ColumnName="cmminstallationdate" />
+                <ScalarProperty Name="cmesinstallationdate" ColumnName="cmesinstallationdate" />
+                <ScalarProperty Name="cmninstallationdate" ColumnName="cmninstallationdate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="fetchDoctorDetails" FunctionName="TinnitusTrioModel.Store.fetchDoctorDetails">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TinnitusTrioModel.fetchDoctorDetails_Result">
+                <ScalarProperty Name="Doctor_ID" ColumnName="Doctor ID" />
+                <ScalarProperty Name="First_Name" ColumnName="First Name" />
+                <ScalarProperty Name="Middle_Name" ColumnName="Middle Name" />
+                <ScalarProperty Name="Last_Name" ColumnName="Last Name" />
+                <ScalarProperty Name="Address_Line_1" ColumnName="Address Line 1" />
+                <ScalarProperty Name="Address_Line_2" ColumnName="Address Line 2" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="Pin___Zip_Code" ColumnName="Pin / Zip Code" />
+                <ScalarProperty Name="Phone_Number" ColumnName="Phone Number" />
+                <ScalarProperty Name="Mobile_No" ColumnName="Mobile No" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="E_Mail" ColumnName="E-Mail" />
+                <ScalarProperty Name="Website" ColumnName="Website" />
+                <ScalarProperty Name="Registered_On" ColumnName="Registered On" />
+                <ScalarProperty Name="Active_Status" ColumnName="Active Status" />
+                <ScalarProperty Name="Doctor_Code" ColumnName="Doctor Code" />
+                <ScalarProperty Name="First_Login_Pending" ColumnName="First Login Pending" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="FreqInstallerLogger" FunctionName="TinnitusTrioModel.Store.FreqInstallerLogger" />
+          <FunctionImportMapping FunctionImportName="FREQINSTALLHISTORY" FunctionName="TinnitusTrioModel.Store.FREQINSTALLHISTORY">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TinnitusTrioModel.FREQINSTALLHISTORY_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Patient_ID" ColumnName="Patient ID" />
+                <ScalarProperty Name="Patient_Name" ColumnName="Patient Name" />
+                <ScalarProperty Name="Frequency_Installation_Date" ColumnName="Frequency Installation Date" />
+                <ScalarProperty Name="Frequency" ColumnName="Frequency" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GenerateCmesReport" FunctionName="TinnitusTrioModel.Store.GenerateCmesReport">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TinnitusTrioModel.GenerateCmesReport_Result">
+                <ScalarProperty Name="LOGDATE" ColumnName="LOGDATE" />
+                <ScalarProperty Name="LOGTIME" ColumnName="LOGTIME" />
+                <ScalarProperty Name="Duration" ColumnName="Duration" />
+                <ScalarProperty Name="track" ColumnName="track" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GenerateCmesReportDateWise" FunctionName="TinnitusTrioModel.Store.GenerateCmesReportDateWise">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TinnitusTrioModel.GenerateCmesReportDateWise_Result">
+                <ScalarProperty Name="LOGDATE" ColumnName="LOGDATE" />
+                <ScalarProperty Name="LOGTIME" ColumnName="LOGTIME" />
+                <ScalarProperty Name="Duration" ColumnName="Duration" />
+                <ScalarProperty Name="track" ColumnName="track" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GenerateCmmReport" FunctionName="TinnitusTrioModel.Store.GenerateCmmReport">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TinnitusTrioModel.GenerateCmmReport_Result">
+                <ScalarProperty Name="LOGDATE" ColumnName="LOGDATE" />
+                <ScalarProperty Name="LOGTIME" ColumnName="LOGTIME" />
+                <ScalarProperty Name="Duration" ColumnName="Duration" />
+                <ScalarProperty Name="track" ColumnName="track" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GenerateCmmReportDateWise" FunctionName="TinnitusTrioModel.Store.GenerateCmmReportDateWise">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TinnitusTrioModel.GenerateCmmReportDateWise_Result">
+                <ScalarProperty Name="LOGDATE" ColumnName="LOGDATE" />
+                <ScalarProperty Name="LOGTIME" ColumnName="LOGTIME" />
+                <ScalarProperty Name="Duration" ColumnName="Duration" />
+                <ScalarProperty Name="track" ColumnName="track" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GenerateCmnReport" FunctionName="TinnitusTrioModel.Store.GenerateCmnReport">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TinnitusTrioModel.GenerateCmnReport_Result">
+                <ScalarProperty Name="LOGDATE" ColumnName="LOGDATE" />
+                <ScalarProperty Name="LOGTIME" ColumnName="LOGTIME" />
+                <ScalarProperty Name="Duration" ColumnName="Duration" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GenerateCmnReportDateWise" FunctionName="TinnitusTrioModel.Store.GenerateCmnReportDateWise">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TinnitusTrioModel.GenerateCmnReportDateWise_Result">
+                <ScalarProperty Name="LOGDATE" ColumnName="LOGDATE" />
+                <ScalarProperty Name="LOGTIME" ColumnName="LOGTIME" />
+                <ScalarProperty Name="Duration" ColumnName="Duration" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GenerateCmtReport" FunctionName="TinnitusTrioModel.Store.GenerateCmtReport">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TinnitusTrioModel.GenerateCmtReport_Result">
+                <ScalarProperty Name="LOGDATE" ColumnName="LOGDATE" />
+                <ScalarProperty Name="LOGTIME" ColumnName="LOGTIME" />
+                <ScalarProperty Name="Duration" ColumnName="Duration" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GenerateCmtReportDateWise" FunctionName="TinnitusTrioModel.Store.GenerateCmtReportDateWise">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TinnitusTrioModel.GenerateCmtReportDateWise_Result">
+                <ScalarProperty Name="LOGDATE" ColumnName="LOGDATE" />
+                <ScalarProperty Name="LOGTIME" ColumnName="LOGTIME" />
+                <ScalarProperty Name="Duration" ColumnName="Duration" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getUniqueID" FunctionName="TinnitusTrioModel.Store.getUniqueID" />
+          <FunctionImportMapping FunctionImportName="insertDevicedetails" FunctionName="TinnitusTrioModel.Store.insertDevicedetails" />
+          <FunctionImportMapping FunctionImportName="InsertFrequencyDetails" FunctionName="TinnitusTrioModel.Store.InsertFrequencyDetails" />
+          <FunctionImportMapping FunctionImportName="insertPatientDetails" FunctionName="TinnitusTrioModel.Store.insertPatientDetails" />
+          <FunctionImportMapping FunctionImportName="LoginDoctor" FunctionName="TinnitusTrioModel.Store.LoginDoctor" />
+          <FunctionImportMapping FunctionImportName="serialValidation" FunctionName="TinnitusTrioModel.Store.serialValidation">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TinnitusTrioModel.serialValidation_Result">
+                <ScalarProperty Name="Column1" ColumnName="Column1" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="doctorcode" ColumnName="doctorcode" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spAdminDetails" FunctionName="TinnitusTrioModel.Store.spAdminDetails" />
+          <FunctionImportMapping FunctionImportName="spAdminUpdatePasswordDetails" FunctionName="TinnitusTrioModel.Store.spAdminUpdatePasswordDetails" />
+          <FunctionImportMapping FunctionImportName="spCheckActivationStatusDoctoronDate" FunctionName="TinnitusTrioModel.Store.spCheckActivationStatusDoctoronDate" />
+          <FunctionImportMapping FunctionImportName="spCreateDoctor" FunctionName="TinnitusTrioModel.Store.spCreateDoctor" />
+          <FunctionImportMapping FunctionImportName="spUpdateDoctorSubscription" FunctionName="TinnitusTrioModel.Store.spUpdateDoctorSubscription" />
+          <FunctionImportMapping FunctionImportName="spUpdateDoctorSubscriptionTypenDate" FunctionName="TinnitusTrioModel.Store.spUpdateDoctorSubscriptionTypenDate" />
+          <FunctionImportMapping FunctionImportName="UpdateDesktopAppLoginDetails" FunctionName="TinnitusTrioModel.Store.UpdateDesktopAppLoginDetails" />
+          <FunctionImportMapping FunctionImportName="UpdateLogindetails" FunctionName="TinnitusTrioModel.Store.UpdateLogindetails" />
+          <FunctionImportMapping FunctionImportName="XMLLogSync" FunctionName="TinnitusTrioModel.Store.XMLLogSync" />
+          <EntitySetMapping Name="OfflineLicenseRequests">
+            <EntityTypeMapping TypeName="TinnitusTrioModel.OfflineLicenseRequest">
+              <MappingFragment StoreEntitySet="OfflineLicenseRequest">
+                <ScalarProperty Name="requestisserviced" ColumnName="requestisserviced" />
+                <ScalarProperty Name="requestenddate" ColumnName="requestenddate" />
+                <ScalarProperty Name="requestdate" ColumnName="requestdate" />
+                <ScalarProperty Name="licenseQuantity" ColumnName="licenseQuantity" />
+                <ScalarProperty Name="remarks" ColumnName="remarks" />
+                <ScalarProperty Name="requestActiveStatus" ColumnName="requestActiveStatus" />
+                <ScalarProperty Name="doctorCode" ColumnName="doctorCode" />
+                <ScalarProperty Name="requestId" ColumnName="requestId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OFFLINELICENSESTRACKERs">
+            <EntityTypeMapping TypeName="TinnitusTrioModel.OFFLINELICENSESTRACKER">
+              <MappingFragment StoreEntitySet="OFFLINELICENSESTRACKER">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="SerialKey" ColumnName="SerialKey" />
+                <ScalarProperty Name="requestId" ColumnName="requestId" />
+                <ScalarProperty Name="lastSerialNumber" ColumnName="lastSerialNumber" />
+                <ScalarProperty Name="DoctorCode" ColumnName="DoctorCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="admin_Employee">
+            <EntityTypeMapping TypeName="TinnitusTrioModel.admin_Employee">
+              <MappingFragment StoreEntitySet="admin_Employee">
+                <ScalarProperty Name="isFirstLogin" ColumnName="isFirstLogin" />
+                <ScalarProperty Name="Field5" ColumnName="Field5" />
+                <ScalarProperty Name="Field4" ColumnName="Field4" />
+                <ScalarProperty Name="Field3" ColumnName="Field3" />
+                <ScalarProperty Name="Field2" ColumnName="Field2" />
+                <ScalarProperty Name="Field1" ColumnName="Field1" />
+                <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+                <ScalarProperty Name="createdBy" ColumnName="createdBy" />
+                <ScalarProperty Name="isactive" ColumnName="isactive" />
+                <ScalarProperty Name="isSuperAdmin" ColumnName="isSuperAdmin" />
+                <ScalarProperty Name="isAdmin" ColumnName="isAdmin" />
+                <ScalarProperty Name="emailaddress" ColumnName="emailaddress" />
+                <ScalarProperty Name="mobileno" ColumnName="mobileno" />
+                <ScalarProperty Name="telephone" ColumnName="telephone" />
+                <ScalarProperty Name="pincode" ColumnName="pincode" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="country" ColumnName="country" />
+                <ScalarProperty Name="addressline2" ColumnName="addressline2" />
+                <ScalarProperty Name="addressline1" ColumnName="addressline1" />
+                <ScalarProperty Name="lastname" ColumnName="lastname" />
+                <ScalarProperty Name="middlename" ColumnName="middlename" />
+                <ScalarProperty Name="firstname" ColumnName="firstname" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="Employeeid" ColumnName="Employeeid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MenuLists">
+            <EntityTypeMapping TypeName="TinnitusTrioModel.MenuList">
+              <MappingFragment StoreEntitySet="MenuList">
+                <ScalarProperty Name="parentmenuid" ColumnName="parentmenuid" />
+                <ScalarProperty Name="Field5" ColumnName="Field5" />
+                <ScalarProperty Name="Field4" ColumnName="Field4" />
+                <ScalarProperty Name="Field3" ColumnName="Field3" />
+                <ScalarProperty Name="Field2" ColumnName="Field2" />
+                <ScalarProperty Name="Field1" ColumnName="Field1" />
+                <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+                <ScalarProperty Name="createdBy" ColumnName="createdBy" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="MenuLink" ColumnName="MenuLink" />
+                <ScalarProperty Name="MenuDesc" ColumnName="MenuDesc" />
+                <ScalarProperty Name="MenuName" ColumnName="MenuName" />
+                <ScalarProperty Name="MenuId" ColumnName="MenuId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RoleMenuMappings">
+            <EntityTypeMapping TypeName="TinnitusTrioModel.RoleMenuMapping">
+              <MappingFragment StoreEntitySet="RoleMenuMapping">
+                <ScalarProperty Name="Field5" ColumnName="Field5" />
+                <ScalarProperty Name="Field4" ColumnName="Field4" />
+                <ScalarProperty Name="Field3" ColumnName="Field3" />
+                <ScalarProperty Name="Field2" ColumnName="Field2" />
+                <ScalarProperty Name="Field1" ColumnName="Field1" />
+                <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+                <ScalarProperty Name="createdBy" ColumnName="createdBy" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="Menuid" ColumnName="Menuid" />
+                <ScalarProperty Name="Roleid" ColumnName="Roleid" />
+                <ScalarProperty Name="RoleMenuMappingId" ColumnName="RoleMenuMappingId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="TinnitusTrioModel.Role">
+              <MappingFragment StoreEntitySet="Roles">
+                <ScalarProperty Name="Field5" ColumnName="Field5" />
+                <ScalarProperty Name="Field4" ColumnName="Field4" />
+                <ScalarProperty Name="Field3" ColumnName="Field3" />
+                <ScalarProperty Name="Field2" ColumnName="Field2" />
+                <ScalarProperty Name="Field1" ColumnName="Field1" />
+                <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+                <ScalarProperty Name="createdBy" ColumnName="createdBy" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="RoleDescription" ColumnName="RoleDescription" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="Roleid" ColumnName="Roleid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserRoleMappings">
+            <EntityTypeMapping TypeName="TinnitusTrioModel.UserRoleMapping">
+              <MappingFragment StoreEntitySet="UserRoleMapping">
+                <ScalarProperty Name="Field5" ColumnName="Field5" />
+                <ScalarProperty Name="Field4" ColumnName="Field4" />
+                <ScalarProperty Name="Field3" ColumnName="Field3" />
+                <ScalarProperty Name="Field2" ColumnName="Field2" />
+                <ScalarProperty Name="Field1" ColumnName="Field1" />
+                <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+                <ScalarProperty Name="createdBy" ColumnName="createdBy" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Roleid" ColumnName="Roleid" />
+                <ScalarProperty Name="UserRoleMappingId" ColumnName="UserRoleMappingId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

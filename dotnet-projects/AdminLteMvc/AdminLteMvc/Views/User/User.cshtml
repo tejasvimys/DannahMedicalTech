@@ -1,0 +1,164 @@
+﻿@model AdminLteModels.AdminFunctions
+@{
+    // TODO: Consider setting Layout set automatially in _ViewStart.cshtml
+    Layout = "~/Views/Shared/_AdminLteLayout.cshtml";
+
+
+    // EXAMPLE:
+    // Using the ViewBag on a page to set the title and sub-title
+    // This will cause the _AdminLteLayout to include this value in the page title
+    // And also set the top titles in the main content area of the page
+    ViewBag.Title = "Employee Registration";
+    //ViewBag.TitleSmall = "Version 2.0";
+
+    // EXAMPLE:
+    // Using the Breadcrumb class to create a dynamically generated breadcrumb on the page with
+    // Titles, plus optional icon and URLs
+    ViewBag.Breadcrumb = new Breadcrumb(new Crumb[] {
+        new Crumb("Employee Registration", "", "fa-floppy-o")
+    });
+}
+<script type="text/javascript" src="~/Scripts/countries.js"></script>
+<script src='@Url.Content("~/Scripts/jquery.validate.js")' type='text/javascript'></script>
+<script src='@Url.Content("~/Scripts/jquery.validate.unobtrusive.js")' type='text/javascript'></script>
+<script src="~/Scripts/ModalDialog.js"></script>
+<style>
+    .asterik {
+        color: red;   
+    }
+</style>
+
+<script type="text/javascript" language="javascript">
+    $(document).ready(function() {
+        populateCountries("country", "state");
+
+        //reset button functionn
+        $("#btnReset").click(function() {
+            $("#Emailaddress").val("");
+            $("#Firstname").val("");
+            $("#Middlename").val("");
+            $("#Lastname").val("");
+            $("#Addressline1").val("");
+            $("#Addressline2").val("");
+            $("#City").val("");
+            $("#Pincode").val("");
+            $("#Telephone").val("");
+            $("#Mobileno").val("");
+        });
+    });
+</script>
+
+<div class="row">
+    
+@using (Html.BeginForm("CreateUser", "User", FormMethod.Post))
+{
+
+
+
+    if ((ViewData.ModelState["Username"]) != null && ViewData.ModelState["Username"].Errors.Count > 0)
+{
+  <div class="alert alert-error alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <h4><i class="icon fa fa-check"></i> Error!</h4>
+                @Html.ValidationSummary("User Exists!")
+              </div>
+}
+
+    else if (ViewData.ModelState["Success"] != null && ViewData.ModelState["Success"].Errors.Count > 0)
+{ 
+    <div class="alert alert-success alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <h4><i class="icon fa fa-check"></i> Success!</h4>
+        @Html.ValidationSummary("User Added Successfully!")
+              </div>
+}
+    
+    
+    
+
+    <div class="col-md-6">
+        <div class="box box-warning">
+            <div class="box-body">
+                <div class="form-group">
+                    <label for="clinicHospitalName">E-Mail ID(This will be the user name)<span class="asterik">*</span></label>
+                    @Html.TextBoxFor(m => m.Emailaddress, new { @class = "form-control", @placeholder = "Enter E-Mail ID", @maxlength = "300" })
+                    @Html.ValidationMessageFor(model => model.Emailaddress, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    <label for="clinicHospitalName">First Name<span class="asterik">*</span></label>
+                    @Html.TextBoxFor(m => m.Firstname, new { @class = "form-control", @placeholder = "Enter First Name", @maxlength = "50" })
+                    @Html.ValidationMessageFor(model => model.Firstname, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    <label for="clinicHospitalName">Middle Name</label>
+                    @Html.TextBoxFor(m => m.Middlename, new { @class = "form-control", @placeholder = "Enter Middle Name", @maxlength = "50" })
+                </div>
+
+                <div class="form-group">
+                    <label for="clinicHospitalName">Last Name<span class="asterik">*</span></label>
+                    @Html.TextBoxFor(m => m.Lastname, new { @class = "form-control", @placeholder = "Enter Last Name", @maxlength = "50" })
+                    @Html.ValidationMessageFor(model => model.Lastname, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    <label for="clinicHospitalName">Address Line 1</label>
+                    @Html.TextBoxFor(m => m.Addressline1, new { @class = "form-control", @placeholder = "Enter Address Line 1", @maxlength = "100" })
+                </div>
+
+                <div class="form-group">
+                    <label for="clinicHospitalName">Address Line 2</label>
+                    @Html.TextBoxFor(m => m.Addressline2, new { @class = "form-control", @placeholder = "Enter Address Line 2", @maxlength = "100" })
+                </div>
+
+                <div class="form-group">
+                    <label for="clinicHospitalName">Country</label>
+                    <select id="country" class="form-control" name="country"></select>
+                </div>
+
+                <div class="form-group">
+                    <label for="clinicHospitalName">State</label>
+                    <select name="state" class="form-control" id="state"></select>
+                </div>
+
+                <div class="form-group">
+                    <label for="clinicHospitalName">City</label>
+                    @Html.TextBoxFor(m => m.City, new {@class = "form-control", @placeholder = "Enter City" , @maxlength = "50"})
+                </div>
+                <div class="form-group">
+                    <label for="clinicHospitalName">Zip Code</label>
+                    @Html.TextBoxFor(m => m.Pincode, new { @class = "form-control", @placeholder = "Enter Zip Code", @maxlength = "20" })
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="box box-warning">              
+            <div class="box-body">
+                <div class="form-group">
+                    <label for="clinicHospitalName">Telephone</label>
+                    @Html.TextBoxFor(m => m.Telephone, new {@class = "form-control", @placeholder = "Enter Telephone Number", @maxlength = "20"})
+                </div>
+
+                <div class="form-group">
+                    <label for="clinicHospitalName">Mobile Number<span class="asterik">*</span></label>
+                    @Html.TextBoxFor(m => m.Mobileno, new {@class = "form-control", @placeholder = "Enter Mobile Number", @maxlength = "20"})
+                    @Html.ValidationMessageFor(model => model.Mobileno, "", new { @class = "text-danger" })
+                </div>
+                    
+
+                <div class="form-group">
+                    <label for="clinicHospitalName">Is Admin</label>
+                    @Html.CheckBoxFor(m => m.IsAdmin)
+                </div>
+                    
+                <div class="form-group">
+                    <button type="submit" id="btnSave" class="btn btn-block btn-success btn-lg">Save</button>
+                    <button type="button" id="btnReset" class="btn btn-block btn-primary btn-lg">Reset Data</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+</div>

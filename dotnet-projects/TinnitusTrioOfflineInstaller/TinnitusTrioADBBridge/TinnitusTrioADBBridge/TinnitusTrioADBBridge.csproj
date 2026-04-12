@@ -1,0 +1,539 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4CF46FB5-69D7-445F-970B-74FE1A51482F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TinnitusTrioADBBridge</RootNamespace>
+    <AssemblyName>TinnitusTrioADBBridge</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoUpdater.NET, Version=1.3.1.0, Culture=neutral, PublicKeyToken=942f95247e354701, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>adbdriver\AutoUpdater.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.BonusSkins.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Charts.v13.1.Core, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Office.v13.1.Core, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v13.1.Core, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v13.1.Core, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v13.1.Core, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v13.1.Core, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v13.1.UI, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraNavBar.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v13.1.Extensions, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="Interop.WMPLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>DLLS\Interop.WMPLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Managed.Adb">
+      <HintPath>..\packages\Managed.Adb.1.0.3.12644\lib\net45\Managed.Adb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InsertPatientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InsertPatientForm.Designer.cs">
+      <DependentUpon>InsertPatientForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LicenseManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LicenseManager.Designer.cs">
+      <DependentUpon>LicenseManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PatientViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PatientViewForm.Designer.cs">
+      <DependentUpon>PatientViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RenewLicenseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RenewLicenseForm.Designer.cs">
+      <DependentUpon>RenewLicenseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ResetPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResetPassword.Designer.cs">
+      <DependentUpon>ResetPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MediaPlayer.cs" />
+    <Compile Include="PleaseWait.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PleaseWait.Designer.cs">
+      <DependentUpon>PleaseWait.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QueryScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QueryScreen.Designer.cs">
+      <DependentUpon>QueryScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PatientIDEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PatientIDEntry.Designer.cs">
+      <DependentUpon>PatientIDEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Person.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashScreen.Designer.cs">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CMESReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\CMESReport.Designer.cs">
+      <DependentUpon>CMESReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CMMReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\CMMReport.Designer.cs">
+      <DependentUpon>CMMReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CMNReport.cs">
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="UserControls\CMNReport.Designer.cs">
+      <DependentUpon>CMNReport.cs</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="UserControls\CMTReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\CMTReport.Designer.cs">
+      <DependentUpon>CMTReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\OfflineKeyGenerator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\OfflineKeyGenerator.Designer.cs">
+      <DependentUpon>OfflineKeyGenerator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UC_GetPatientDetails.cs">
+      <SubType>UserControl</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="UserControls\UC_GetPatientDetails.Designer.cs">
+      <DependentUpon>UC_GetPatientDetails.cs</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="UserControls\UC_GetUserDetails.cs">
+      <SubType>UserControl</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="UserControls\UC_GetUserDetails.Designer.cs">
+      <DependentUpon>UC_GetUserDetails.cs</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="UserControls\UC_DeactivatePatient.cs">
+      <SubType>UserControl</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="UserControls\UC_DeactivatePatient.Designer.cs">
+      <DependentUpon>UC_DeactivatePatient.cs</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="UserControls\UC_InstallAPK.cs">
+      <SubType>UserControl</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="UserControls\UC_InstallAPK.Designer.cs">
+      <DependentUpon>UC_InstallAPK.cs</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="UserControls\UC_PatientInstallerReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_PatientInstallerReport.Designer.cs">
+      <DependentUpon>UC_PatientInstallerReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UC_PatientList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_PatientList.Designer.cs">
+      <DependentUpon>UC_PatientList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UC_PatientReports.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_PatientReports.Designer.cs">
+      <DependentUpon>UC_PatientReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UC_PushFiles.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_PushFiles.Designer.cs">
+      <DependentUpon>UC_PushFiles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UC_RenewLicense.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_RenewLicense.Designer.cs">
+      <DependentUpon>UC_RenewLicense.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InsertPatientForm.resx">
+      <DependentUpon>InsertPatientForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LicenseManager.resx">
+      <DependentUpon>LicenseManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PatientViewForm.resx">
+      <DependentUpon>PatientViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RenewLicenseForm.resx">
+      <DependentUpon>RenewLicenseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResetPassword.resx">
+      <DependentUpon>ResetPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PleaseWait.resx">
+      <DependentUpon>PleaseWait.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QueryScreen.resx">
+      <DependentUpon>QueryScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PatientIDEntry.resx">
+      <DependentUpon>PatientIDEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="SplashScreen.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\CMESReport.resx">
+      <DependentUpon>CMESReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\CMMReport.resx">
+      <DependentUpon>CMMReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\CMNReport.resx">
+      <DependentUpon>CMNReport.cs</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\CMTReport.resx">
+      <DependentUpon>CMTReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\OfflineKeyGenerator.resx">
+      <DependentUpon>OfflineKeyGenerator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UC_GetPatientDetails.resx">
+      <DependentUpon>UC_GetPatientDetails.cs</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UC_GetUserDetails.resx">
+      <DependentUpon>UC_GetUserDetails.cs</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UC_DeactivatePatient.resx">
+      <DependentUpon>UC_DeactivatePatient.cs</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UC_InstallAPK.resx">
+      <DependentUpon>UC_InstallAPK.cs</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UC_PatientInstallerReport.resx">
+      <DependentUpon>UC_PatientInstallerReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UC_PatientList.resx">
+      <DependentUpon>UC_PatientList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UC_PatientReports.resx">
+      <DependentUpon>UC_PatientReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UC_PushFiles.resx">
+      <DependentUpon>UC_PushFiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UC_RenewLicense.resx">
+      <DependentUpon>UC_RenewLicense.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="APK\CMES.apk" />
+    <None Include="APK\CMM.apk" />
+    <None Include="APK\CMN.apk" />
+    <None Include="APK\CMT.apk" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="app.manifest" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="adbdriver\ADBDriverInstaller.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="adbdriver\AutoUpdater.NET.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="adbdriver\manual.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="adb\adb.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="adb\AdbWinApi.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="adb\AdbWinUsbApi.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\10_to_16000\%2810_to_16000%29_AIRCRAFT_CARRIER-_H-46_TWIN_ROTOR_HELICOPTERS_FLYING_in_and_AWAY.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\10_to_16000\%2810_to_16000%29_BATTLE_FIELD_ASSAULT_MACHINE_GUNS,_RIFLES,_EXPLOSIONS.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\World_fusion\World_fusion1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\DLLS\Interop.WMPLib.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\1.jpg" />
+    <None Include="Resources\bluebg.jpg" />
+    <None Include="Resources\500x300.png" />
+    <None Include="Resources\btn_enterpatient.png" />
+    <None Include="Resources\btn_editpatient.png" />
+    <None Include="Resources\btnExit.png" />
+    <None Include="Resources\btnEntersmrtBrdge.png" />
+    <None Include="Resources\bgbackground1.png" />
+    <None Include="Resources\btnGenerateTonefile.png" />
+    <None Include="Resources\button.png" />
+    <None Include="Resources\btns pngs0001.png" />
+    <None Include="Resources\btns pngs0002.png" />
+    <None Include="Resources\btns pngs0003.png" />
+    <None Include="Resources\btns pngs0004.png" />
+    <None Include="Resources\btns pngs0005.png" />
+    <None Include="Resources\ACTIVE.png" />
+    <None Include="Resources\btns0001.png" />
+    <None Include="Resources\btns0002.png" />
+    <None Include="Resources\btns0003.png" />
+    <None Include="Resources\btns0004.png" />
+    <None Include="Resources\btns0005.png" />
+    <None Include="Resources\btns0006.png" />
+    <None Include="Resources\BG.jpg" />
+    <None Include="Resources\123.png" />
+    <Content Include="Drivers\SAMSUNG_USB_Driver_for_Mobile_Phones.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\capt.png" />
+    <None Include="Resources\download.jpg" />
+    <None Include="Resources\cmtbg.jpg" />
+    <None Include="Resources\DA APPS.png" />
+    <None Include="Resources\E P BTN.png" />
+    <None Include="Resources\EMB_btns.png" />
+    <Content Include="Resources\environment.png" />
+    <None Include="Resources\grdblue.jpg" />
+    <None Include="Resources\linear-gradient.png" />
+    <None Include="Resources\gradient_series___yellow.png" />
+    <None Include="Resources\maintitleimage.png" />
+    <None Include="Resources\light-gradient-2-1920x1080.jpg" />
+    <None Include="Resources\loadingLogin.gif" />
+    <None Include="Resources\lightGradblue.jpg" />
+    <None Include="Resources\gradient_header.jpg" />
+    <None Include="Resources\icon tt.ico" />
+    <None Include="Resources\exit btn2 .png" />
+    <None Include="Resources\exit btns .png" />
+    <None Include="Resources\logo back patch.png" />
+    <None Include="Resources\loginedited.png" />
+    <None Include="Resources\exitedit.png" />
+    <None Include="Resources\EXITBTN.png" />
+    <None Include="Resources\EXITEDITED.png" />
+    <None Include="Resources\LOGINNEW.png" />
+    <None Include="Resources\loginBig.png" />
+    <None Include="Resources\EPD.png" />
+    <None Include="Resources\EXIT.png" />
+    <None Include="Resources\GEN REPORT.png" />
+    <None Include="Resources\INSTALL.png" />
+    <None Include="Resources\LOGIN.png" />
+    <None Include="Resources\loading_circle.gif" />
+    <None Include="Resources\icons-30001.png" />
+    <None Include="Resources\icons-30002.png" />
+    <Content Include="Resources\music.png" />
+    <None Include="Resources\tinnitus trio_90x26.png" />
+    <None Include="Resources\tumblr_static_7p7kyf8q94sgo044wo8o40ko.jpg" />
+    <None Include="Resources\please_wait.gif" />
+    <None Include="Resources\splashscreen.jpg" />
+    <None Include="Resources\orangeBG.jpg" />
+    <None Include="Resources\verticalGradient.jpg" />
+    <None Include="Resources\newtt.ico" />
+    <None Include="Resources\title2 .png" />
+    <None Include="Resources\patch for patient detailes2.png" />
+    <None Include="Resources\title1 .png" />
+    <None Include="Resources\patch for patient detailes.png" />
+    <None Include="Resources\resetFields.png" />
+    <None Include="Resources\resetnew.png" />
+    <None Include="Resources\RESETBIG.png" />
+    <None Include="Resources\NP BTN.png" />
+    <None Include="Resources\PR TONE.png" />
+    <None Include="Resources\RESET.png" />
+    <None Include="Resources\SAVE PA.png" />
+    <None Include="Resources\SPLASSH.jpg" />
+    <None Include="Resources\patientdetailesbtn.png" />
+    <None Include="Resources\RENEWLICENSE.png" />
+    <None Include="Resources\patientdetails.png" />
+    <Content Include="TinnitusTrio.mdf" />
+    <Content Include="TinnitusTrio_log.ldf">
+      <DependentUpon>TinnitusTrio.mdf</DependentUpon>
+    </Content>
+    <None Include="Resources\noise.png" />
+    <Content Include="Resources\PNG1_bg-with-tinnitus-trio_logo %281%29.png" />
+    <Content Include="Resources\PNG1_bg-with-tinnitus-trio_logo.png" />
+    <Content Include="Resources\tones.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\TinnitusTrioADB_BAL\TinnitusTrioADB_BAL.csproj">
+      <Project>{cd54af0c-afda-4093-821e-2872557e6249}</Project>
+      <Name>TinnitusTrioADB_BAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TinnitusTrioADB_BO\TinnitusTrioADB_BO.csproj">
+      <Project>{92849f14-1c74-4b20-8367-cab28bf46a62}</Project>
+      <Name>TinnitusTrioADB_BO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

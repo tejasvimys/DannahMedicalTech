@@ -1,0 +1,2595 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4CF46FB5-69D7-445F-970B-74FE1A51482F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TinnitusTrioADBBridge</RootNamespace>
+    <AssemblyName>TinnitusTrioADBBridge</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationVersion>2.0.2.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoUpdater.NET, Version=1.3.1.0, Culture=neutral, PublicKeyToken=942f95247e354701, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>adbdriver\AutoUpdater.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.BonusSkins.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Charts.v13.1.Core, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Office.v13.1.Core, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v13.1.Core, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v13.1.Core, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v13.1.Core, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v13.1.Core, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v13.1.UI, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraNavBar.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v13.1.Extensions, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="Interop.WMPLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>DLLS\Interop.WMPLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Managed.Adb">
+      <HintPath>..\packages\Managed.Adb.1.0.3.12644\lib\net45\Managed.Adb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InsertPatientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InsertPatientForm.Designer.cs">
+      <DependentUpon>InsertPatientForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LicenseManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LicenseManager.Designer.cs">
+      <DependentUpon>LicenseManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PatientViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PatientViewForm.Designer.cs">
+      <DependentUpon>PatientViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ResetPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResetPassword.Designer.cs">
+      <DependentUpon>ResetPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MediaPlayer.cs" />
+    <Compile Include="PleaseWait.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PleaseWait.Designer.cs">
+      <DependentUpon>PleaseWait.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QueryScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QueryScreen.Designer.cs">
+      <DependentUpon>QueryScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PatientIDEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PatientIDEntry.Designer.cs">
+      <DependentUpon>PatientIDEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Person.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashScreen.Designer.cs">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CMESReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\CMESReport.Designer.cs">
+      <DependentUpon>CMESReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CMMReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\CMMReport.Designer.cs">
+      <DependentUpon>CMMReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CMNReport.cs">
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="UserControls\CMNReport.Designer.cs">
+      <DependentUpon>CMNReport.cs</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="UserControls\CMTReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\CMTReport.Designer.cs">
+      <DependentUpon>CMTReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UC_GetPatientDetails.cs">
+      <SubType>UserControl</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="UserControls\UC_GetPatientDetails.Designer.cs">
+      <DependentUpon>UC_GetPatientDetails.cs</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="UserControls\UC_GetUserDetails.cs">
+      <SubType>UserControl</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="UserControls\UC_GetUserDetails.Designer.cs">
+      <DependentUpon>UC_GetUserDetails.cs</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="UserControls\UC_DeactivatePatient.cs">
+      <SubType>UserControl</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="UserControls\UC_DeactivatePatient.Designer.cs">
+      <DependentUpon>UC_DeactivatePatient.cs</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="UserControls\UC_InstallAPK.cs">
+      <SubType>UserControl</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="UserControls\UC_InstallAPK.Designer.cs">
+      <DependentUpon>UC_InstallAPK.cs</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="UserControls\UC_PatientInstallerReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_PatientInstallerReport.Designer.cs">
+      <DependentUpon>UC_PatientInstallerReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UC_PatientList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_PatientList.Designer.cs">
+      <DependentUpon>UC_PatientList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UC_PatientReports.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_PatientReports.Designer.cs">
+      <DependentUpon>UC_PatientReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UC_PushFiles.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_PushFiles.Designer.cs">
+      <DependentUpon>UC_PushFiles.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InsertPatientForm.resx">
+      <DependentUpon>InsertPatientForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LicenseManager.resx">
+      <DependentUpon>LicenseManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PatientViewForm.resx">
+      <DependentUpon>PatientViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResetPassword.resx">
+      <DependentUpon>ResetPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PleaseWait.resx">
+      <DependentUpon>PleaseWait.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QueryScreen.resx">
+      <DependentUpon>QueryScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PatientIDEntry.resx">
+      <DependentUpon>PatientIDEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="SplashScreen.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\CMESReport.resx">
+      <DependentUpon>CMESReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\CMMReport.resx">
+      <DependentUpon>CMMReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\CMNReport.resx">
+      <DependentUpon>CMNReport.cs</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\CMTReport.resx">
+      <DependentUpon>CMTReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UC_GetPatientDetails.resx">
+      <DependentUpon>UC_GetPatientDetails.cs</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UC_GetUserDetails.resx">
+      <DependentUpon>UC_GetUserDetails.cs</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UC_DeactivatePatient.resx">
+      <DependentUpon>UC_DeactivatePatient.cs</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UC_InstallAPK.resx">
+      <DependentUpon>UC_InstallAPK.cs</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UC_PatientInstallerReport.resx">
+      <DependentUpon>UC_PatientInstallerReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UC_PatientList.resx">
+      <DependentUpon>UC_PatientList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UC_PatientReports.resx">
+      <DependentUpon>UC_PatientReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UC_PushFiles.resx">
+      <DependentUpon>UC_PushFiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="APK\CMES.apk" />
+    <None Include="APK\CMM.apk" />
+    <None Include="APK\CMN.apk" />
+    <None Include="APK\CMT.apk" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="app.manifest" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="adbdriver\ADBDriverInstaller.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="adbdriver\AutoUpdater.NET.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="adbdriver\manual.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="adb\adb.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="adb\AdbWinApi.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="adb\AdbWinUsbApi.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\1000-4000\%281000-4000%29_35_MM_START,_FILM,_STOP.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\1000-4000\%281000-4000%29_BURGLAR_or_FIRE_ALARM_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\1000-4000\%281000-4000%29_CRICKET,_CICADA,_AFRICA,_INSECT,_DIGIFFECTS.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\1000-4000\%281000-4000%29_ELECTRONIC_BEEP_WARBLE,_SCI_FI.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\1000-4000\%281000-4000%29_ELECTRONIC_HOSPITAL_ALARM,_VINTAGE_RECORDING.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\1000-4000\%281000-4000%29_ELECTRONIC_TONE_ALARM-_HOTEL_EMERGENCY_SYSTEM.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\1000-4000\%281000-4000%29_EXTERNAL-_APPROACH.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\1000-4000\%281000-4000%29_FIRE_BELL_RINGING.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\1000-4000\%281000-4000%29_GROUP_of_CHIMPANZEES-_JUNGLE_AMBIENCE.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\1000-4000\%281000-4000%29_JUNGLE,_ENVIRONMENT,_AMBIENCE.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\1000-4000\%281000-4000%29_LION,_INDOORS,_ROARS,_MOANS,_VERSION_5,_DIGIFFECTS.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\1000-4000\%281000-4000%29_MORSE_CODE_MESSAGE.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\1000-4000\%281000-4000%29_OUTDOOR-SQUAWKING-_BROOK_in_BACKGROUND,.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\1000-4000\%281000-4000%29_OXYGEN_TANK-_TAKE_OFF,_WARNING_BEEP,_EMERGENCY.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\1000-4000\%281000-4000%29_RANDOM_NOTES_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\1000-4000\%281000-4000%29_SINGING,_BIRDS_in_BACKGROUND.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\1000-4000\%281000-4000%29_TelephoneCellular_INTERNAL_RINGING.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\1000-4000\%281000-4000%29_TRACKING_DEVICE-_ELECTRONIC.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\1000-4000\%281000-4000%29_VARIOUS_BIRDS_CHIRPING.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\1000-8000\%281000-8000%29_FOREST_ENVIRONMENT,_AMBIENCE,_EVERGREENS,_BIRDS,_DIGIFFECTS.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\1000-8000\%281000-8000%29_GECKO,_WEST_AFRICA_3,_DIGIFFECTS.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\1000-8000\%281000-8000%29_SPARROW_HAWK-_CALLS,_ANIMAL_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\1000_to_2000\%281000_to_2000%29_TURN_on_BATH_WATER,_ENGAGE_SHOWER_HEAD,_PERSON_SHOWERING,_SHUT_OFF.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\1000_to_3000\%281000_to_3000%29_RATTLING_of_DISHES.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\100_to_300\%28100_to_300%29_AQUARIUM,_AIR_PUMP_and_BUBBLES,_VERY_CLOSE-UP,_DIGIFFECTS.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\100_to_300\%28100_to_300%29_AUTOMATIC_CAR_WASh-_JET_DRYER-_START,_RUN,_SHUT_OFF,_FROM_CAR_INTERIOR.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\100_to_300\%28100_to_300%29_BATHING_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\100_to_300\%28100_to_300%29_BURNER_IGNITES,_BURN,_FAN_ON,_BURNER_OUT,_FAN_OFF.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\100_to_300\%28100_to_300%29_CLANKING_WITH_SILVERWARE_on_to_TABLE_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\100_to_300\%28100_to_300%29_COCK_and_FIRE.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\100_to_300\%28100_to_300%29_DATA_PLOTTER,_BENSON_1002,_DIGIFFECTS.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\100_to_300\%28100_to_300%29_FAN_START,_RUN,_STOP-MEDIUM_SPEED_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\100_to_300\%28100_to_300%29_FILL,_WASH,_WATER_OUT,_SPIN_DRY,_LAUNDRY_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\100_to_300\%28100_to_300%29_GAS-_START,_RUN,_GARDENING,_CLIPPERS.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\100_to_300\%28100_to_300%29_INDOOR_FIREPLACE-_CRACKLING.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\100_to_300\%28100_to_300%29_LAPTOP_COMPUTER-_START,_RUN,_LONG_WIND_UP_and_LOAD.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\100_to_300\%28100_to_300%29_LARGE_INDUSTRIAL_AIR_CONDITIONING_UNIT-_RUNNING,_INDUSTRY.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\100_to_300\%28100_to_300%29_POPCORN_POPPING,_in_POT_on_STOVE,_KITCHEN,_DIGIFFECTS.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\100_to_300\%28100_to_300%29_SHOVELLING_and_PUSHING_SNOW_WITH_METAL_SHOVEL,_GARDEN,_DIGIFFECTS.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\10_to_16000\%2810_to_16000%29_AIRCRAFT_CARRIER-_H-46_TWIN_ROTOR_HELICOPTERS_FLYING_in_and_AWAY.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\10_to_16000\%2810_to_16000%29_BATTLE_FIELD_ASSAULT_MACHINE_GUNS,_RIFLES,_EXPLOSIONS.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\400_to_2000\%28400_to_2000%29_BASSOON-_FLOATING_DOWN_ACCENT,_CARTOON.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\400_to_2000\%28400_to_2000%29_CASSETTE_MACHINE-START,_WIND,_STOP,_STEREO.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\400_to_2000\%28400_to_2000%29_DOMESTIC_SMOKE_DETECTOR_ALARM.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\400_to_2000\%28400_to_2000%29_ELECTRONIC_WARBLE.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\400_to_2000\%28400_to_2000%29_ELECTRONIC_WARNING_SIGNAL-_PULSING_BEEP,_HIGH,_SCI_FI.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\400_to_2000\%28400_to_2000%29_HORN_SIREN.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\400_to_2000\%28400_to_2000%29_HOWLING,_SMALL_PACK,_ANIMAL,_WOLF_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\400_to_2000\%28400_to_2000%29_INTERNAL_KEY_in_IGNITION_WARNING_SIGNAL,_GMC.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\400_to_2000\%28400_to_2000%29_SIRENS,_FIRE_TRUCKS,_BELLS,_P.A.,_TRAFFIC.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\400_to_2000\%28400_to_2000%29_TWO_WAY_RADIO-_GENERIC_GARBLED_COMMUNICATION.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\400_to_2000\%28400_to_2000%29_VARIED,_RAPID_DRIPPING,_WATER,_DROP.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\500_to_1000\%28500_to_1000%29_Chain_saw_cutting_tree.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\500_to_1000\%28500_to_1000%29_CLEANING_PLANT-_STEAM_PRESSING_MACHINE,_BACKGROUND,_FACTORY.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\500_to_1000\%28500_to_1000%29_COFFEE_MAKER_BREWING.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\500_to_1000\%28500_to_1000%29_COMPUTER,_MAC_G3,_ERROR_SOUND,_ALERT,_13_VERSIONS,_DIGIFFECTS.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\500_to_1000\%28500_to_1000%29_COMPUTER_KEYBOARD,_TYPING,_SLOW,_OFFICE,_DIGIFFECTS.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\500_to_1000\%28500_to_1000%29_DOOR,_BELL,_PLING,_RINGS,_5_VERSIONS,_DIGIFFECTS.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\500_to_1000\%28500_to_1000%29_SHINING_BOOTS,_POSLISH_DIGIFFECTS.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\500_to_1000\%28500_to_1000%29_VACCUM_CLEANER,_START,_RUN_and_STOP,_MEDIUM_SPEED.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_1,812_BARFS,_for_SURE,_CARTOON,_COMEDY,_BARF,_MUSIC.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_450_CC_ATV_4X4-_START,_IDLE_WITH_REVS,_SHUT_OFF,_FROM_ENGINE.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_ACOUSTIC_GUITAR-_LONG_BUILDING_CHARGE_ACCENT,_CARTOON.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_AIRCRAFT_ASSEMBLY_PLANT-_WING_DRILLING,_CLOSE_UP,_FACTORY,_AMBIENCE.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_ALOUETTE-_FLYING_BY,_CLOSE,_LANDING_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_BANJO-_LONG_BUILDING_CHARGE_ACCENT,_CARTOON.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_BARN-_EXT-_SHEEP,_TURKEY,_HEAVY_CALLS,_FARM.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_BARN_AMBIENCE-_.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_BEING_BLOWN_UP_and_TIED,_AIR_MATTRESS_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_BELCHING,_COUGHING,_YAWNING,_PICKING_TEETH_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_BLACKSMITH_SHOP-_SINGLE_WORKER_HAMMERING,_BLOW_TORCH_in_BACKGROUND_.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_BMW_M3_GTP_RACE_or_STREET_CAR-_EXT-_ON_BOARD.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_BOTTLING_FACTORY-_BOTTLES_on_ASSEMBLY_LINE,_AMBIENCE_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_BOWLING,_BALL,_HITS_OTHER_BALL,_ROLLS,_12_VERSIONS,_DIGIFFECTS.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_BREAKING_DOWN_DOOR,_BREAKING_CABINET,_DIGIFFECTS.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_BUILDING_DEMOLITION-_MASSIVE_JACKHAMMER_on_BOOM.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_BUILDING_SHIMMER_WITH_RINGING_TONES_and_HEAVENLY_VOICES.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_CAGE_HOIST_ELEVATOR_CONTROL-.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_CHAIN_RATTLING_and_DRAGGING_on_FLOOR,_HORROR.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_CHILDREN%27S_VOICES,_SHOUTING_and_STICKS,_SPORTS_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_CHILDREN_-_ELEMENTARY_SCHOOL,_PLAYING_at_RECESS,_AMBIENCE,_PLAYGROUND.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_CHILD_LAUGHING,_BOY_6_YEARS_OLD,_HUMAN,_DIGIFFECTS.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_CHINA_MARKET_VOICES,_TRAFFIC,_ANIMALS,_BICYCLE,_BELLS,_CROWD,_AMBIENCE_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_CHIRPING-_SURF_and_BOATS_in_BACKGROUND,_ANIMAL_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_COIN_SORTING_MACHINE,_DROP_in_COINS,_RUN_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_COLONY_of_BATS-_CHIRPING_and_RUSTLING.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_COUNTER_and_SORTING_MACHINE-_CASINO_BACKGROUND,_CASINO,_GAMBLING_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_CREAKS,7-_RICH_MULTIPLE_TONES.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_CROQUET_GAME-_GENERAL_AMBIENCE,_SPORTS.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_CUTTING_BLOCKS_of_SNOW,_GARDEN,_DIGIFFECTS.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_DIPPING_RUG_in_LAKE,_WATER_RUNNING_OFF,_THROWN_on_the_GROUND,_DIGIFFECTS_.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_DOG_BARKING_3,_ANIMAL,_DIGIFFECTS.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_DRUM_EFFECT,_INCREASING_TEMPO,_MUSIC,_PERCUSSION.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_EATING_GRASS,_ANIMAL_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_ELECTRIC_GUITAR-_LONG_BUILDING_CHARGE_ACCE.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_ELECTRONIC_MUSIC,_RHYTHMIC_PATTERN_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_ELEKTRON_SID_STATION-_LOW,_FILTERED_STATIC_NOISE.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_ELEPHANT,_BLOWING_TRUNK,_TRUMPET,_6_VERSIONS,_DIGIFFECTS.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_ELEPHANT_SEAL,_SNORTS,_GRUNTS,_CHUFFS,_SNIFFS.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_EXTERNAL_START,_IDLE,_REVERSE_AWAY_MEDIUM,_FROM_FRONT.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_FAN_ONLY_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_FLIPPING_the_PAGES_of_a_BOOK_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_FLOCK,SQUEAKING.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_FOOTSTEPS,_on_DRY_SNOW-_CREAKING,_PASSING,_FAST,_DIGIFFECTS.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_FOOTSTEPS,_WALK_in_WATER,_SPLASH,_5_VERSIONS,_DIGIFFECTS.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_FOOTSTEPS-_MALE,_MEDIUM_SPEED.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_FOOTSTEPS-_WALKING_THROUGH_and_SPLASHING_in_WATER_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_FOREST_FIRE-_TREES_FALLING,_BRANCHES_BREAKING.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_FREIGHT_TRAIN-_PASS_BY,_HORN_DOPPLER,_VERY_LOUD_TRACK_SQUEALS.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_FRONT_DOOR,_DOUBLE,_UNLOCKING,_LEAVING,_LOCKING.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_FROZEN_LAKE_ICE-_HEAVY_CRACKING,_FOOTSTEPS.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_GALLOPING_on_DIRT,_ANIMAL.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_GAS_GOLF_CART-_EXT-_ON_BOARD-_DRIVE_at_SLOW_SPEED_on_SMOOTH_ROAD.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_GENERAL_AMBIENCE,_VOICES,_SURF_in_BACKGROUND,_WATER,_SEASHORE_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_GETS_EXCITED,_CLUCKING,_FLAPPING_of_WINGS,_ANIMAL,_BIRD_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_GROWLING,_SNARLS,_ANIMAL,_CAT.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_GROWLING_WITH_SNARLING_and_ROAR,_CAT.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_GROWLS_and_SNARLS,_ANIMAL,_CAT_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_GYMNASIUM,_BELL_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_HARMONICA-_RHYTHMIC_TRAIN_CHUG_ACCENT,_ACCELERATING,_CARTOON.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_HARP-_TRANQUIL_ACCENT,_CARTOON.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_HEAVY_COTTON,_STARTING_to_TEAR.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_HEAVY_METAL_CHAIN_LINK-_LIGHT_RATTLES_and_DROP,_6_TAKES_.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_HEAVY_OCEAN_WAVES_and_SURF,_SEASHORE.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_HEAVY_RAIN_on_CEMENT,_WEATHER.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_HEAVY_TRAFFIC,_TAKEN_FROM_30TH_FLOOR_BALCONY,_AMBIENCE_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_HEAVY_WATERFALL,_DISTANT_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_HEAVY_WAVES_UNDERWATER,_UNDERWATER_AMBIENCES,_UNDERWATER_OCEANS_&amp;_SURF.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_HERD_MOOING,_BRANDING,_HURT_MOOS_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_HORN_SIREN.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_HOUSE_FIRE_SCENE-_FIRE_RAGING,_FIRE_ENGINES,_SIRENS,_RADIOS_AMBIENCE.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_ICE-_CONTINUOUS_SCRAPING_%28crashes_hits_impacts%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_INDOOR-MEDIUM_ADULT_CROWD-_PARTY_AMBIENCE,_HEAVY_WALLA,_LAUGHTER.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_INDOOR-_MEDIUM_CROWD,_COUNTDOWN_FROM_10,_CELEBRATION,_NEW_YEAR%27S_EVE,_AUDIENCE.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_LAKE_BARGE-_THREE_ENGINE_DIESEL-_ON_BOARD-_.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_LARGE_BUZZER-_QUICK_BUZZES,_ACCELERATING_in_FREQUENCY.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_LARGE_CONCERT_CROWD-_APPLAUSE_WITH_CHEERING_and_WHISTLING.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_LARGE_DIESEL_LOCOMOTIVE-_INT-_ON_BOARD-_DRIVING,_HORN_BLASTS,_BELL_RINGING.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_LARGE_FIRE_ROARING_and_HOWLING_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_LARGE_HATCH_on_SHIP%27S_CARGO_HOLD-_HINGE_CREAKS,_LIGHT_DEBRIS_FALLING,_DOOR,_METAL.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_LARGE_INDOOR_WATER_FOUNTAIN.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_LARGE_INDUSTRIAL_DIESEL_BIN_TRUCK-_EXT-_ENGINE_THROTTLE_HIGH,_LIFT_BIN,_AIR_and_BRAKE_RELEASES.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_LEAVES,_DRY,_ONE_and_MORE_FALLING-_GARDEN,_DIGIFFECTS.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_LIDE_PROJECTOR,_KODAK_SAV_2050,_ON,_OFF,_VERSION_2,_OFFICE,_DIGIFFECTS.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_LIGHT_TRAFFIC,_PEDESTRIANS_WALKING_and_TALKING,_AMBIENCE_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_LONG_FART,_COMEDY,_CARTOON.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_MALE_LEATHER_SOLE-_WALK.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_MALE_LEATHER_SOLE-_WALK_%282%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_MANDOLIN-_LAST_POST,_RAPID_PICKING,_CARTOON.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_MANDOLIN-_LAST_POST,_SINGLE_NOTES,_CARTOON.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_MEDIUM_MIDTOWN_AMBIENCE-_TRAFFIC,_CITY_RUMBLE,_CITY_&amp;_URBAN_AMBIENCES,_TRAFFIC_AMBIENCES.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_MEDIUM_OUTDOOR_GALLERY_AUDIENCE-.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_MEDIUM_RAIN_on_HARD_GROUND.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_METAL_CHAIN-_LIGHT_METALLIC_RATTLE,_5_TAKE.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_Mosquito_1018_52.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_MOSQUITO_BUZZING,_VINTAGE_RECORDING.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_MotorcycleRace_2015_64.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_MOTORCYCLE_CHASE_SCENE_EDIT-.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_MOVIE_FILM_PROJECTOR-_RUNNING.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_MUD_BUBBLES-_HEAVY_GLUGGING,_SLOW_STEAM_RELEASE.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_NO_MUSIC,_CROWD_APPLAUSE_and_CHEERING,_VARIOUS_HORNS,_SIRENS_AMBIENCE.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_OCEAN_FISHING_TRAWLER-.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_OLD_ANALOG_RADIO_TUNING_ACROSS_DIAL,_VINTAGE_RECORDING.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_OLD_PRISON_AMBIENCE,_VINTAGE_RECORDING.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_ONE_PERSON_WALKING_on_BEACH,_SEASHORE_%28VINTAGE_RECORDING%29_.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_ON_METAL_ROOF,_WEATHER_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_OSCILLATING_ELECTRONIC_TONE,_LOW.MP3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_OUTDOOR-_LARGE_CONCERT_CROWD,_AUDIENCE.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_OUTDOOR-_MEDIUM_CROWD-_GENERAL_AMBIENCE.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_PINK_NOISE.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_PLAYING_at_the_BEACH,_SURF,_SEASHORE_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_POUR_SAND_INTO_PLASTIC_BUCKET,_SLOW.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_POWER_LINE_HIT_by_LIGHTNING,_CRASH_INTO_HOUSE,.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_PUNCHING_KEYBOARD,_BEEP_SOUNDS,_OFFICE_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_QUACKING_in_POND,_VOICES_and_CITY_AMBIENCE_in_BACKGROUND,_ANIMAL,_BIRD.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_RAILROAD_CROSSING_SIGNAL_BELL-_RINGING.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_RANGE_ROVER_SUV-_EXTERIOR-_ON_BOARD-_DRIVE_OFF_ROAD_OVER_MIXED_TERRAIN_and_WATER.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_RATTLING_of_DISHES,_GENERAL_KITCHEN_SOUNDS,_FRIDGE,_RATTLE_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_REVERBERANT_WATER_LAPPING,_DRIPPING_and_MOVEMENT_in_LARGE_CAVERN.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_RHINOCEROS-_EATING,_HEAVY_MOVEMENT_and_MOUTH_SLAPS,_ANIMAL.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_RICOCHETS,_FORWARD_and_REVERSE_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_RINGMASTER%27S_OVERTURE-_GRAND_CIRCUS_INTRODUCTION,_CARTOON.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_ROOMTONE_AMBIENCE-_UNDERGROUND_PARKING_GARAGE-_CLOSE_VENTILATION.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_ROUND_and_ROUND-_PERKY,_PLAYFUL,_ENERGETIC,_CARTOON.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_ROWING,_HEAVY_WATER_MOVEMENT_and_LAP,_SPORTS_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_RULER_TWANGS,_VARIOUS_LENGTHS_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_RUMMAGE_THROUGH_KITCHEN_DRAWERS,_THROWING_OBJECTS_on_FLOOR.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_RUNNING,_RIVER.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_RUSTLING_PAPER,_CRUMPLE_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_RUSTLING_THROUGH_GARBAGE,_RUSTLE.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_SEAL,_YOUNG,_GRUMBLE,_DISTANT_BIRDS,_ANIMAL,_DIGIFFECTS.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_SEVERAL_ARROWS_PASS_BY,_SPORTS_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_SHAKING_HAND_HELD_CONTAINER_FULL_of_METAL_DISHES,_SHAKE.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_SHEET_METAL_RATTLE-_VARIOUS_INTENSITIES.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_SHEET_METAL_RATTLE-_VARIOUS_INTENSITIES_%282%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_SHEET_MOVEMENTS,_RUSTLE,_SHAKE,_SNAP_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_SHINING_BOOTS,_DIGIFFECTS.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_SHIP_CREAKS_INSIDE_CARGO_HOLD.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_SHORT_BURSTS_of_SPRAYING_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_SMALL_BOAT_RUNNING,_BIRDS_in_BACKGROUND,_MARINE_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_SMALL_CAMPFIRE-_CRACKLING,_HISSING,_POPPING.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_SMALL_STUDIO_AUDIENCE-LONG_LAUGHTER_WITH_VARIOUS_INTENSITIES.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_START,_IDLE.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_START,_RUN,_GRIND,_STOP_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_START_UP,_DRIVE_AWAY,_PASS_BY-_VARIOUS_CARS_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_STOCK_CARS-_CARS_ENTERING_TRACK_AREA.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_STORE_FRONT_AMBIENCE.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_SWITCH_ON,_HUM,_SWITCH_OFF.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_SYNTHETIC-_WHISTLING_POLAR_WIND,_WEATHER_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_SYNTH_DRONE_FEATURING_VOICES_in_a_MAJOR,_MUSIC.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_TALK,_EAT_and_DRINK,_CROWD_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_THEATRICAL_WIND_MACHINE-_LONG_CONTINUOUS_VERSION.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_THROWING_WATER_on_CAMPFIRE,_STEAM_BURSTS_and_HISSES.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_TRAIN_WITH_WHISTLE,_MUSIC,_PERCUSSION.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_TUG_BOAT_-_BOAT_RUNNING,_MARINE,_HORN_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_TURN_ON,_RUN,_TURN_OFF_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_TWO_BOXERS_SPARRING_in_RING,_SPORTS.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_TWO_MEN_FIGHTING-_PUNCHES,_GRUNTS,_CRASHES_AMBIENCE,_HUMAN.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_TWO_SCUBA_DIVERS-_UNDERWATER-_SWIMMING_and.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_UNDERWATER,_TRAIN_on_BRIDGE_ABOVE,_DIGIFFECTS.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_UNIVERSITY_BASKETBALL-_GAME_AMBIENCE-.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_VARIOUS_GROWLS,_CAT.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_WALKING_THROUGH_RUBBLE,_SLOW_WITH_SCUFFLES.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_WARBLE_TONE-_EIGHT_NOTE_SCALE.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_WAREHOUSE_TONE-_LIGHT_HUM,_AMBIENCE.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_WATER_BOILING_in_POT_on_STOVE,_FOOD,_BUBBLES,_DRIPS_&amp;_SPLASHES.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_WATER_RUNNING_THROUGH_DRAIN_PIPE.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_WHEEL_of_FORTUNE-_CROWN_and_ANCHOR,_CASINO,_AMUSEMENT_PARK,_GAME.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_WHITE_NOISE.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_WINDOW,_SMALL,_GLASS,_KNOCKING,_11_VERSIONS,_DIGIFFECTS.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_WORKBENCH,_METAL_CHAINS,_HOOKS,_CLUTCH,_TOOL.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_WORKBENCH,_METAL_CHAINS,_HOOKS_on_TO,_TOOL.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_10000\%2850_to_10000%29_ZANY_CARTOON_JUMBLE,_COMEDY.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_1000\%2850_to_1000%29_ACOUSTIC_BASS-_CALL_to_TRACK_ACCENT,_CARTOON.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_1000\%2850_to_1000%29_BABY_BAWLING,_HUMAN,_CRY.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_1000\%2850_to_1000%29_BEEHIVE,_ANIMAL,_INSECT_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_1000\%2850_to_1000%29_BUSY_SIGNAL,_VINTAGE_RECORDING.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_1000\%2850_to_1000%29_CALCUTTA,_INDIA-_TEMPLE_BELLS-_CONSTANT_RINGING,_FOREIGN_.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_1000\%2850_to_1000%29_ELECTRONIC_WARNING_SIGNAL-_CONSTANT_BEEP,_SMOOTH,_SCI_FI.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_1000\%2850_to_1000%29_ELECTRONIC_WARNING_SIGNAL-_MILD,_CONSTAN.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_1000\%2850_to_1000%29_EXTERIOR-_PASSING_by_CROSSING.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_1000\%2850_to_1000%29_GENERAL_RAILYARD_AMBIENCE-_LOCOMOTIVES_SHUNTING_CARS.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_1000\%2850_to_1000%29_GRAND_PIANO-_TENSION_ACCENT,_CARTOON.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_1000\%2850_to_1000%29_HEAVY,_WEATHER_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_1000\%2850_to_1000%29_HIGH_SCHOOL_HALLWAY-_HEAVY_LOW_RUMBLE,_AMBI.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_1000\%2850_to_1000%29_HORN_BLASTS,_ALARM,_SHIP,_DIGIFFECTS.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_1000\%2850_to_1000%29_HOWLING-_RECEIVES_ANSWER_FROM_OTHER_WOLVES.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_1000\%2850_to_1000%29_INCREASING_RUMBLE_LEADING_to_EXPLOSION.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_1000\%2850_to_1000%29_INTERNAL-_START,_IDLE,_ACCELERATE_SLOWLY_to_LOW_SPEED,_GMC.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_1000\%2850_to_1000%29_INTERNAL-_VENTILATION_FAN,_TURN_ON,_RUN,_TURN_OFF,_LOW,_GMC.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_1000\%2850_to_1000%29_KING_AIR-_INTERNAL-_IDLE,_BELL,_FLAPS.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_1000\%2850_to_1000%29_LONG_SQUEAL_and_MULTIPLE_CRASHES,_VINTAGE_RECORDING.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_1000\%2850_to_1000%29_LOW_OMINOUS_AMBIENCE,_FANTASY.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_1000\%2850_to_1000%29_MEDIUM_ROOM_TONE-_LIGHT_HUM,_AMBIENCE.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_1000\%2850_to_1000%29_RoomToneMedium_6085_45.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_1000\%2850_to_1000%29_RoomToneSmall_6085_49.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_1000\%2850_to_1000%29_ROOMTONE_AMBIENCE-_INDUSTRIAL_WAREHOUSE-_HEAVY_LIGHT_BUZZ.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_1000\%2850_to_1000%29_ROOMTONE_AMBIENCE-_RESIDENTIAL_HOUSE-_FINISHED_BASEMENT.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_1000\%2850_to_1000%29_ROOMTONE_AMBIENCE-_SCHOOL_CLASSROOM-_VENTILATION.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_1000\%2850_to_1000%29_RUNNING_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_1000\%2850_to_1000%29_SMALL_GROUP-_FRIGHTENED,_AIRPLANE,_CRASH_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_1000\%2850_to_1000%29_SMALL_ROOM-_COMPUTER_RUNNING_AMBIENCE.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_1000\%2850_to_1000%29_SMALL_ROOM_TONE-_FAN,_AMBIENCE.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_1000\%2850_to_1000%29_STEAM_TRAIN-_on_BOARD_ENGINE-_STEADY,_TRACK_RATTLE,_STEAM_WHISTLES,_BELL.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_1000\%2850_to_1000%29_SUBMARINE-_INT_or_EXTERNAL-_PROPULSION_DRIVE,_HEAVY.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_1000\%2850_to_1000%29_SUBMERGED_SHIP-_HEAVY_UNDERWATER_WOOD_CREAKING.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_1000\%2850_to_1000%29_TRUMPETS,_VARIOUS,_ANIMAL_%28VINTAGE_RECORDING%29_.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_1000\%2850_to_1000%29_TUBA-_LONG_PUSH_PULL_ACCENT,_LOW,_CARTOON.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_1000\%2850_to_1000%29_UNDERWATER_AMBIENCE-_LOW_RUMBLE,_INTENSITY_VARIES.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_1000\%2850_to_1000%29_UNDERWATER_AVALANCHE-_HEAVY_RUMBLE_AMBIENCE.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_1000\%2850_to_1000%29_UNDERWATER_DRONE-_CONSTANT_OMINOUS_ROAR_WITH.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_1000\%2850_to_1000%29_UNDERWATER_TURBULENCE,_HEAVY_LOW_RUMBLE_and_BUBBLING.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_1000\%2850_to_1000%29_WATER_RUMBLE_and_GURGLE,_SLOW_WAVE.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_3000\%2850_to_3000%29_ANGRY_YELLS,_GRUNTS,_APE_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_3000\%2850_to_3000%29_BAA_and_GROANING,_ANIMAL,_LAMB,_SHEEP_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_3000\%2850_to_3000%29_CHEETAH,_EATING,_CHEWING,_CLOSE,_BIRDS,_ANIMAL,_SAFARI,_DIGIFFECTS_.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_3000\%2850_to_3000%29_CROAKING,_OTHERS_RETURNING_CALL,_ANIMAL,_AMPHIBIAN_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_3000\%2850_to_3000%29_CUB_CRYING_in_CAGE,_ANIMAL,_CAT_%28VINTAGE_RECO.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_3000\%2850_to_3000%29_DC-9-_INTERNAL_TAKE_OFF_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_3000\%2850_to_3000%29_EXTERNAL-_START,_ACCELERATE_QUICKLY_to_HIGH_SPEED,_FROM_EXHAUST%28L%29_ENGINE%28R%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_3000\%2850_to_3000%29_EXTERNAL-_START,_IDLE,_PULL_AWAY,_VERY_SLOW_SPEED,_EXIT.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_3000\%2850_to_3000%29_FOOTSTEPS,_HALLWAY,_WOMAN,_CONTINUOUS,_SLOW,_DIGIFFECTS.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_3000\%2850_to_3000%29_GONG,_DEEP,_DIGIFFECTS.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_3000\%2850_to_3000%29_GROWLING_and_MEOWING,_ANIMAL_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_3000\%2850_to_3000%29_HEAVY_RAIN_on_THICK_VEGETATION_and_WOOD,_WEATHER.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_3000\%2850_to_3000%29_HEAVY_WATER_RUMBLE,_WATER_CRASH,_SLOW_SURF.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_3000\%2850_to_3000%29_HENHOUSE_1,_BIRD,_DIGIFFECTS.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_3000\%2850_to_3000%29_HIPPOPOTAMUS,_SNORTING,_BIRDS_SINGING,_by_the_RIVER,_ANIMAL,_SAFARI,_DIGIFFECTS.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_3000\%2850_to_3000%29_HUGHES_300-_INTERNAL-_START,_IDLE,_TAKE_OFF,_INFLIGHT,_LAND,_SHUT_OFF%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_3000\%2850_to_3000%29_INT,_AWAY_SLOW,_WOOD_SQUEAKS,_BUMPY_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_3000\%2850_to_3000%29_INTERNAL-_START,_IDLE,_ACCELERATE_QUICKLY_to_HIGH_SPEED,_ALFA_ROMEO,_SPORTS_CAR.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_3000\%2850_to_3000%29_JUMPING_OBSTACLES,_ANIMAL_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_3000\%2850_to_3000%29_KENNEL-_INDOOR-_MANY_BARKING,_ANIMAL_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_3000\%2850_to_3000%29_LARGE_BRONZE_DINNER_GONG.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_3000\%2850_to_3000%29_LARGE_TANK_DRAINING-_HEAVY_GURGLES_in_PIPE.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_3000\%2850_to_3000%29_LARGE_VOLCANO_ERUPTING,_EXPLODING,_RUMBLE,_NATURAL.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_3000\%2850_to_3000%29_MALE-_NASAL_and_THROATY_SNORE_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_3000\%2850_to_3000%29_P.A._ANNOUNCEMENTS,_CHILDREN,_PHONES,_VOICES,_AMBIENCE,_CORRIDOR.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_3000\%2850_to_3000%29_PASSES_OVERHEAD_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_3000\%2850_to_3000%29_ROCKS_FALL,_START_to_STOP,_NATURAL_DISASTER_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_3000\%2850_to_3000%29_SEVERAL_CLUCKING,_BIRDS_and_WIND_in_BACKGRO.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_3000\%2850_to_3000%29_SMALL_GROUP-_AMBIENCE,_SOME_ROOSTERS,_ANIMAL.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_3000\%2850_to_3000%29_THEATRICAL_THUNDER_MACHINE-_LARGE_RUMBLE,_CLOSE_UP,_THEATER,_THEATRE.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_3000\%2850_to_3000%29_TIMPANI_BOUNCES_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_3000\%2850_to_3000%29_UNDERWATER_METAL_STRUCTURE-_HEAVY_TWISTING_and_GROANING.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_3000\%2850_to_3000%29_VARIOUS_GROWLINGS,_PURR-LIKE_GROWLS,_SNARLS,_BREATHS,_CAT.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_3000\%2850_to_3000%29_WALKING_in_STABLE,_NEIGHING,_ANIMAL.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_3000\%2850_to_3000%29_WILD-_GROWL,_HISSING,_TWO_CATS,_ANIMAL.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_4000\%2850_to_4000%29_38_CAL._PISTOL-_FIVE_SHOTS_WITH_ECHO_%28VINTAGE_RECORDING%29_.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_4000\%2850_to_4000%29_AIRCRAFT_CARRIER_FA_18_HORNET_JET_EXT_HEAVY_THRUSTER_BUILD.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_4000\%2850_to_4000%29_COMMUNICATIONS-_DETECTION_and_TRACKING,_AIRCRAFT_CARRIER,_SHIP.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_4000\%2850_to_4000%29_DISTANT_BOMB_EXPLOSIONS.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_4000\%2850_to_4000%29_LARGE_DISPLAY,_WHISTLES,_BANGS,_VOICES_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_4000\%2850_to_4000%29_OLD_ELECTRIC,_ENTER_FIGURES,_TOTAL_UP,_OFFICE_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_4000\%2850_to_4000%29_OUTDOOR-_HORNS,_TRAFFIC,_FIREWORKS,_NEW_YEAR%27S_EVE,_PARTY_%28VINTAGE_RECORDING%29_.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_4000_2\%2850_to_4000_2%29_BATH_TUB-_MASSAGE_JETS-_START,_RUN,_SHUT_OFF,_FROM_UNDERWATER.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_4000_2\%2850_to_4000_2%29_CARS_PULL_UP,_START,_ANNOUNCER,_CROWD.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_4000_2\%2850_to_4000_2%29_CAR_HORN,_EXTERNAL,_2_VERSIONS,_INT.,_1_VERSIONS,_DIGIFFECTS.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_4000_2\%2850_to_4000_2%29_CUPBOARD,_LIVINGROOM,_OPEN,_CLOSE,_14_VERSIONS,_DIGIFFECTS.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_4000_2\%2850_to_4000_2%29_ELEVATOR,_CONSTRUCTION_SITE,_GOING_UP,_DOWN,_DOORS.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_4000_2\%2850_to_4000_2%29_EXTERNAL-_START,_ACCELERATE_QUICKLY_to_MEDIUM_SPEED.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_4000_2\%2850_to_4000_2%29_HARP-_DESCENDING_PLUCKS,_FAST,_CARTOON.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_4000_2\%2850_to_4000_2%29_HARP-_LAST_POST,_CARTOON.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_4000_2\%2850_to_4000_2%29_HEAVY_BLIZZARD_WIND,_WEATHER_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_4000_2\%2850_to_4000_2%29_ICE_and_WATER_DRIPS.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_4000_2\%2850_to_4000_2%29_ICE_HOCKEY,_EUROPE,_SPECTATORS,_BOOS,_WHISTLES,_DIGIFFECTS.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_4000_2\%2850_to_4000_2%29_LARGE_OUTDOOR_STADIUM_CROWD-_HEAVY_CHEERING_FOLLOWED_by_CELEBRATION.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_4000_2\%2850_to_4000_2%29_SEVERAL_HOLLOW_WOOD_BLOCK_HITS_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_4000_2\%2850_to_4000_2%29_START,_PEDDLE_at_MEDIUM_SPEED,_COAST_DOWN_HILL,_STOP.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_4000_2\%2850_to_4000_2%29_UNDERWATER_RAIN-_HEAVY,_CONSTANT_ROAR.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_4000_2\%2850_to_4000_2%29_WAVES_COMING_IN,_LIGHT,_SEASHORE,_SURF,_BEACH_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_500\%2850_to_500%29_EAGLE_OWL,_BUBO_BUBO,_WHOOING,_CLOSE_and_DISTANT,_BIRD,_DIGIFFECTS_.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_500\%2850_to_500%29_FOOTSTEPS,_FOREST,_PASSING_TWICE,_DIGIFFECTS.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_500\%2850_to_500%29_IN_CAGE,_ROARING,_BIRDS_in_BACKGROUND,_ANIMAL.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_500\%2850_to_500%29_OPERATING_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_500\%2850_to_500%29_QUIET_AMBIENCE-_SNOW_FALLING_on_LEAVES,_SNOW.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_500\%2850_to_500%29_URAL_OWL,_BIRD,_WHOOING,_VERSION_2,_DIGIFFECTS.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_500\%2850_to_500%29_VENTILATION_NOISE_and_RATTLE_AMBIENCE.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_6000\%2850_to_6000%29_450_CC_ATV_4X4-APPROACH_LEFT,_FAST_SPEED_on_ASPHALT_ROAD.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_6000\%2850_to_6000%29_BILLIARD_HALL_AMBIENCE,_POOL,_SPORTS.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_6000\%2850_to_6000%29_BOOK,_TURNING_PAGES,_NORMAL,_OFFICE,_DIGIFFECTS.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_6000\%2850_to_6000%29_CURLING,_STONE,_PUT_OUT,_GLIDE,_3_VERSIONS,_DIGIFFECTS.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_6000\%2850_to_6000%29_EXTERNAL-_START,_IDLE,_REVERSE_AWAY_FAST,_FROM_FRONT.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_6000\%2850_to_6000%29_INDOOR_TRACK-_TWO_PEOPLE,_SPORTS_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_6000\%2850_to_6000%29_RALLYING_BACK_and_FORTH,_TABLE_TENNIS,_SPORTS_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_6000\%2850_to_6000%29_SLOW_SPEED_%28VINTAGE_RECORDING%29.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_6000\%2850_to_6000%29_TAKE_OFF.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\50_to_6000\%2850_to_6000%29_UNDERWATER_RIVER_RAPIDS-_LOW_BUBBLING_and_GURGLING.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMES\600_to_11000\%28600_to_11000%29_IMI,_JERICHO,_9MM_AUTOMATIC_PISTOL-_LOAD_BULLETS_INTO_CLIP.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Classical\Active_&amp;_bright_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Classical\Classical-_String_Ensembles_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Classical\Classical-_String_Ensembles_2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Classical\Classical-_String_Ensembles_3.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Classical\Classical-_String_Ensembles_4.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Classical\Classical-_String_Ensembles_5.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Classical\Classical-_string_quarters_2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Classical\Classical-_string_quarters_3.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Classical\Classical-_string_quarters_4.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Classical\Classical-_string_quarters_5.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Classical\Divertimento-DMaj-Andante-Mozart_FULL_WCM121401.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Classical\Effortless_and_graceful_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Classical\Effortless_and_graceful_2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Classical\Effortless_and_graceful_3.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Classical\Effortless_and_graceful_4.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Classical\Effortless_and_graceful_5.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Classical\Energetic_&amp;_light_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Classical\Energetic_&amp;_light_2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Classical\Energetic_&amp;_light_3.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Classical\Gentle_&amp;_Peaceful_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Classical\Gentle_&amp;_Peaceful_2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Classical\Gentle_&amp;_Peaceful_3.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Classical\Gentle_&amp;_Peaceful_4.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Classical\Gentle_&amp;_Peaceful_5.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Classical\Melodrama_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Classical\Melodrama_2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Classical\Melodrama_3.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Classical\Melodrama_4.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Classical\Mournful_&amp;_Melancholy_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Classical\Mournful_&amp;_Melancholy_2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Classical\Mournful_&amp;_Melancholy_3.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Classical\Mournful_&amp;_Melancholy_5.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Classical\Nachtmusik-Romanza-Mozart_FULL_WSR1670201.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Classical\Noble_&amp;_Dramatic_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Classical\Noble_&amp;_Dramatic_2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Classical\Noble_&amp;_Dramatic_3.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Classical\Noble_&amp;_Dramatic_4.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Classical\Noble_&amp;_Dramatic_5.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Classical\Noble_&amp;_Dramatic_6.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Classical\Passion_&amp;_Romance_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Classical\Passion_&amp;_Romance_2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Classical\Passion_&amp;_Romance_3.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Classical\Passion_&amp;_Romance_4.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Classical\Piano-_Forte_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Classical\Piano-_Forte_2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Classical\Piano-_Forte_3.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Classical\Piano-_Forte_4.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Classical\Piano-_Forte_5.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Classical\Piano-_Forte_6.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Classical\Piano-_Forte_7.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Classical\Refined_Romance_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Classical\Refined_Romance_2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Classical\Serious_&amp;_Sorrowful_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Classical\Serious_&amp;_Sorrowful_2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Classical\Serious_&amp;_Sorrowful_3.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Classical\Serious_&amp;_Sorrowful_4.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Classical\Serious_&amp;_Sorrowful_5.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Classical\Serious_&amp;_Sorrowful_6.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\American_classic\Entertainer_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Blues\Fusion_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Blues\Fusion_2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Blues\Sleek_&amp;_Stylish_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Blues\Sleek_&amp;_Stylish_2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Blues\Sleek_&amp;_Stylish_3.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Blues\Sleek_&amp;_Stylish_4.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Blues\Sleek_&amp;_Stylish_5.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Blues\Sleek_&amp;_Stylish_6.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Children\Childhood_Plays_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Children\Childhood_Plays_2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Children\Childhood_Plays_3.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Children\Childhood_Plays_4.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Children\Gentle_Lullabies_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Children\Gentle_Lullabies_2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Children\Gentle_Lullabies_3.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Children\Gentle_Lullabies_4.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Children\Gentle_Lullabies_5.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Children\Gentle_Lullabies_6.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Children\Gentle_Lullabies_7.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\christmas_and_holidays\Acoustic_Carols_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\christmas_and_holidays\Acoustic_Carols_2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\christmas_and_holidays\Acoustic_Carols_3.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\christmas_and_holidays\Acoustic_Carols_4.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\christmas_and_holidays\Acoustic_Carols_5.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\christmas_and_holidays\Acoustic_Carols_6.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\christmas_and_holidays\Acoustic_Carols_7.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\christmas_and_holidays\Acoustic_Carols_8.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\christmas_and_holidays\Acoustic_Carols_9.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\christmas_and_holidays\Traditional_Carols_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\christmas_and_holidays\Traditional_Carols_2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\christmas_and_holidays\Traditional_Carols_3.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\christmas_and_holidays\Traditional_Carols_4.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\christmas_and_holidays\Traditional_Carols_5.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\christmas_and_holidays\Traditional_Carols_6.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\christmas_and_holidays\Traditional_Carols_7.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\christmas_and_holidays\Traditional_Carols_8.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\christmas_and_holidays\Traditional_Carols_9.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\corporate\Forward_Motion.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\corporate\inspiring_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Drama_&amp;_Film_scores\Atmospheric_1.mp3" />
+    <Content Include="CMM\Drama_&amp;_Film_scores\Atmospheric_2.mp3" />
+    <Content Include="CMM\Drama_&amp;_Film_scores\Atmospheric_3.mp3" />
+    <Content Include="CMM\Drama_&amp;_Film_scores\Epic_1.mp3" />
+    <Content Include="CMM\Drama_&amp;_Film_scores\Epic_2.mp3" />
+    <Content Include="CMM\Drama_&amp;_Film_scores\Epic_3.mp3" />
+    <Content Include="CMM\Drama_&amp;_Film_scores\Epic_4.mp3" />
+    <Content Include="CMM\Drama_&amp;_Film_scores\Epic_5.mp3" />
+    <Content Include="CMM\Drama_&amp;_Film_scores\Epic_6.mp3" />
+    <Content Include="CMM\Drama_&amp;_Film_scores\Fantasy_1.mp3" />
+    <Content Include="CMM\Drama_&amp;_Film_scores\Fantasy_2.mp3" />
+    <Content Include="CMM\Drama_&amp;_Film_scores\Fantasy_3.mp3" />
+    <Content Include="CMM\Drama_&amp;_Film_scores\Fantasy_4.mp3" />
+    <Content Include="CMM\Drama_&amp;_Film_scores\Grand_Scale_1.mp3" />
+    <Content Include="CMM\Drama_&amp;_Film_scores\Grand_Scale_2.mp3" />
+    <Content Include="CMM\Drama_&amp;_Film_scores\Grand_Scale_3.mp3" />
+    <Content Include="CMM\Drama_&amp;_Film_scores\Grand_Scale_4.mp3" />
+    <Content Include="CMM\Drama_&amp;_Film_scores\Innocence_1.mp3" />
+    <Content Include="CMM\Drama_&amp;_Film_scores\Innocence_2.mp3" />
+    <Content Include="CMM\Drama_&amp;_Film_scores\Inspirational_1.mp3" />
+    <Content Include="CMM\Drama_&amp;_Film_scores\Moments_1.mp3" />
+    <Content Include="CMM\Drama_&amp;_Film_scores\Moments_2.mp3" />
+    <Content Include="CMM\Drama_&amp;_Film_scores\Moments_3.mp3" />
+    <Content Include="CMM\Drama_&amp;_Film_scores\Moments_4.mp3" />
+    <Content Include="CMM\Drama_&amp;_Film_scores\Sentimental_1.mp3" />
+    <Content Include="CMM\Drama_&amp;_Film_scores\Sentimental_2.mp3" />
+    <Content Include="CMM\Drama_&amp;_Film_scores\Sentimental_3.mp3" />
+    <Content Include="CMM\Drama_&amp;_Film_scores\Sentimental_4.mp3" />
+    <Content Include="CMM\Drama_&amp;_Film_scores\Sentimental_5.mp3" />
+    <Content Include="CMM\Drama_&amp;_Film_scores\Sentimental_7.mp3" />
+    <Content Include="CMM\Drama_&amp;_Film_scores\Sentimental_8.mp3" />
+    <Content Include="CMM\Drama_&amp;_Film_scores\Sinister_1.mp3" />
+    <Content Include="CMM\Drama_&amp;_Film_scores\Skies_1.mp3" />
+    <Content Include="CMM\Drama_&amp;_Film_scores\Skies_2.mp3" />
+    <Content Include="CMM\Drama_&amp;_Film_scores\Solemn_1.mp3" />
+    <Content Include="CMM\Drama_&amp;_Film_scores\Solemn_2.mp3" />
+    <Content Include="CMM\Drama_&amp;_Film_scores\Solemn_3.mp3" />
+    <Content Include="CMM\Drama_&amp;_Film_scores\Solemn_4.mp3" />
+    <Content Include="CMM\Drama_&amp;_Film_scores\Solemn_5.mp3" />
+    <Content Include="CMM\Easy_Listening\Acoustic_Pop_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Acoustic_Pop_2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Acoustic_Pop_3.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Acoustic_Pop_4.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Acoustic_Pop_5.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Acoustic_Pop_6.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Acoustic_Pop_7.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Acoustic_Pop_8.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Effortless_Guitars_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Effortless_Guitars_2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Effortless_Guitars_3.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Effortless_Guitars_4.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Effortless_Guitars_5.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Effortless_Guitars_6.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Effortless_Guitars_7.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Emotions_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Emotions_2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Emotions_3.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Emotions_4.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Evening_Out_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Evening_Out_2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Gentle_&amp;_Tranquil_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Gentle_&amp;_Tranquil_2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Gentle_&amp;_Tranquil_3.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Gentle_&amp;_Tranquil_4.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Gentle_&amp;_Tranquil_5.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Leisurely_stroll_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Leisurely_stroll_2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Leisurely_stroll_3.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Leisurely_stroll_4.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Leisurely_stroll_5.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Leisurely_stroll_6.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Leisurely_stroll_7.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Leisurely_stroll_8.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Melancholy_&amp;_Romance_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Melancholy_&amp;_Romance_2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Melancholy_&amp;_Romance_3.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Melancholy_&amp;_Romance_4.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\More-Than-Youll-Ever-Know_FULL_WSR3101501.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Positively_Romantic_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Positively_Romantic_2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Positively_Romantic_3.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Positively_Romantic_4.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Positively_Romantic_5.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Positively_Romantic_6.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Positive_&amp;_Refreshing_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Positive_&amp;_Refreshing_2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Positive_&amp;_Refreshing_3.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Positive_&amp;_Refreshing_4.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Problems_ALT_WSR1342001.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Quiet-Pause_FULL_WSR3370301.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Reflecting-Love_FULL_WSR3320401.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Reflective_&amp;_Inclusive_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Romance_5.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Sensitive_&amp;_Expressive_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Sensitive_&amp;_Expressive_2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Sensitive_&amp;_Expressive_3.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Simple-Love-Song_FULL_WSR3190301.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Soft_&amp;_Relaxing_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Soft_&amp;_Relaxing_2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Soft_&amp;_Relaxing_3.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Soft_&amp;_Relaxing_4.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Soft_&amp;_Relaxing_5.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Soothing_Guitar_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Soothing_Guitar_2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Soothing_Guitar_3.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Soothing_Guitar_4.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Soothing_Guitar_5.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Soothing_Guitar_6.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Soothing_Guitar_7.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Sparkling_and_Carefree_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Sparkling_and_Carefree_2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Stylish_&amp;_Smooth_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Stylish_&amp;_Smooth_2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Stylish_&amp;_Smooth_3.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Sweet_Dreams_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Sweet_Dreams_10.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Sweet_Dreams_11.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Sweet_Dreams_12.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Sweet_Dreams_2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Sweet_Dreams_3.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Sweet_Dreams_4.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Sweet_Dreams_5.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Sweet_Dreams_6.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Sweet_Dreams_7.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\Sweet_Dreams_9.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\When-I-Hear-Your-Voice_FULL_WSR3190701.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Easy_Listening\While-I-Reminisce_FULL_WSR3451501.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\jazz\Confident_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\jazz\Dreamy_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\jazz\Dreamy_2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\jazz\Dreamy_3.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\jazz\Dreamy_4.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\jazz\Dreamy_5.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\jazz\Easy_Look_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\jazz\Easy_Look_2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\jazz\Easy_Look_3.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\jazz\Effortless_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\jazz\Effortless_2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\jazz\Effortless_3.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\jazz\Effortless_4.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\jazz\Effortless_5.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\jazz\Flowing_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\jazz\Lighter_Side_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\jazz\Lighter_Side_2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\jazz\Lighter_Side_3.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\jazz\Lighter_Side_4.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\jazz\Lighter_Side_5.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\jazz\Lighter_Side_6.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\jazz\Lighter_Side_7.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\jazz\Mindful_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\jazz\Piano_Bass_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\jazz\Piano_Bass_2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\jazz\Spontaneous_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\jazz\Streamy_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\jazz\Streamy_2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\jazz\Upbeat_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\New_age\Calm_&amp;_Relaxing_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\New_age\Calm_&amp;_Relaxing_2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\New_age\Calm_&amp;_Relaxing_3.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\New_age\Calm_&amp;_Relaxing_4.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\New_age\Calm_&amp;_Relaxing_5.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\New_age\Calm_&amp;_Relaxing_6.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\New_age\Calm_&amp;_Relaxing_7.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\New_age\Calm_&amp;_Relaxing_8.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\New_age\Calm_&amp;_Relaxing_9.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\New_age\Inner_Peace_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\New_age\Inner_Peace_2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\New_age\Inner_Peace_3.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\New_age\Inner_Peace_4.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\New_age\Inner_Peace_5.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\New_age\Inner_Peace_6.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\New_age\Inner_Peace_7.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Old_school\Old_School_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Old_school\Old_School_2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\period_dance\Period_dance.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Period_Jazz\Cocktail_Longue_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Period_Jazz\Cocktail_Longue_2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Period_Jazz\Cocktail_Longue_3.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Period_Jazz\Lively_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Period_Jazz\Lively_2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Period_Jazz\Lively_3.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Romance\heartfelt_and_tender_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Romance\heartfelt_and_tender_2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Romance\heartfelt_and_tender_3.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Romance\Love_and_loss_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Romance\Love_and_loss_2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Romance\Love_and_loss_3.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Romance\Love_and_loss_4.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Romance\Love_and_loss_5.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Romance\Love_and_loss_6.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Romance\Musical_Stories_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Romance\Musical_Stories_2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Romance\Musical_Stories_3.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Romance\Musical_Stories_4.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Romance\Musical_Stories_5.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Romance\Musical_Stories_6.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Romance\Musical_Stories_7.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Romance\Musical_Stories_8.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Romance\Musical_Stories_9.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Romance\People_in_love_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Romance\People_in_love_10.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Romance\People_in_love_2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Romance\People_in_love_3.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Romance\People_in_love_4.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Romance\People_in_love_5.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Romance\People_in_love_6.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Romance\People_in_love_7.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Romance\People_in_love_8.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Romance\People_in_love_9.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Romance\Sensuous_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Romance\Sensuous_2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Romance\Sensuous_3.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Romance\Sincere_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Romance\Sincere_10.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Romance\Sincere_11.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Romance\Sincere_2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Romance\Sincere_3.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Romance\Sincere_4.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Romance\Sincere_5.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Romance\Sincere_6.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Romance\Sincere_7.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Romance\Sincere_8.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Romance\Sincere_9.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Romance\Wistful_and_warm_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Romance\Wistful_and_warm_2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Romance\Wistful_and_warm_3.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Romance\Wistful_and_warm_4.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Romance\Wistful_and_warm_5.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Romance\Wistful_and_warm_6.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Solo_instrument\Moods_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Solo_instrument\Moods_2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Solo_instrument\Moods_3.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Solo_instrument\Moods_4.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Solo_instrument\Moods_5.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Solo_instrument\Piano_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Solo_instrument\Piano_2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Solo_instrument\Piano_3.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Solo_instrument\Piano_4.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Solo_instrument\Piano_5.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Solo_instrument\Piano_6.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Solo_instrument\Piano_7.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Solo_instrument\Piano_dramatic_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Solo_instrument\Piano_dramatic_2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Solo_instrument\Piano_dramatic_3.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Solo_instrument\Piano_stylings_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Solo_instrument\Piano_stylings_2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Solo_instrument\Piano_stylings_3.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Solo_instrument\Piano_stylings_4.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Solo_instrument\Piano_stylings_5.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Solo_instrument\Together_forever_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Solo_instrument\Together_forever_2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Solo_instrument\Together_forever_3.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Solo_instrument\Together_forever_4.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Western\Western_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Western\Western_2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Western\Western_3.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Western\Western_4.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\Western\Western_5.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\World_fusion\World_fusion1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\world_music\Calypso_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\world_music\Celebrations_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\world_music\Celebrations_2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\world_music\Celebrations_3.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\world_music\Celebrations_4.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\world_music\Celebrations_5.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\world_music\Celtic_Memories_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\world_music\Celtic_Memories_2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\world_music\Celtic_Memories_3.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\world_music\Celtic_Memories_4.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\world_music\Celtic_Memories_5.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\world_music\Celtic_Memories_6.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\world_music\Celtic_Memories_7.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\world_music\Celtic_Traditional_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\world_music\Celtic_Traditional_2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\world_music\Celtic_Traditional_3.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\world_music\Celtic_Traditional_4.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CMM\world_music\Clypso_2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\DLLS\Interop.WMPLib.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\1.jpg" />
+    <None Include="Resources\bluebg.jpg" />
+    <None Include="Resources\500x300.png" />
+    <None Include="Resources\btn_enterpatient.png" />
+    <None Include="Resources\btn_editpatient.png" />
+    <None Include="Resources\btnExit.png" />
+    <None Include="Resources\btnEntersmrtBrdge.png" />
+    <None Include="Resources\bgbackground1.png" />
+    <None Include="Resources\btnGenerateTonefile.png" />
+    <None Include="Resources\button.png" />
+    <None Include="Resources\btns pngs0001.png" />
+    <None Include="Resources\btns pngs0002.png" />
+    <None Include="Resources\btns pngs0003.png" />
+    <None Include="Resources\btns pngs0004.png" />
+    <None Include="Resources\btns pngs0005.png" />
+    <None Include="Resources\ACTIVE.png" />
+    <None Include="Resources\btns0001.png" />
+    <None Include="Resources\btns0002.png" />
+    <None Include="Resources\btns0003.png" />
+    <None Include="Resources\btns0004.png" />
+    <None Include="Resources\btns0005.png" />
+    <None Include="Resources\btns0006.png" />
+    <None Include="Resources\BG.jpg" />
+    <None Include="Resources\123.png" />
+    <Content Include="Drivers\SAMSUNG_USB_Driver_for_Mobile_Phones.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\capt.png" />
+    <None Include="Resources\download.jpg" />
+    <None Include="Resources\cmtbg.jpg" />
+    <None Include="Resources\DA APPS.png" />
+    <None Include="Resources\E P BTN.png" />
+    <None Include="Resources\EMB_btns.png" />
+    <None Include="Resources\environment %281%29.png" />
+    <Content Include="Resources\environment.png" />
+    <None Include="Resources\grdblue.jpg" />
+    <None Include="Resources\linear-gradient.png" />
+    <None Include="Resources\gradient_series___yellow.png" />
+    <None Include="Resources\maintitleimage.png" />
+    <None Include="Resources\light-gradient-2-1920x1080.jpg" />
+    <None Include="Resources\loadingLogin.gif" />
+    <None Include="Resources\lightGradblue.jpg" />
+    <None Include="Resources\gradient_header.jpg" />
+    <None Include="Resources\icon tt.ico" />
+    <None Include="Resources\exit btn2 .png" />
+    <None Include="Resources\exit btns .png" />
+    <None Include="Resources\logo back patch.png" />
+    <None Include="Resources\loginedited.png" />
+    <None Include="Resources\exitedit.png" />
+    <None Include="Resources\EXITBTN.png" />
+    <None Include="Resources\EXITEDITED.png" />
+    <None Include="Resources\LOGINNEW.png" />
+    <None Include="Resources\loginBig.png" />
+    <None Include="Resources\EPD.png" />
+    <None Include="Resources\EXIT.png" />
+    <None Include="Resources\GEN REPORT.png" />
+    <None Include="Resources\INSTALL.png" />
+    <None Include="Resources\LOGIN.png" />
+    <None Include="Resources\loading_circle.gif" />
+    <None Include="Resources\exit_big.png" />
+    <Content Include="Resources\music.png" />
+    <None Include="Resources\tinnitus trio_90x26.png" />
+    <None Include="Resources\tumblr_static_7p7kyf8q94sgo044wo8o40ko.jpg" />
+    <None Include="Resources\please_wait.gif" />
+    <None Include="Resources\splashscreen.jpg" />
+    <None Include="Resources\orangeBG.jpg" />
+    <None Include="Resources\verticalGradient.jpg" />
+    <None Include="Resources\newtt.ico" />
+    <None Include="Resources\title2 .png" />
+    <None Include="Resources\patch for patient detailes2.png" />
+    <None Include="Resources\title1 .png" />
+    <None Include="Resources\patch for patient detailes.png" />
+    <None Include="Resources\resetFields.png" />
+    <None Include="Resources\resetnew.png" />
+    <None Include="Resources\RESETBIG.png" />
+    <None Include="Resources\NP BTN.png" />
+    <None Include="Resources\PR TONE.png" />
+    <None Include="Resources\RESET.png" />
+    <None Include="Resources\SAVE PA.png" />
+    <None Include="Resources\SPLASSH.jpg" />
+    <None Include="Resources\patientdetailesbtn.png" />
+    <None Include="Resources\patient_details_crc.png" />
+    <Content Include="TinnitusTrio.mdf" />
+    <Content Include="TinnitusTrio_log.ldf">
+      <DependentUpon>TinnitusTrio.mdf</DependentUpon>
+    </Content>
+    <None Include="Resources\noise.png" />
+    <Content Include="Resources\PNG1_bg-with-tinnitus-trio_logo %281%29.png" />
+    <Content Include="Resources\PNG1_bg-with-tinnitus-trio_logo.png" />
+    <Content Include="Resources\tones.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\TinnitusTrioADB_BAL\TinnitusTrioADB_BAL.csproj">
+      <Project>{cd54af0c-afda-4093-821e-2872557e6249}</Project>
+      <Name>TinnitusTrioADB_BAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TinnitusTrioADB_BO\TinnitusTrioADB_BO.csproj">
+      <Project>{92849f14-1c74-4b20-8367-cab28bf46a62}</Project>
+      <Name>TinnitusTrioADB_BO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

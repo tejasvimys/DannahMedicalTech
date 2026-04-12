@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="TinnitusTrioModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="DoctorDetails">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MiddleName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Address1" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address2" Type="nvarchar" MaxLength="50" />
+          <Property Name="city" Type="nvarchar" MaxLength="30" />
+          <Property Name="state" Type="nvarchar" MaxLength="30" />
+          <Property Name="country" Type="nvarchar" MaxLength="30" />
+          <Property Name="ZipCode" Type="nvarchar" MaxLength="30" />
+          <Property Name="phone" Type="nvarchar" MaxLength="20" />
+          <Property Name="mobileno" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="fax" Type="nvarchar" MaxLength="20" />
+          <Property Name="email" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="website" Type="nvarchar" MaxLength="30" />
+          <Property Name="uniqueId" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="HospitalNme" Type="nvarchar" MaxLength="50" />
+          <Property Name="appdemodate" Type="nvarchar" MaxLength="50" />
+          <Property Name="useragreementGenerated" Type="bit" />
+          <Property Name="Isactive" Type="bit" Nullable="false" />
+          <Property Name="DoctorCode" Type="varchar" MaxLength="10" />
+          <Property Name="password" Type="varchar(max)" />
+          <Property Name="pin" Type="int" />
+          <Property Name="isFirstLogin" Type="bit" />
+          <Property Name="SubscriptionType" Type="int" />
+          <Property Name="SubscriptionDate" Type="date" />
+        </EntityType>
+        <EntityType Name="OfflineLicenseRequest">
+          <Key>
+            <PropertyRef Name="requestId" />
+          </Key>
+          <Property Name="requestId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="doctorCode" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="requestActiveStatus" Type="bit" />
+          <Property Name="remarks" Type="varchar" MaxLength="1000" />
+          <Property Name="licenseQuantity" Type="int" />
+          <Property Name="requestdate" Type="date" />
+          <Property Name="requestenddate" Type="date" />
+          <Property Name="requestisserviced" Type="bit" />
+        </EntityType>
+        <EntityContainer Name="TinnitusTrioModelStoreContainer">
+          <EntitySet Name="DoctorDetails" EntityType="Self.DoctorDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OfflineLicenseRequest" EntityType="Self.OfflineLicenseRequest" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TinnitusTrioModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="OfflineLicenseRequest">
+          <Key>
+            <PropertyRef Name="requestId" />
+          </Key>
+          <Property Name="requestId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="doctorCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="requestActiveStatus" Type="Boolean" />
+          <Property Name="remarks" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="licenseQuantity" Type="Int32" />
+          <Property Name="requestdate" Type="DateTime" Precision="0" />
+          <Property Name="requestenddate" Type="DateTime" Precision="0" />
+          <Property Name="requestisserviced" Type="Boolean" />
+        </EntityType>
+        <EntityContainer Name="TinnitusTrioEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="OfflineLicenseRequests" EntityType="Self.OfflineLicenseRequest" />
+          <EntitySet Name="DoctorDetails" EntityType="TinnitusTrioModel.DoctorDetail" />
+        </EntityContainer>
+        <EntityType Name="DoctorDetail">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="city" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="state" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="country" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="ZipCode" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="mobileno" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fax" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="website" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="uniqueId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HospitalNme" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="appdemodate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="useragreementGenerated" Type="Boolean" />
+          <Property Name="Isactive" Type="Boolean" Nullable="false" />
+          <Property Name="DoctorCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="pin" Type="Int32" />
+          <Property Name="isFirstLogin" Type="Boolean" />
+          <Property Name="SubscriptionType" Type="Int32" />
+          <Property Name="SubscriptionDate" Type="DateTime" Precision="0" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TinnitusTrioModelStoreContainer" CdmEntityContainer="TinnitusTrioEntities">
+          <EntitySetMapping Name="OfflineLicenseRequests">
+            <EntityTypeMapping TypeName="TinnitusTrioModel.OfflineLicenseRequest">
+              <MappingFragment StoreEntitySet="OfflineLicenseRequest">
+                <ScalarProperty Name="requestId" ColumnName="requestId" />
+                <ScalarProperty Name="doctorCode" ColumnName="doctorCode" />
+                <ScalarProperty Name="requestActiveStatus" ColumnName="requestActiveStatus" />
+                <ScalarProperty Name="remarks" ColumnName="remarks" />
+                <ScalarProperty Name="licenseQuantity" ColumnName="licenseQuantity" />
+                <ScalarProperty Name="requestdate" ColumnName="requestdate" />
+                <ScalarProperty Name="requestenddate" ColumnName="requestenddate" />
+                <ScalarProperty Name="requestisserviced" ColumnName="requestisserviced" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DoctorDetails">
+            <EntityTypeMapping TypeName="TinnitusTrioModel.DoctorDetail">
+              <MappingFragment StoreEntitySet="DoctorDetails">
+                <ScalarProperty Name="SubscriptionDate" ColumnName="SubscriptionDate" />
+                <ScalarProperty Name="SubscriptionType" ColumnName="SubscriptionType" />
+                <ScalarProperty Name="isFirstLogin" ColumnName="isFirstLogin" />
+                <ScalarProperty Name="pin" ColumnName="pin" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="DoctorCode" ColumnName="DoctorCode" />
+                <ScalarProperty Name="Isactive" ColumnName="Isactive" />
+                <ScalarProperty Name="useragreementGenerated" ColumnName="useragreementGenerated" />
+                <ScalarProperty Name="appdemodate" ColumnName="appdemodate" />
+                <ScalarProperty Name="HospitalNme" ColumnName="HospitalNme" />
+                <ScalarProperty Name="uniqueId" ColumnName="uniqueId" />
+                <ScalarProperty Name="website" ColumnName="website" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="fax" ColumnName="fax" />
+                <ScalarProperty Name="mobileno" ColumnName="mobileno" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+                <ScalarProperty Name="country" ColumnName="country" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

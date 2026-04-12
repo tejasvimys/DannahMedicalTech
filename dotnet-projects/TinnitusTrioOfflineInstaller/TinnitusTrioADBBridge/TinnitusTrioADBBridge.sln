@@ -1,0 +1,103 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinnitusTrioADBBridge", "TinnitusTrioADBBridge\TinnitusTrioADBBridge.csproj", "{4CF46FB5-69D7-445F-970B-74FE1A51482F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinnitusTrioADB_DAL", "TinnitusTrioADB_DAL\TinnitusTrioADB_DAL.csproj", "{796F8954-FFB4-46FF-98AE-83306BF16CBA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinnitusTrioADB_BO", "TinnitusTrioADB_BO\TinnitusTrioADB_BO.csproj", "{92849F14-1C74-4B20-8367-CAB28BF46A62}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinnitusTrioADB_BAL", "TinnitusTrioADB_BAL\TinnitusTrioADB_BAL.csproj", "{CD54AF0C-AFDA-4093-821E-2872557E6249}"
+EndProject
+Project("{6141683F-8A12-4E36-9623-2EB02B2C2303}") = "ADBSetupProject", "ADBSetupProject\ADBSetupProject.isproj", "{1381C0E6-E740-411D-976B-4C39F04D4E6D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4CF46FB5-69D7-445F-970B-74FE1A51482F} = {4CF46FB5-69D7-445F-970B-74FE1A51482F}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://prisminfotechsolutions.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ADBSetupProject\\ADBSetupProject.isproj
+		SccProjectName1 = ADBSetupProject
+		SccLocalPath1 = ADBSetupProject
+		SccProjectUniqueName2 = TinnitusTrioADB_BAL\\TinnitusTrioADB_BAL.csproj
+		SccProjectName2 = TinnitusTrioADB_BAL
+		SccLocalPath2 = TinnitusTrioADB_BAL
+		SccProjectUniqueName3 = TinnitusTrioADB_BO\\TinnitusTrioADB_BO.csproj
+		SccProjectName3 = TinnitusTrioADB_BO
+		SccLocalPath3 = TinnitusTrioADB_BO
+		SccProjectUniqueName4 = TinnitusTrioADB_DAL\\TinnitusTrioADB_DAL.csproj
+		SccProjectName4 = TinnitusTrioADB_DAL
+		SccLocalPath4 = TinnitusTrioADB_DAL
+		SccProjectUniqueName5 = TinnitusTrioADBBridge\\TinnitusTrioADBBridge.csproj
+		SccProjectName5 = TinnitusTrioADBBridge
+		SccLocalPath5 = TinnitusTrioADBBridge
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		CD_ROM|Any CPU = CD_ROM|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		DVD-5|Any CPU = DVD-5|Any CPU
+		Release|Any CPU = Release|Any CPU
+		SingleImage|Any CPU = SingleImage|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4CF46FB5-69D7-445F-970B-74FE1A51482F}.CD_ROM|Any CPU.ActiveCfg = Release|Any CPU
+		{4CF46FB5-69D7-445F-970B-74FE1A51482F}.CD_ROM|Any CPU.Build.0 = Release|Any CPU
+		{4CF46FB5-69D7-445F-970B-74FE1A51482F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CF46FB5-69D7-445F-970B-74FE1A51482F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CF46FB5-69D7-445F-970B-74FE1A51482F}.DVD-5|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CF46FB5-69D7-445F-970B-74FE1A51482F}.DVD-5|Any CPU.Build.0 = Debug|Any CPU
+		{4CF46FB5-69D7-445F-970B-74FE1A51482F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CF46FB5-69D7-445F-970B-74FE1A51482F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CF46FB5-69D7-445F-970B-74FE1A51482F}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
+		{4CF46FB5-69D7-445F-970B-74FE1A51482F}.SingleImage|Any CPU.Build.0 = Release|Any CPU
+		{796F8954-FFB4-46FF-98AE-83306BF16CBA}.CD_ROM|Any CPU.ActiveCfg = Release|Any CPU
+		{796F8954-FFB4-46FF-98AE-83306BF16CBA}.CD_ROM|Any CPU.Build.0 = Release|Any CPU
+		{796F8954-FFB4-46FF-98AE-83306BF16CBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{796F8954-FFB4-46FF-98AE-83306BF16CBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{796F8954-FFB4-46FF-98AE-83306BF16CBA}.DVD-5|Any CPU.ActiveCfg = Debug|Any CPU
+		{796F8954-FFB4-46FF-98AE-83306BF16CBA}.DVD-5|Any CPU.Build.0 = Debug|Any CPU
+		{796F8954-FFB4-46FF-98AE-83306BF16CBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{796F8954-FFB4-46FF-98AE-83306BF16CBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{796F8954-FFB4-46FF-98AE-83306BF16CBA}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
+		{796F8954-FFB4-46FF-98AE-83306BF16CBA}.SingleImage|Any CPU.Build.0 = Release|Any CPU
+		{92849F14-1C74-4B20-8367-CAB28BF46A62}.CD_ROM|Any CPU.ActiveCfg = Release|Any CPU
+		{92849F14-1C74-4B20-8367-CAB28BF46A62}.CD_ROM|Any CPU.Build.0 = Release|Any CPU
+		{92849F14-1C74-4B20-8367-CAB28BF46A62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92849F14-1C74-4B20-8367-CAB28BF46A62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92849F14-1C74-4B20-8367-CAB28BF46A62}.DVD-5|Any CPU.ActiveCfg = Debug|Any CPU
+		{92849F14-1C74-4B20-8367-CAB28BF46A62}.DVD-5|Any CPU.Build.0 = Debug|Any CPU
+		{92849F14-1C74-4B20-8367-CAB28BF46A62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92849F14-1C74-4B20-8367-CAB28BF46A62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92849F14-1C74-4B20-8367-CAB28BF46A62}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
+		{92849F14-1C74-4B20-8367-CAB28BF46A62}.SingleImage|Any CPU.Build.0 = Release|Any CPU
+		{CD54AF0C-AFDA-4093-821E-2872557E6249}.CD_ROM|Any CPU.ActiveCfg = Release|Any CPU
+		{CD54AF0C-AFDA-4093-821E-2872557E6249}.CD_ROM|Any CPU.Build.0 = Release|Any CPU
+		{CD54AF0C-AFDA-4093-821E-2872557E6249}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD54AF0C-AFDA-4093-821E-2872557E6249}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD54AF0C-AFDA-4093-821E-2872557E6249}.DVD-5|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD54AF0C-AFDA-4093-821E-2872557E6249}.DVD-5|Any CPU.Build.0 = Debug|Any CPU
+		{CD54AF0C-AFDA-4093-821E-2872557E6249}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD54AF0C-AFDA-4093-821E-2872557E6249}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD54AF0C-AFDA-4093-821E-2872557E6249}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
+		{CD54AF0C-AFDA-4093-821E-2872557E6249}.SingleImage|Any CPU.Build.0 = Release|Any CPU
+		{1381C0E6-E740-411D-976B-4C39F04D4E6D}.CD_ROM|Any CPU.ActiveCfg = CD_ROM
+		{1381C0E6-E740-411D-976B-4C39F04D4E6D}.CD_ROM|Any CPU.Build.0 = CD_ROM
+		{1381C0E6-E740-411D-976B-4C39F04D4E6D}.Debug|Any CPU.ActiveCfg = DVD-5
+		{1381C0E6-E740-411D-976B-4C39F04D4E6D}.Debug|Any CPU.Build.0 = DVD-5
+		{1381C0E6-E740-411D-976B-4C39F04D4E6D}.DVD-5|Any CPU.ActiveCfg = DVD-5
+		{1381C0E6-E740-411D-976B-4C39F04D4E6D}.DVD-5|Any CPU.Build.0 = DVD-5
+		{1381C0E6-E740-411D-976B-4C39F04D4E6D}.Release|Any CPU.ActiveCfg = SingleImage
+		{1381C0E6-E740-411D-976B-4C39F04D4E6D}.Release|Any CPU.Build.0 = SingleImage
+		{1381C0E6-E740-411D-976B-4C39F04D4E6D}.SingleImage|Any CPU.ActiveCfg = SingleImage
+		{1381C0E6-E740-411D-976B-4C39F04D4E6D}.SingleImage|Any CPU.Build.0 = SingleImage
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

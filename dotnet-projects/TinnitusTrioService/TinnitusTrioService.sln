@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinnitusTrioService", "TinnitusTrioService\TinnitusTrioService.csproj", "{EF907CDC-D6BA-463C-A083-A32D180A953B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrioBAL", "TrioBAL\TrioBAL.csproj", "{DC4BF409-0360-43C8-98ED-DECB636E1DE6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrioDAL", "TrioDAL\TrioDAL.csproj", "{FBC6D718-B933-4305-8457-6F8114D8AEB3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrioBO", "TrioBO\TrioBO.csproj", "{45163F3D-F0EB-4CA2-B122-BCA9782BB41A}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://prisminfotechsolutions.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = TinnitusTrioService\\TinnitusTrioService.csproj
+		SccProjectName1 = TinnitusTrioService
+		SccLocalPath1 = TinnitusTrioService
+		SccProjectUniqueName2 = TrioBAL\\TrioBAL.csproj
+		SccProjectName2 = TrioBAL
+		SccLocalPath2 = TrioBAL
+		SccProjectUniqueName3 = TrioBO\\TrioBO.csproj
+		SccProjectName3 = TrioBO
+		SccLocalPath3 = TrioBO
+		SccProjectUniqueName4 = TrioDAL\\TrioDAL.csproj
+		SccProjectName4 = TrioDAL
+		SccLocalPath4 = TrioDAL
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EF907CDC-D6BA-463C-A083-A32D180A953B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF907CDC-D6BA-463C-A083-A32D180A953B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF907CDC-D6BA-463C-A083-A32D180A953B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF907CDC-D6BA-463C-A083-A32D180A953B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC4BF409-0360-43C8-98ED-DECB636E1DE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC4BF409-0360-43C8-98ED-DECB636E1DE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC4BF409-0360-43C8-98ED-DECB636E1DE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC4BF409-0360-43C8-98ED-DECB636E1DE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBC6D718-B933-4305-8457-6F8114D8AEB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBC6D718-B933-4305-8457-6F8114D8AEB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBC6D718-B933-4305-8457-6F8114D8AEB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBC6D718-B933-4305-8457-6F8114D8AEB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45163F3D-F0EB-4CA2-B122-BCA9782BB41A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45163F3D-F0EB-4CA2-B122-BCA9782BB41A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45163F3D-F0EB-4CA2-B122-BCA9782BB41A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45163F3D-F0EB-4CA2-B122-BCA9782BB41A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
