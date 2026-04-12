@@ -1,5 +1,6 @@
 *.mp3
 *.jks
+hs_err_pid*.log
 **/.gradle/
 **/.idea/
 **/build/
