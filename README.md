@@ -21,6 +21,11 @@ This repository contains imported legacy project snapshots, organized by platfor
 - `TinnitusTrioRequest`
 - `TinnitusTrioService`
 
-Each project folder includes its own `README.md` and `TECHNICAL_DETAILS.md`.
+## Documentation
+
+Project documentation is kept outside the code trees in separate top-level folders:
+
+- `readme/<ProjectName>/README.md`
+- `technical-documentation/<ProjectName>/TECHNICAL_DETAILS.md`
 
 Sensitive legacy connection strings were sanitized during import, and local build/runtime artifacts were excluded from the published snapshot.
